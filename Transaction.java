@@ -3,7 +3,6 @@ import java.util.*;
 public class Transaction {
 
     private String transactionID;
-    private String CardNum;
     private String OrderNum;
     private String PriceToTal;
 

@@ -2,6 +2,7 @@ import java.util.*;
 import java.text.*;
 import java.io.*;
 
+// Test the Supplier and supplierlist class
 public class Tester {
 	  
 	public static void main(String[] s) {
