@@ -28,11 +28,11 @@ public class Client{
     public void getCID(String cID) { this.clientID = cID; }
 
     // Getter
-    public String returnClientcName(){ return cName; }
+    public String returnClientName(){ return cName; }
 
-    public String returnClientcAddress(){ return cAddress; }
+    public String returnClientAddress(){ return cAddress; }
 
-    public String returnClientcPhone(){ return cPhone; }
+    public String returnClientPhone(){ return cPhone; }
 
     public String returnClientID(){ return clientID; }
 
