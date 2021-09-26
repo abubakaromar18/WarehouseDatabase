@@ -1,6 +1,7 @@
 import java.io.PrintStream;
 import java.util.*;
 import java.util.Random;
+
 public class Cart {
 
     private String Name;
@@ -13,19 +14,6 @@ public class Cart {
     private List transfers;
 
 
-    public void setTransfer(List transfer) {
-        for (Object o : this.transfer) {
-
-        }
-
-    }
-
-    public void setTransfers(List transfers) {
-        for (Object o : this.transfer) {
-
-        }
-
-    }
 
     public void setName(String Name) {
         this.Name = Name;
