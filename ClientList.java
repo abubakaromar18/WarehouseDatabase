@@ -21,10 +21,11 @@ public class ClientList{
     } 
 
     // Search For Client
+	// Test TESt
     public Client searchClient(String find){
 
         for (Client c : clientList) 
-            if(c.getClientName().equals(find) ||c.getClientAddress().equals(find) || c.getClientPhone().equals(find) || c.getClientID().equals(find))
+            if(c.setClientName().equals(find) ||c.setClientAddress().equals(find) || c.setClientPhone().equals(find) || c.setClientID().equals(find))
                 return c;  
         
         return null;

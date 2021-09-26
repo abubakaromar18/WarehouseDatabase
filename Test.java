@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class Test {
    
     public static void main(String[] args){
+        String input;
 
         Client a = new Client("Jack", "123 1ST Ave", "(123) 456-8789", "ID1");
 
@@ -21,6 +22,7 @@ public class Test {
         Transaction h = new Transaction("ID789", "A98764", "1542.23");
 
         ClientList d = new ClientList();
+
 
         // Inset Class Object To Vector
         d.insertClientInfo(a);
@@ -37,6 +39,29 @@ public class Test {
         d.displayAllClient();  
         e.displayAllCart();
         g.displayAllTranscation();
+
+
+        System.out.print("Please Enter Client Name, Address, Phone number, or ID to search for that Client");
+        Scanner in= new Scanner(System.in)
+        input = in.nextline();
+
+       System.out.println("The Person You Are Looking For Is: " + d.searchClient(input))
+
+
+       System.out.print("Please Enter Client Name, Product Name, or ID to search for that Cart");
+        Scanner in= new Scanner(System.in)
+        input = in.nextline();
+
+       System.out.println("The Person You Are Looking For Is: " + e.searchCart(input))
+
+       System.out.print("Please Enter Transaction ID, Order Number");
+        Scanner in= new Scanner(System.in)
+        input = in.nextline();
+
+       System.out.println("The Person You Are Looking For Is: " + g.searchTransaction(input))
+
+       
+        
         
     }
 
