@@ -23,6 +23,11 @@ public class productList{
         pList.add(p);
         return true;
     }
+    public boolean removeProduct(products p)
+    {
+        pList.remove(p);
+        return true;
+    }
     
     public Iterator getProduct(){
         return pList.iterator();
