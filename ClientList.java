@@ -19,16 +19,6 @@ public class ClientList{
      
     } 
 
-    // Remove Client
-    public Client removeClient(String find){
-
-        for (Client c : list) 
-            if(c.returnClientName().equals(find) || c.returnClientAddress().equals(find) || c.returnClientPhone().equals(find)|| c.returnClientID().equals(find))
-                list.remove(c);
-
-        return null;
-    }
-
     // Search For Client
     public Client searchClient(String find){
 

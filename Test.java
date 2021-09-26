@@ -35,10 +35,6 @@ public class Test {
 
         System.out.println("The Cleint Information You Are Looking For Is: " + b.searchClient(search));
 
-        //Remove Client
-        b.removeClient("Lucy");
-
-        b.displayAllClient(); 
     }
  
 }
