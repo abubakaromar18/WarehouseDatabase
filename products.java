@@ -35,6 +35,10 @@ public class products {
         this.productID = pID;
     }
 
+    public void something()
+    {
+        //add something new
+    }
 
     
     //getters
