@@ -18,7 +18,7 @@ public class Client{
         this.clientID = clientID;
     }
 
-    // Setter
+    // Getter
     public void getCName(String cName) { this.cName = cName; }
     
     public void getCAddress(String cAddress) { this.cAddress = cAddress; }
@@ -27,14 +27,14 @@ public class Client{
 
     public void getCID(String cID) { this.clientID = cID; }
 
-    // Getter
-    public String returnClientName(){ return cName; }
+    // Setter
+    public String setClientName(){ return cName; }
 
-    public String returnClientAddress(){ return cAddress; }
+    public String setClientAddress(){ return cAddress; }
 
-    public String returnClientPhone(){ return cPhone; }
+    public String setClientPhone(){ return cPhone; }
 
-    public String returnClientID(){ return clientID; }
+    public String setClientID(){ return clientID; }
 
     @Override
     public String toString(){ return this.cName+ "  " + this.cAddress + " " + this.cPhone + "  " + this.clientID; }

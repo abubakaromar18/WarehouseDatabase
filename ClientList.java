@@ -23,7 +23,7 @@ public class ClientList{
     public Client searchClient(String find){
 
         for (Client c : list) 
-            if(c.returnClientName().equals(find) ||c.returnClientAddress().equals(find) || c.returnClientPhone().equals(find) || c.returnClientID().equals(find))
+            if(c.setClientName().equals(find) ||c.setClientAddress().equals(find) || c.setClientPhone().equals(find) || c.setClientID().equals(find))
                 return c;  
         
         return null;
