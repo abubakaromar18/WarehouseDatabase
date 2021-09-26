@@ -95,7 +95,7 @@ public class Cart {
         int i = 0;
         int total = 0;
         boolean check = true;
-        // String[] carting= new String[]{"Wood","Backpack","computer","knifes"};
+        
 
         List books = new LinkedList();
         List prices = new LinkedList();
@@ -104,13 +104,9 @@ public class Cart {
 
         List product = new LinkedList();
 
-
+        //--------------------------------------------------------------------------------testing product inputs
         while (check) {
             System.out.println("hello Welcome to the Shopping Cart");
-
-
-       
-
             System.out.printf("entering the product name \n");
             Scanner nam = new Scanner(System.in);
             systeminput = nam.next();
@@ -145,8 +141,7 @@ public class Cart {
 
 
             System.out.println("ID: "+IDnum+""+books+" $"+prices+" Quantity"+qun+"");
-
-           
+            //---------------------------------------------------------------------------menu
             System.out.println("input 1 to remove a product");
             System.out.println("input 2 to add another product");
             System.out.println("input 3 to clear");
@@ -154,7 +149,7 @@ public class Cart {
             //System.out.println("input 5 to add another product");
             Scanner w = new Scanner(System.in);
             systemprice = w.nextInt();
-            if (systemprice == 1) {
+            if (systemprice == 1) {                                             //remove
                 System.out.println("which row of items do you want to remove");
                 Scanner g = new Scanner(System.in);
                 Systemidenity = g.nextInt();
@@ -165,19 +160,19 @@ public class Cart {
                 qun.remove(Systemidenity);
                 System.out.println(books);
             }
-            if (systemprice == 2) {
+            if (systemprice == 2) {                                        //add
                 System.out.println("What do you want to add");
                 Scanner k = new Scanner(System.in);
                 systeminput = k.next();
                 books.add(systeminput);
                 System.out.println(books);
             }
-            if (systemprice == 3) {
+            if (systemprice == 3) {                                     //clearing all
                 System.out.println("Clearing all");
                 books.clear();
                 System.out.println(books);
             }
-            if (systemprice == 4) {
+            if (systemprice == 4) {                                     //add the total price
                 int finaltotal = 0;
                 for (int v = 0; v < 3; v++) {
                     finaltotal = finaltotal + product.indexOf(v);
@@ -190,7 +185,7 @@ public class Cart {
             //c.setTransfer(books);
             //c.setTransfers(product);
 
-            System.out.printf("do you want to exit?: Y/N\n");
+            System.out.printf("do you want to exit?: Y/N\n");           //exit while loop
             Scanner end = new Scanner(System.in);
             endcode = end.nextInt();
             //  total=(getPrice+total);
