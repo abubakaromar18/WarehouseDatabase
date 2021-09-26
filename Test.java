@@ -12,7 +12,7 @@ public class Test {
 
         Scanner input = new Scanner(System.in);
      
-        Client a = new Client("Thomas", "123 1ST Ave", "(123) 456-8789", "ID1");
+        Client a = new Client("Jack", "123 1ST Ave", "(123) 456-8789", "ID1");
 
         Client c = new Client("Lucy", "456 2ND Ave", "(456) 799-1324", "ID2");
 
