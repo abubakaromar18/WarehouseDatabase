@@ -109,12 +109,7 @@ public class Cart {
             System.out.println("hello Welcome to the Shopping Cart");
 
 
-            /*for(int h=0;h<3;h++)
-            {
-                stream.println(carting);
-                stream.flush();
-            }
-*/
+       
 
             System.out.printf("entering the product name \n");
             Scanner nam = new Scanner(System.in);
@@ -132,38 +127,16 @@ public class Cart {
             Scanner q = new Scanner(System.in);
             SystemQuantity = q.nextInt();
             c.setID(Systemidenity);
-            //c.setName("wood");
             c.setName(systeminput);
             c.setPrice(systemprice);
             c.setQuantity(SystemQuantity);
             c.setPriceTotal(0);
 
 
-        /*
-            carting[j] = c.getName();
-            carting[j+1] = c.getID();
-            carting[j+2] = c.getPrice();
-            carting[j+3] = c.getQuantity();
-            j++;
-        */
             String getName = c.getName();
             int getID = c.getID();
             int getPrice = c.getPrice();
             int getQuantity = c.getQuantity();
-            //  System.out.println(systeminput);
-
-            /*
-            books.add(i,getName);
-            books.add(1,"computer");
-            books.add(2,"Dish");
-            books.add(3,"TV");
-            product.add(0,25);
-            product.add(1,87);
-            product.add(2,63);
-            product.add(3,200);
-            *\
-
-             */
 
             books.add(i, getName);
             prices.add(i, getID);
@@ -173,7 +146,7 @@ public class Cart {
 
             System.out.println("ID: "+IDnum+""+books+" $"+prices+" Quantity"+qun+"");
 
-            // System.out.println(product);
+           
             System.out.println("input 1 to remove a product");
             System.out.println("input 2 to add another product");
             System.out.println("input 3 to clear");
@@ -222,6 +195,7 @@ public class Cart {
             endcode = end.nextInt();
             //  total=(getPrice+total);
             c.setPriceTotal(total);
+            
             if (endcode == 0) {
                 // int random=rand.setPrice;
                 check = false;
