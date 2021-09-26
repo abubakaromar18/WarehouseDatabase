@@ -8,7 +8,6 @@ public class Test {
    
     public static void main(String[] args){
 
-        
         Client a = new Client("Jack", "123 1ST Ave", "(123) 456-8789", "ID1");
 
         Client b = new Client("Lucy", "456 2ND Ave", "(456) 799-1324", "ID2");
@@ -23,6 +22,7 @@ public class Test {
 
         ClientList d = new ClientList();
 
+        // Inset Class Object To Vector
         d.insertClientInfo(a);
         d.insertClientInfo(b);
 
@@ -37,7 +37,6 @@ public class Test {
         d.displayAllClient();  
         e.displayAllCart();
         g.displayAllTranscation();
-
         
     }
 
