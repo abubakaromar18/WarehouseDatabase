@@ -19,22 +19,22 @@ public class Client{
     }
 
     // Getter
-    public void getCName(String cName) { this.cName = cName; }
-    
-    public void getCAddress(String cAddress) { this.cAddress = cAddress; }
+    public String getClientName(){ return cName; }
 
-    public void getCPhone(String cPhone) { this.cPhone = cPhone; }
+    public String getClientAddress(){ return cAddress; }
 
-    public void getCID(String cID) { this.clientID = cID; }
+    public String getClientPhone(){ return cPhone; }
+
+    public String getClientID(){ return clientID; }
 
     // Setter
-    public String setClientName(){ return cName; }
+    public void setCName(String cName) { this.cName = cName; }
+    
+    public void setCAddress(String cAddress) { this.cAddress = cAddress; }
 
-    public String setClientAddress(){ return cAddress; }
+    public void setCPhone(String cPhone) { this.cPhone = cPhone; }
 
-    public String setClientPhone(){ return cPhone; }
-
-    public String setClientID(){ return clientID; }
+    public void setCID(String cID) { this.clientID = cID; }
 
     @Override
     public String toString(){ return this.cName+ "  " + this.cAddress + " " + this.cPhone + "  " + this.clientID; }

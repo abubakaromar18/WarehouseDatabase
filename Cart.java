@@ -39,6 +39,23 @@ public class Cart {
         }
     }
 
+    // Display All Cart
+    public void displayAllCart(){
+
+        for (Cart c : cartList) 
+            System.out.println(c);
+    } 
+
+    // Search For A Cart
+    public Cart searchCart(String find){
+
+        for (Cart a : cartList) 
+            if(a.getOrderNumber().equals(find) ||a.getName().equals(find) || a.getID().equals(find) || a.getPrice().equals(find)|| a.getQuantity().equals(find) || a.getTotalPrice().equals(find))
+                return a;  
+        
+        return null;
+    }
+
 
     // Setter
     public void setName(String Name) { this.Name = Name; }
@@ -68,7 +85,7 @@ public class Cart {
     public String getQuantity() { return this.Quantity; }
 
     @Override
-    public String toString(){ return this.Name+ "  " + this.ID + " " + this.Price + "  " + this.Quantity; }
+    public String toString(){ return this.OrderNum + " " + this.Name + "  " + this.ID + " " + this.Price + "  " + this.Quantity + " " + this.PriceTotal; }
 }
 
 

@@ -1,14 +1,11 @@
-import java.io.*;
-import java.util.*;
-import java.lang.*;
-import java.util.Scanner;
-
-// Client, ClientList, Cart, Transaction Test
 public class Test {
    
     public static void main(String[] args){
 
-        
+        String search; 
+
+        Scanner input = new Scanner(System.in);
+     
         Client a = new Client("Jack", "123 1ST Ave", "(123) 456-8789", "ID1");
 
         Client b = new Client("Lucy", "456 2ND Ave", "(456) 799-1324", "ID2");
@@ -27,25 +24,17 @@ public class Test {
         d.insertClientInfo(b);
 
         e.insertItemToCart(e);
-        e.insertItemToCart(f);
+        f.insertItemToCart(f);
 
         g.insertItemToTransaction(g);
-        g.insertItemToTransaction(h);
+        h.insertItemToTransaction(h);
 
 
         // Display Information
         d.displayAllClient();  
         e.displayAllCart();
         g.displayAllTranscation();
-
         
     }
 
 }
-
-
-
-
-
-
- 
