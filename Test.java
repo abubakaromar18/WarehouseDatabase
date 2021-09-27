@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class Test {
    
     public static void main(String[] args){
+        
         String input;
 
         Client a = new Client("Jack", "123 1ST Ave", "(123) 456-8789", "ID1");
@@ -41,28 +42,22 @@ public class Test {
         g.displayAllTranscation();
 
 
-        System.out.print("Please Enter Client Name, Address, Phone number, or ID to search for that Client");
-        Scanner in= new Scanner(System.in)
-        input = in.nextline();
+        // Search For A Client
+        System.out.print("Please Enter The Client Name, Address, Phone number, Or ID To Search For A Client: ");
+        Scanner in= new Scanner(System.in);
+        input = in.nextLine();
+        System.out.println("The Person You Are Looking For Is: " + d.searchClient(input));
 
-       System.out.println("The Person You Are Looking For Is: " + d.searchClient(input))
+        // Search For A Shopping Cart
+        System.out.print("Please Enter The Client Name, Product Name, Or ID To Search For The Shopping Cart: ");
+        input = in.nextLine();
+        System.out.println("The Shopping Cart Contain The Following Information: " + e.searchCart(input));
 
-
-       System.out.print("Please Enter Client Name, Product Name, or ID to search for that Cart");
-        Scanner in= new Scanner(System.in)
-        input = in.nextline();
-
-       System.out.println("The Person You Are Looking For Is: " + e.searchCart(input))
-
-       System.out.print("Please Enter Transaction ID, Order Number");
-        Scanner in= new Scanner(System.in)
-        input = in.nextline();
-
-       System.out.println("The Person You Are Looking For Is: " + g.searchTransaction(input))
-
-       
-        
-        
+        // Search For A Transaction 
+        System.out.print("Please Enter The Transaction ID, Order Number To Search For A Transaction: ");
+        input = in.nextLine();
+        System.out.println("The Transaction Information Is: " + g.searchTransaction(input));
+   
     }
 
 }
