@@ -93,6 +93,30 @@ public class TestStage2 {
             System.out.println("Cart Is Not Empty!");
         }
 
+        //Check Quantity
+        System.out.println("Check Quantity: Enter product");
+        pName = in.nextLine();
+        products product = j.searchProduct(pName);
+
+
+        System.out.println("Product " + pName + " has " + j.getQuantity(product) + " Quantities\n");
+        System.out.println("would you like to decrease the quantity? ");
+        String response = in.nextLine();
+
+        if(response.equals("yes"))
+        {
+            System.out.println("enter the new quantity: ");
+            int quantity = in.nextInt();
+            product.setQuantity(quantity);
+
+            System.out.println("Product " + pName + " has " + j.getQuantity(product) + " Quantities\n");
+        }
+        else
+        {
+            System.out.println("Done");
+        }
+
+        in.close();
     }
 
 }
