@@ -9,6 +9,8 @@ public class Cart {
     private int Quantity;
     private double PriceTotal;
 
+    private Vector<products> waitlist = new Vector<products>();
+
     private Vector<Cart> cartList = new Vector<Cart>();
 
     public void insertItemToCart(Cart l) {cartList.addElement(l);}
@@ -43,7 +45,8 @@ public class Cart {
         Iterator<products> prodIt = pList.getProduct();
 
         int index = 0; 
-
+       
+        
 
         for (Cart c: cartList){
             while (prodIt.hasNext()){
@@ -61,8 +64,9 @@ public class Cart {
 
                 }
                 else{
-
+                    int wait=pL.getQuantity();
                     // Put into waitlist
+                    waitlist.add(wait);
                 }
             }
         }
