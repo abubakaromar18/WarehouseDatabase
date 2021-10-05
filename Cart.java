@@ -54,6 +54,19 @@ public class Cart {
         return null;
     }
 
+    // Is Cart Empty?
+    public int CheckEmpty(){	
+        
+        System.out.println("Tom GAy");
+       
+        if(cartList.isEmpty()){
+            System.out.println("Tom GAy 1");
+            return 1; 
+        }
+        else
+         return 0;
+    }
+
 
     // Setter
     public void setName(String productName) { this.productName = productName; }
