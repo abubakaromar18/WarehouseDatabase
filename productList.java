@@ -45,12 +45,35 @@ public class productList{
         pList.remove(p);
         return true;
     }
+
+    public boolean setQuantity(products p, int quantity)
+    {
+        p.setQuantity(quantity);
+        return true;
+    }
     
     public Iterator getProduct(){
         return pList.iterator();
     }
 
+    public products searchProduct(String product)
+    {
+        for (products p : pList) 
+        {
+            if(p.getProductName().equals(product))
+            {
+                return p;
+            }
+        }
+        return null;
+    }
+
+    public int getQuantity(products p)
+    {
+        return p.getQuantity();
+    }
+
     public String toString() {
         return pList.toString();
-      }
+    }
 }
