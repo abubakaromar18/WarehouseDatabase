@@ -26,7 +26,7 @@ public class productList{
     } 
 
     // Update Cart: Search Product + Return Product Price
-    public double searchCart(String find){
+    public double searchCartPrice(String find){
 
         for (products a : pList) 
             if(a.getProductName().equals(find))
