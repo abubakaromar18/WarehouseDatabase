@@ -1,6 +1,5 @@
 import java.io.PrintStream;
 import java.util.*;
-import java.util.Random;
 
 public class Cart {
 
@@ -9,11 +8,13 @@ public class Cart {
     private int Quantity;
     private double PriceTotal;
 
-    private Vector<products> waitlist = new Vector<products>();
+    private List<Object> waitList = new LinkedList<Object>();
 
-    private Vector<Cart> cartList = new Vector<Cart>();
+    private List<Cart> cartList = new LinkedList<Cart>();
 
-    public void insertItemToCart(Cart l) {cartList.addElement(l);}
+    public void insertItemToCart(Cart l) {cartList.add(l);}
+
+    public void insertWaitList(products l) { waitList.add(l); };
 
     // Contructor
     Cart(String productName, double Price, int Quantity, double PriceTotal){
@@ -46,27 +47,30 @@ public class Cart {
 
         int index = 0; 
        
-        
-
+    
         for (Cart c: cartList){
+
             while (prodIt.hasNext()){
                 products  pL = prodIt.next();
 
             
-                // If product is in the product class
+                // If cartList product is in the productList class
                 if(c.getproductName() == pL.getProductName() && c.getQuantity() <= pL.getQuantity()){
                     
-                   int num = pL.getQuantity() - c.getQuantity();
+                   int num = (pL.getQuantity() - c.getQuantity());
 
                    // Remove object
-                   cartList.remove(index);
+                   cartList.remove(pL);
                    index++;
 
                 }
                 else{
-                    int wait=pL.getQuantity();
+                    int wQuantity = pL.getQuantity();
+
+                    String wProductName = pL.getProductName();
+
                     // Put into waitlist
-                    waitlist.add(wait);
+                   waitList.add(wQuantity + wProductName);
                 }
             }
         }

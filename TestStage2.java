@@ -40,7 +40,7 @@ public class TestStage2 {
         // Client List
         ClientList cList1 = new ClientList();
 
-        // Client List
+        // Insert Client List
         cList1.insertClientInfo(client1);
 
         // Product List
@@ -49,9 +49,9 @@ public class TestStage2 {
         pList1.addProductList(prod3);
         pList1.addProductList(prod4);
 
-        // Shopping Cart
+        // Insert Shopping Cart
         cart1.insertItemToCart(cart1);
-        cart2.insertItemToCart(cart2);
+        cart1.insertItemToCart(cart2);
         cart1.insertItemToCart(cart3);
 
         // Display Shopping Cart
@@ -92,6 +92,14 @@ public class TestStage2 {
         if (cart1.CheckEmpty() == 0){
             System.out.println("Cart Is Not Empty!");
         }
+
+        System.out.println();
+
+        // Process Shopping Card
+        cart1.processCart(pList1);
+
+        cart1.displayAllCart();
+
 
         //Check Quantity
         /*

@@ -1,17 +1,15 @@
 import java.io.*;
 import java.util.*;
 import java.lang.*;
-import java.util.Scanner;
-import java.util.Vector;
 
 public class ClientList{
 
-    private Vector<Client> clientList = new Vector<Client>();
+    private List<Client> clientList = new LinkedList<Client>();
 
     private int index;
 
     // Add Client Object 
-    public void insertClientInfo(Client l) {clientList.addElement(l);}
+    public void insertClientInfo(Client l) {clientList.add(l);}
     
     // Display All Client Information
     public void displayAllClient(){
