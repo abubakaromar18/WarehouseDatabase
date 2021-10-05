@@ -28,9 +28,14 @@ public class Cart {
             if(c.getproductName().equals(productName)){
                 setName(productName);
                 setQuantity(Quantity);
+                return; 
             }
 
         }
+
+        // Product Not In Cart, Add to Cart
+        Cart c = new Cart(productName, Price, Quantity, PriceTotal);
+        c.insertItemToCart(c);
     }
 
     // Display All Cart
@@ -53,7 +58,6 @@ public class Cart {
 
     // Setter
     public void setName(String productName) { this.productName = productName; }
-
 
     public void setPrice(String Price) { this.Price = Price; }
 
