@@ -8,9 +8,9 @@ public class TestStage2 {
    
     public static void main(String[] args){
         
-        String pName, pQuantity;
+        String pName, pQuantity, response;
 
-        int productFound = 0;
+        int productFound = 0, quantity;
 
         Scanner in = new Scanner(System.in);
 
@@ -88,6 +88,30 @@ public class TestStage2 {
             b.displayAllCart();
 
         }
+
+        //check if product quantity is enough
+        System.out.println("Check Quantity: Enter product name");
+        pName = in.nextLine();
+        products product = j.searchProduct(pName);
+
+
+        System.out.println("Product " + pName + " has " + j.getQuantity(product) + " Quantities\n");
+        System.out.println("would you like to decrease the quantity? ");
+        response = in.nextLine();
+
+        if(response.equals("yes"))
+        {
+            System.out.println("enter the new quantity: ");
+            quantity = in.nextInt();
+            product.setQuantity(quantity);
+
+            System.out.println("Product " + pName + " has " + j.getQuantity(product) + " Quantities\n");
+        }
+        else
+        {
+            System.out.println("Done");
+        }
+        in.close();
 
     }
 
