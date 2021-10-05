@@ -94,6 +94,7 @@ public class TestStage2 {
             System.out.println("Cart Is Not Empty!");
         }
 
+        //Check Quantity
         System.out.println("Check Quantity: Enter product");
         pName = in.nextLine();
         products product = j.searchProduct(pName);
