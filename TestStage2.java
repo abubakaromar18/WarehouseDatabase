@@ -24,12 +24,15 @@ public class TestStage2 {
 
         Cart f = new Cart("Notebook", "2.23", "14", "32.48");
 
+
         // Product
         products g = new products( "Tom", "Pen", "Box of Pen", 12.32, 100);
 
         products h = new products("Tom", "Apple", "Bag of Apple", 15.32, 100);
 
         products i = new products("Tom", "Notebook", "Notebook 80 Sheet", 2.23, 100);
+
+        products m = new products("Tom", "Computer", "A Machine To Do Cool Stuff", 599.99, 15);
 
         // Product List
         productList j = new productList();
@@ -44,6 +47,7 @@ public class TestStage2 {
         j.addProduct(g);
         j.addProduct(h);
         j.addProduct(i);
+        j.addProduct(m);
 
         // Shopping Cart
         b.insertItemToCart(b);
@@ -66,10 +70,19 @@ public class TestStage2 {
         // Is Product In Shopping Cart
         productFound = b.updateCart(pName, pQuantity);
 
+        if(productFound == 1)
+            b.displayAllCart();
+
         // Product Not In Shopping Cart
         if (productFound == 0){
 
-            Cart l = new Cart(pName, "2.23", pQuantity, "32.48");
+            // Search for price
+            double temp = j.searchCart(pName);
+
+            String s = Double.toString(temp);
+
+            // Cart(String productName, String Price, String Quantity, String PriceTotal)
+            Cart l = new Cart(pName, s, pQuantity, "1,199.98");
             b.insertItemToCart(l);
 
             b.displayAllCart();

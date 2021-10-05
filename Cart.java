@@ -27,8 +27,8 @@ public class Cart {
         for (Cart c : cartList) {
             // Product In Cart
             if(c.getproductName().equals(productName)){
-                setName(productName);
-                setQuantity(Quantity);
+                c.setName(productName);
+                c.setQuantity(Quantity);
                 return 1; 
             }
 
