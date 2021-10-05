@@ -7,6 +7,12 @@ public class productList{
     private List<products> pList = new LinkedList<products>();
     private static productList ProductList;
 
+    // Add To Product List
+    public boolean addProduct(products p){
+        pList.add(p);
+        return true;
+    }
+
     public static productList instance()
     {
         if(ProductList == null){
@@ -25,7 +31,7 @@ public class productList{
             System.out.println(c);
     } 
 
-    // Update Cart: Search Product + Return Product Price
+    // Update Cart: Search Product Price + Return Product Price
     public double searchCartPrice(String find){
 
         for (products a : pList) 
@@ -35,29 +41,14 @@ public class productList{
         return 0;
     }
 
-    public boolean addProduct(products p)
-    {
-        pList.add(p);
-        return true;
-    }
-    public boolean removeProduct(products p)
-    {
+    // Remove Product
+    public boolean removeProduct(products p){
         pList.remove(p);
         return true;
     }
 
-    public boolean setQuantity(products p, int quantity)
-    {
-        p.setQuantity(quantity);
-        return true;
-    }
-    
-    public Iterator getProduct(){
-        return pList.iterator();
-    }
-
-    public products searchProduct(String product)
-    {
+    // Search For A Produce
+    public products searchProduct(String product){
         for (products p : pList) 
         {
             if(p.getProductName().equals(product))
@@ -68,8 +59,17 @@ public class productList{
         return null;
     }
 
-    public int getQuantity(products p)
-    {
+    public boolean setQuantity(products p, int quantity){
+        p.setQuantity(quantity);
+        return true;
+    }
+    
+    public Iterator getProduct(){
+        return pList.iterator();
+    }
+
+
+    public int getQuantity(products p){
         return p.getQuantity();
     }
 
