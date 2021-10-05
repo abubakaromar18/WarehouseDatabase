@@ -77,7 +77,7 @@ public class TestStage2 {
         if (productFound == 0){
 
             // Search for price
-            double temp = j.searchCart(pName);
+            double temp = j.searchCartPrice(pName);
 
             String s = Double.toString(temp);
 
