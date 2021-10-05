@@ -25,6 +25,16 @@ public class productList{
             System.out.println(c);
     } 
 
+    // Update Cart: Search Product + Return Product Price
+    public double searchCart(String find){
+
+        for (products a : pList) 
+            if(a.getProductName().equals(find))
+                return a.getCostPrice();  
+        
+        return 0;
+    }
+
     public boolean addProduct(products p)
     {
         pList.add(p);
