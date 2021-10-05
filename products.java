@@ -7,14 +7,16 @@ public class products {
     private String productName;
     private String description;
     private float costPrice;
+    private int quantity;
     private String productID;
 
-    public products(String sName, String pName, String descipt, float cPrice)
+    public products(String sName, String pName, String descipt, float cPrice, int quantity)
     {
         this.supplierName = sName;
         this.productName = pName;
         this.description = descipt;
         this.costPrice = cPrice;
+        this.quantity = quantity;
     }
 
     //setters
@@ -34,10 +36,9 @@ public class products {
     {
         this.productID = pID;
     }
-
-    public void something()
+    public void setQuantity(int quantity)
     {
-        //add something new
+        this.quantity = quantity;
     }
 
     
@@ -58,6 +59,9 @@ public class products {
     }
     public float getCostPrice(){
         return costPrice;
+    }
+    public int getQuantity(){
+        return quantity;
     }
 
     public String toString(){
