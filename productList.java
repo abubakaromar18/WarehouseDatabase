@@ -8,8 +8,7 @@ public class productList{
 
     public static productList instance()
     {
-        if(ProductList == null)
-        {
+        if(ProductList == null){
             ProductList = new productList();
             return ProductList;
         }

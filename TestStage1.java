@@ -4,7 +4,7 @@ import java.lang.*;
 import java.util.Scanner;
 
 // Client, ClientList, Cart, Transaction Test
-public class Test {
+public class TestStage1 {
    
     public static void main(String[] args){
         
@@ -14,9 +14,9 @@ public class Test {
 
         Client b = new Client("Lucy", "456 2ND Ave", "(456) 799-1324", "ID2");
 
-        Cart e = new Cart("Pen", "Jack", "ID1", "12.32", "14", "100");
+        Cart e = new Cart("Pen", "12.32", "14", "100");
 
-        Cart f = new Cart("Apple", "Lucy", "ID2", "15.32", "12", "456");
+        Cart f = new Cart("Apple", "15.32", "12", "456");
 
         Transaction g = new Transaction("ID456", "A123264", "152.32");
 
@@ -44,7 +44,7 @@ public class Test {
 
         // Search For A Client
         System.out.print("Please Enter The Client Name, Address, Phone number, Or ID To Search For A Client: ");
-        Scanner in= new Scanner(System.in);
+        Scanner in = new Scanner(System.in);
         input = in.nextLine();
         System.out.println("The Person You Are Looking For Is: " + d.searchClient(input));
 
