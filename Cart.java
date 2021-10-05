@@ -22,15 +22,19 @@ public class Cart {
     }
 
     // Update Shopping Cart
-    public void updateCart(String productName, String Quantity){
+    public int updateCart(String productName, String Quantity){
 
         for (Cart c : cartList) {
+            // Product In Cart
             if(c.getproductName().equals(productName)){
-                setName(productName);
-                setQuantity(Quantity);
+                c.setName(productName);
+                c.setQuantity(Quantity);
+                return 1; 
             }
 
         }
+
+        return 0;
     }
 
     // Display All Cart
@@ -53,7 +57,6 @@ public class Cart {
 
     // Setter
     public void setName(String productName) { this.productName = productName; }
-
 
     public void setPrice(String Price) { this.Price = Price; }
 
