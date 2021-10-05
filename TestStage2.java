@@ -8,9 +8,9 @@ public class TestStage2 {
    
     public static void main(String[] args){
         
-        String pName, pQuantity;
+        String pName;
 
-        int productFound = 0;
+        int productFound = 0, pQuantity = 0;
 
         Scanner in = new Scanner(System.in);
 
@@ -18,11 +18,11 @@ public class TestStage2 {
         Client a = new Client("Jack", "123 1ST Ave", "(123) 456-8789", "ID1");
 
         // Shopping Cart
-        Cart b = new Cart("Pen", "12.32", "14", "172.48");
+        Cart b = new Cart("Pen", 12.32, 14, 172.48);
 
-        Cart c = new Cart("Apple", "15.32", "12", "183.84");
+        Cart c = new Cart("Apple", 15.32, 12, 183.84);
 
-        Cart f = new Cart("Notebook", "2.23", "14", "32.48");
+        Cart f = new Cart("Notebook", 2.23, 14, 32.48);
 
 
         // Product
@@ -44,10 +44,10 @@ public class TestStage2 {
         d.insertClientInfo(a);
 
         // Product List
-        j.addProduct(g);
-        j.addProduct(h);
-        j.addProduct(i);
-        j.addProduct(m);
+        j.addProductList(g);
+        j.addProductList(h);
+        j.addProductList(i);
+        j.addProductList(m);
 
         // Shopping Cart
         b.insertItemToCart(b);
@@ -65,7 +65,7 @@ public class TestStage2 {
         pName = in.nextLine();
 
         System.out.print("Please Enter The Product Quantity To Update The Cart: ");
-        pQuantity = in.nextLine();
+        pQuantity = in.nextInt();
         
         // Is Product In Shopping Cart
         productFound = b.updateCart(pName, pQuantity);
@@ -79,10 +79,9 @@ public class TestStage2 {
             // Search for price
             double temp = j.searchCartPrice(pName);
 
-            String s = Double.toString(temp);
-
+        
             // Cart(String productName, String Price, String Quantity, String PriceTotal)
-            Cart l = new Cart(pName, s, pQuantity, "1,199.98");
+            Cart l = new Cart(pName, temp, pQuantity , 1199.98);
             b.insertItemToCart(l);
 
             b.displayAllCart();

@@ -24,7 +24,7 @@ public class ClientList{
     public Client searchClient(String find){
 
         for (Client c : clientList) 
-            if(c.getClientName().equals(find) ||c.getClientAddress().equals(find) || c.getClientPhone().equals(find) || c.getClientID().equals(find))
+            if(c.getClientName().equals(find))
                 return c;  
         
         return null;

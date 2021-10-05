@@ -8,7 +8,7 @@ public class productList{
     private static productList ProductList;
 
     // Add To Product List
-    public boolean addProduct(products p){
+    public boolean addProductList(products p){
         pList.add(p);
         return true;
     }
@@ -49,10 +49,9 @@ public class productList{
 
     // Search For A Produce
     public products searchProduct(String product){
-        for (products p : pList) 
-        {
-            if(p.getProductName().equals(product))
-            {
+        
+        for (products p : pList) {
+            if(p.getProductName().equals(product)){
                 return p;
             }
         }
@@ -69,8 +68,8 @@ public class productList{
     }
 
 
-    public int getQuantity(products p){
-        return p.getQuantity();
+    public int getQuantity(){
+        return getQuantity();
     }
 
     public String toString() {

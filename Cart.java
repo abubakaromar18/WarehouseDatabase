@@ -5,16 +5,16 @@ import java.util.Random;
 public class Cart {
 
     private String productName;
-    private String Price;
-    private String Quantity;
-    private String PriceTotal;
+    private double Price;
+    private int Quantity;
+    private double PriceTotal;
 
     private Vector<Cart> cartList = new Vector<Cart>();
 
     public void insertItemToCart(Cart l) {cartList.addElement(l);}
 
     // Contructor
-    Cart(String productName, String Price, String Quantity, String PriceTotal){
+    Cart(String productName, double Price, int Quantity, double PriceTotal){
         this.productName = productName;
         this.Price = Price;
         this.Quantity = Quantity;
@@ -22,20 +22,39 @@ public class Cart {
     }
 
     // Update Shopping Cart
-    public int updateCart(String productName, String Quantity){
+    public int updateCart(String productName, int Quantity){
 
         for (Cart c : cartList) {
+
             // Product In Cart
             if(c.getproductName().equals(productName)){
                 c.setName(productName);
                 c.setQuantity(Quantity);
                 return 1; 
             }
-
         }
-
         return 0;
     }
+
+    /*
+    public void processCart(productList pList){
+
+
+        Iterator<products> prodIt = p.getProduct();
+
+
+        for (Cart c: cartList){
+            while (prodIt.hasNext()){
+                products  pL = prodIt.next();
+
+            
+             if(c.getproductName() == pL.getProductName() && c.getQuantity() <= pL.getQuantity()){
+
+            }
+        }
+        
+    }
+    */
 
     // Display All Cart
     public void displayAllCart(){
@@ -45,22 +64,21 @@ public class Cart {
     } 
 
     // Search For A Cart
+
     public Cart searchCart(String find){
 
         for (Cart a : cartList) 
-            if(a.getproductName().equals(find) || a.getPrice().equals(find)|| a.getQuantity().equals(find) || a.getTotalPrice().equals(find))
+            if(a.getproductName().equals(find))
                 return a;  
         
         return null;
     }
 
+
     // Is Cart Empty?
     public int CheckEmpty(){	
-        
-        System.out.println("Tom GAy");
-       
+             
         if(cartList.isEmpty()){
-            System.out.println("Tom GAy 1");
             return 1; 
         }
         else
@@ -71,21 +89,21 @@ public class Cart {
     // Setter
     public void setName(String productName) { this.productName = productName; }
 
-    public void setPrice(String Price) { this.Price = Price; }
+    public void setPrice(double Price) { this.Price = Price; }
 
-    public void setQuantity(String Quantity) { this.Quantity = Quantity; }
+    public void setQuantity(int Quantity) { this.Quantity = Quantity; }
 
-    public void setPriceTotal(String PriceTotal) { this.PriceTotal = PriceTotal;}
+    public void setPriceTotal(double PriceTotal) { this.PriceTotal = PriceTotal;}
 
 
     // Getter
-    public String getTotalPrice() { return this.PriceTotal; }
+    public double getTotalPrice() { return this.PriceTotal; }
 
     public String getproductName() { return this.productName;}
 
-    public String getPrice() { return this.Price;}
+    public double getPrice() { return this.Price;}
 
-    public String getQuantity() { return this.Quantity; }
+    public int getQuantity() { return this.Quantity; }
 
     @Override
     public String toString(){ return this.productName + " " + this.Price + "  " + this.Quantity + " " + this.PriceTotal; }
