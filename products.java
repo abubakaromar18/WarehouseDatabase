@@ -65,10 +65,10 @@ public class products {
     }
 
     public String toString(){
-        return "Supplier Name "+ supplierName + 
-        "Product Name" + productName + 
-        "Product ID" + productID +
-        "Product Description" + description + 
-        "Cost Price" + costPrice;
+        return "Supplier Name: "+ supplierName + " " +
+        "Product Name: " + productName + " " +
+        "Product ID: " + productID + " " +
+        "Product Description: " + description + " " +
+        "Cost Price: " + costPrice;
     }
 }
