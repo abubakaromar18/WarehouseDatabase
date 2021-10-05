@@ -3,7 +3,7 @@ import java.util.*;
 import java.lang.*;
 import java.util.Scanner;
 
-// Client, ClientList, Cart, Transaction Test
+// Stage 1 Client, ClientList, Cart, Transaction Test
 public class TestStage1 {
    
     public static void main(String[] args){
