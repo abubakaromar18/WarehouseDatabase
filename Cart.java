@@ -36,11 +36,13 @@ public class Cart {
         return 0;
     }
 
-    /*
+    
     public void processCart(productList pList){
 
 
-        Iterator<products> prodIt = p.getProduct();
+        Iterator<products> prodIt = pList.getProduct();
+
+        int index = 0; 
 
 
         for (Cart c: cartList){
@@ -48,13 +50,25 @@ public class Cart {
                 products  pL = prodIt.next();
 
             
-             if(c.getproductName() == pL.getProductName() && c.getQuantity() <= pL.getQuantity()){
+                // If product is in the product class
+                if(c.getproductName() == pL.getProductName() && c.getQuantity() <= pL.getQuantity()){
+                    
+                   int num = pL.getQuantity() - c.getQuantity();
 
+                   // Remove object
+                   cartList.remove(index);
+                   index++;
+
+                }
+                else{
+
+                    // Put into waitlist
+                }
             }
         }
         
     }
-    */
+    
 
     // Display All Cart
     public void displayAllCart(){

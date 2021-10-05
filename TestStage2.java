@@ -15,50 +15,50 @@ public class TestStage2 {
         Scanner in = new Scanner(System.in);
 
         // Client
-        Client a = new Client("Jack", "123 1ST Ave", "(123) 456-8789", "ID1");
+        Client client1 = new Client("Jack", "123 1ST Ave", "(123) 456-8789", "ID1");
 
         // Shopping Cart
-        Cart b = new Cart("Pen", 12.32, 14, 172.48);
+        Cart cart1 = new Cart("Pen", 12.32, 14, 172.48);
 
-        Cart c = new Cart("Apple", 15.32, 12, 183.84);
+        Cart cart2 = new Cart("Apple", 15.32, 12, 183.84);
 
-        Cart f = new Cart("Notebook", 2.23, 14, 32.48);
+        Cart cart3 = new Cart("Notebook", 2.23, 14, 32.48);
 
 
         // Product
-        products g = new products( "Tom", "Pen", "Box of Pen", 12.32, 100);
+        products prod1 = new products( "Tom", "Pen", "Box of Pen", 12.32, 100);
 
-        products h = new products("Tom", "Apple", "Bag of Apple", 15.32, 100);
+        products prod2 = new products("Tom", "Apple", "Bag of Apple", 15.32, 100);
 
-        products i = new products("Tom", "Notebook", "Notebook 80 Sheet", 2.23, 100);
+        products prod3 = new products("Tom", "Notebook", "Notebook 80 Sheet", 2.23, 100);
 
-        products m = new products("Tom", "Computer", "A Machine To Do Cool Stuff", 599.99, 15);
-
-        // Product List
-        productList j = new productList();
-
-        // Client List
-        ClientList d = new ClientList();
-
-        // Client List
-        d.insertClientInfo(a);
+        products prod4 = new products("Tom", "Computer", "A Machine To Do Cool Stuff", 599.99, 15);
 
         // Product List
-        j.addProductList(g);
-        j.addProductList(h);
-        j.addProductList(i);
-        j.addProductList(m);
+        productList pList1 = new productList();
+
+        // Client List
+        ClientList cList1 = new ClientList();
+
+        // Client List
+        cList1.insertClientInfo(client1);
+
+        // Product List
+        pList1.addProductList(prod1);
+        pList1.addProductList(prod2);
+        pList1.addProductList(prod3);
+        pList1.addProductList(prod4);
 
         // Shopping Cart
-        b.insertItemToCart(b);
-        b.insertItemToCart(c);
-        b.insertItemToCart(f);
+        cart1.insertItemToCart(cart1);
+        cart2.insertItemToCart(cart2);
+        cart1.insertItemToCart(cart3);
 
         // Display Shopping Cart
-        b.displayAllCart();
+        cart1.displayAllCart();
 
         // Display Product List
-        j.displayAllProductList();
+        pList1.displayAllProductList();
 
         // Search For A Client
         System.out.print("Please Enter The Product Name To Update The Cart: ");
@@ -68,38 +68,39 @@ public class TestStage2 {
         pQuantity = in.nextInt();
         
         // Is Product In Shopping Cart
-        productFound = b.updateCart(pName, pQuantity);
+        productFound = cart1.updateCart(pName, pQuantity);
 
         if(productFound == 1)
-            b.displayAllCart();
+            cart1.displayAllCart();
 
         // Product Not In Shopping Cart
         if (productFound == 0){
 
             // Search for price
-            double temp = j.searchCartPrice(pName);
+            double temp = pList1.searchCartPrice(pName);
 
         
             // Cart(String productName, String Price, String Quantity, String PriceTotal)
             Cart l = new Cart(pName, temp, pQuantity , 1199.98);
-            b.insertItemToCart(l);
+            cart1.insertItemToCart(l);
 
-            b.displayAllCart();
+            cart1.displayAllCart();
 
         }
 
         // Is Shopping Cart Empty?
-        if (b.CheckEmpty() == 0){
+        if (cart1.CheckEmpty() == 0){
             System.out.println("Cart Is Not Empty!");
         }
 
         //Check Quantity
+        /*
         System.out.println("Check Quantity: Enter product");
         pName = in.nextLine();
-        products product = j.searchProduct(pName);
+        products product = pList1.searchProduct(pName);
 
 
-        System.out.println("Product " + pName + " has " + j.getQuantity(product) + " Quantities\n");
+        System.out.println("Product " + pName + " has " + pList1.getQuantity() + " Quantities\n");
         System.out.println("would you like to decrease the quantity? ");
         String response = in.nextLine();
 
@@ -109,7 +110,7 @@ public class TestStage2 {
             int quantity = in.nextInt();
             product.setQuantity(quantity);
 
-            System.out.println("Product " + pName + " has " + j.getQuantity(product) + " Quantities\n");
+            System.out.println("Product " + pName + " has " + pList1.getQuantity() + " Quantities\n");
         }
         else
         {
@@ -117,6 +118,8 @@ public class TestStage2 {
         }
 
         in.close();
+
+        */
     }
 
 }
