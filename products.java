@@ -6,10 +6,10 @@ public class products {
     private String supplierName;
     private String productName;
     private String description;
-    private float costPrice;
+    private double costPrice;
     private String productID;
 
-    public products(String sName, String pName, String descipt, float cPrice)
+    public products(String sName, String pName, String descipt, double cPrice)
     {
         this.supplierName = sName;
         this.productName = pName;
@@ -56,7 +56,7 @@ public class products {
     public String getDescription(){
         return description;
     }
-    public float getCostPrice(){
+    public double getCostPrice(){
         return costPrice;
     }
 

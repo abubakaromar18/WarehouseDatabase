@@ -10,6 +10,8 @@ public class TestStage2 {
         
         String input, input2;
 
+        Scanner in = new Scanner(System.in);
+
         Client a = new Client("Jack", "123 1ST Ave", "(123) 456-8789", "ID1");
 
         Cart b = new Cart("Pen", "12.32", "14", "172.48");
@@ -18,11 +20,11 @@ public class TestStage2 {
 
         Cart f = new Cart("Notebook", "2.23", "14", "32.48");
 
-        product g = new product("Tom", "Pen", "Box of Pen", "12.32");
+        products g = new products( "Tom", "Pen", "Box of Pen", 12.32);
 
-        product h = new product ("Tom", "Apple", "Bag of Apple", "15.32");
+        products h = new products("Tom", "Apple", "Bag of Apple", 15.32);
 
-        product i = new product ("Tom", "Notebook", "Notebook 80 Sheet", "2.23");
+        products i = new products("Tom", "Notebook", "Notebook 80 Sheet", 2.23);
 
         productList j = new productList();
 
@@ -41,15 +43,18 @@ public class TestStage2 {
         b.insertItemToCart(c);
         b.insertItemToCart(f);
 
-
-
+        // Display Shopping Cart
         b.displayAllCart();
 
-         // Search For A Client
-         System.out.print("Please Enter The Product Name To Update The Cart: ");
-         Scanner in = new Scanner(System.in);
-         input = in.nextLine();
-         b.updateCart(input, input2);
+        j.displayAllProductList();
+
+        // Search For A Client
+        System.out.print("Please Enter The Product Name To Update The Cart: ");
+        input = in.nextLine();
+
+        System.out.print("Please Enter The Product Name To Update The Cart: ");
+        input2 = in.nextLine();
+        b.updateCart(input, input2);
 
     }
 

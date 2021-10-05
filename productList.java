@@ -3,7 +3,7 @@ import java.util.function.Supplier;
 import java.io.*;
 
 public class productList{
-    
+
     private List<products> pList = new LinkedList<products>();
     private static productList ProductList;
 
@@ -17,6 +17,13 @@ public class productList{
             return ProductList;
         }
     }
+
+     // Display All Product List
+     public void displayAllProductList(){
+
+        for (products c : pList) 
+            System.out.println(c);
+    } 
 
     public boolean addProduct(products p)
     {

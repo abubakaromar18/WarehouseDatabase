@@ -22,20 +22,19 @@ public class Cart {
     }
 
     // Update Shopping Cart
-    public void updateCart(String productName, String Quantity){
+    public int updateCart(String productName, String Quantity){
 
         for (Cart c : cartList) {
+            // Product In Cart
             if(c.getproductName().equals(productName)){
                 setName(productName);
                 setQuantity(Quantity);
-                return; 
+                return 1; 
             }
 
         }
 
-        // Product Not In Cart, Add to Cart
-        Cart c = new Cart(productName, Price, Quantity, PriceTotal);
-        c.insertItemToCart(c);
+        return 0;
     }
 
     // Display All Cart
