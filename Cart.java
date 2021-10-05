@@ -22,12 +22,11 @@ public class Cart {
     }
 
     // Update Shopping Cart
-    public void updateCart(String find, String productName, String Price, String Quantity){
+    public void updateCart(String productName, String Quantity){
 
         for (Cart c : cartList) {
-            if(c.getName().equals(find) || c.getPrice().equals(find) || c.getQuantity().equals(find)){
+            if(c.getproductName().equals(productName)){
                 setName(productName);
-                setPrice(Price);
                 setQuantity(Quantity);
             }
 
@@ -45,7 +44,7 @@ public class Cart {
     public Cart searchCart(String find){
 
         for (Cart a : cartList) 
-            if(a.getName().equals(find) || a.getPrice().equals(find)|| a.getQuantity().equals(find) || a.getTotalPrice().equals(find))
+            if(a.getproductName().equals(find) || a.getPrice().equals(find)|| a.getQuantity().equals(find) || a.getTotalPrice().equals(find))
                 return a;  
         
         return null;
@@ -66,7 +65,7 @@ public class Cart {
     // Getter
     public String getTotalPrice() { return this.PriceTotal; }
 
-    public String getName() { return this.productName;}
+    public String getproductName() { return this.productName;}
 
     public String getPrice() { return this.Price;}
 
