@@ -6,18 +6,11 @@ public class products {
     private String supplierName;
     private String productName;
     private String description;
-<<<<<<< HEAD
     private double costPrice;
-    private String productID;
-
-    public products(String sName, String pName, String descipt, double cPrice)
-=======
-    private float costPrice;
     private int quantity;
     private String productID;
 
-    public products(String sName, String pName, String descipt, float cPrice, int quantity)
->>>>>>> cf477d1134edc2d85baf3f7311601d123fefd386
+    public products(String sName, String pName, String descipt, double cPrice, int quantity)
     {
         this.supplierName = sName;
         this.productName = pName;

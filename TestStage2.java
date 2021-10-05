@@ -20,11 +20,11 @@ public class TestStage2 {
 
         Cart f = new Cart("Notebook", "2.23", "14", "32.48");
 
-        products g = new products( "Tom", "Pen", "Box of Pen", 12.32);
+        products g = new products( "Tom", "Pen", "Box of Pen", 12.32, 100);
 
-        products h = new products("Tom", "Apple", "Bag of Apple", 15.32);
+        products h = new products("Tom", "Apple", "Bag of Apple", 15.32, 100);
 
-        products i = new products("Tom", "Notebook", "Notebook 80 Sheet", 2.23);
+        products i = new products("Tom", "Notebook", "Notebook 80 Sheet", 2.23, 100);
 
         productList j = new productList();
 
