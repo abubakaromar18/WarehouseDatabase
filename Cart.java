@@ -39,21 +39,16 @@ public class Cart {
         return 0;
     }
 
-    
+    // Process Shopping Cart
     public void processCart(productList pList){
 
-
         Iterator<products> prodIt = pList.getProduct();
-
-        int index = 0; 
        
-    
         for (Cart c: cartList){
 
             while (prodIt.hasNext()){
                 products  pL = prodIt.next();
 
-            
                 // If cartList product is in the productList class
                 if(c.getproductName() == pL.getProductName() && c.getQuantity() <= pL.getQuantity()){
                     
@@ -61,8 +56,6 @@ public class Cart {
 
                    // Remove object
                    cartList.remove(pL);
-                   index++;
-
                 }
                 else{
                     int wQuantity = pL.getQuantity();
@@ -73,8 +66,7 @@ public class Cart {
                    waitList.add(wQuantity + wProductName);
                 }
             }
-        }
-        
+        }    
     }
     
 

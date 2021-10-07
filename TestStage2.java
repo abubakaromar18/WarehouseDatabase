@@ -89,9 +89,8 @@ public class TestStage2 {
         }
 
         // Is Shopping Cart Empty?
-        if (cart1.CheckEmpty() == 0){
+        if (cart1.CheckEmpty() == 0)
             System.out.println("Cart Is Not Empty!");
-        }
 
         System.out.println();
 
