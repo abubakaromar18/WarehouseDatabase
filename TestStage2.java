@@ -101,7 +101,7 @@ public class TestStage2 {
         // Process Shopping Card
         cart1.processCart(pList1);
 
-        // Display Shopping Cart
+        // TEST To See If Shopping Cart Is Empty Or Not. 
         cart1.displayAllCart();
 
 
