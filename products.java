@@ -12,10 +12,11 @@ public class products {
 
     public products(){};
 
-    public products(String sName, String pName, String descipt, double cPrice, int quantity)
+    public products(String sName, String pName, String productID, String descipt, double cPrice, int quantity)
     {
         this.supplierName = sName;
         this.productName = pName;
+        this.productID = productID;
         this.description = descipt;
         this.costPrice = cPrice;
         this.quantity = quantity;

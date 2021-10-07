@@ -26,13 +26,13 @@ public class TestStage2 {
 
 
         // Product
-        products prod1 = new products( "Tom", "Pen", "Box of Pen", 12.32, 100);
+        products prod1 = new products( "Tom", "Pen", "PID123", "Box of Pen", 12.32, 100);
 
-        products prod2 = new products("Tom", "Apple", "Bag of Apple", 15.32, 100);
+        products prod2 = new products("Tom", "Apple", "PID456", "Bag of Apple", 15.32, 100);
 
-        products prod3 = new products("Tom", "Notebook", "Notebook 80 Sheet", 2.23, 100);
+        products prod3 = new products("Tom", "Notebook","PID789", "Notebook 80 Sheet", 2.23, 100);
 
-        products prod4 = new products("Tom", "Computer", "A Machine To Do Cool Stuff", 599.99, 15);
+        products prod4 = new products("Tom", "Computer","PID321", "A Machine To Do Cool Stuff", 599.99, 15);
 
         // Product List
         productList pList1 = new productList();
@@ -90,13 +90,14 @@ public class TestStage2 {
 
         // Is Shopping Cart Empty?
         if (cart1.CheckEmpty() == 0)
-            System.out.println("Cart Is Not Empty!");
+            System.out.println("\nCart Is Not Empty!");
 
         System.out.println();
 
         // Process Shopping Card
         cart1.processCart(pList1);
 
+        // Display Shopping Cart
         cart1.displayAllCart();
 
 
