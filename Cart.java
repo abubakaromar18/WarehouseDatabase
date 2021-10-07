@@ -14,7 +14,7 @@ public class Cart {
 
     public void insertItemToCart(Cart l) {cartList.add(l);}
 
-    public void insertWaitList(products l) { waitList.add(l); };
+    public void insertWaitList(Cart l) { waitList.add(l); };
 
     // Contructor
     Cart(String productName, double Price, int Quantity, double PriceTotal){
@@ -49,27 +49,18 @@ public class Cart {
 
             boolean found = false; 
 
-            System.out.println("Warehouse Has Product 1");
-
             // Product List
             while (prodIt.hasNext()){
 
                 products  pL = prodIt.next();
 
-                System.out.println("Warehouse Has Product 2");
-
                 // If Product List Have Enought Quantity
-                if(c.getproductName() == pL.getProductName() && c.getQuantity() <= pL.getQuantity()){
-
-                    System.out.println("Warehouse Has Product 3");
+                if(c.getproductName().equals(pL.getProductName()) && c.getQuantity() <= pL.getQuantity() ){
                     
                    int num = (pL.getQuantity() - c.getQuantity());
 
                    // Update Quantity In Product List
-                    pL.setQuantity(num);
-
-                   // Remove Product From Shopping Cart
-                   cartList.remove(c);
+                   pL.setQuantity(num);
 
                    // Create Invoice 
                    Transaction t = new Transaction("T123", "123456", num * pL.getCostPrice());
@@ -83,17 +74,25 @@ public class Cart {
 
             // If There Isn't Enought Quantity In Product List
             if(found == false){
+
                 int wQuantity = c.getQuantity();
 
                 String wProductName = c.getproductName();
 
-                System.out.println("Warehouse Has Product 4");
-
                 // Put Into WaitList
-               waitList.add(wQuantity + wProductName);
+               waitList.add(wProductName + wQuantity);
             }
-        }    
+        } 
+        // Remove Cart
+        cartList.clear();
     }
+
+    // Display Wait List
+    public void displayWList(){
+
+        for (Cart c : cartList) 
+            System.out.println(c);
+    } 
     
 
     // Display All Cart
@@ -104,7 +103,6 @@ public class Cart {
     } 
 
     // Search For A Cart
-
     public Cart searchCart(String find){
 
         for (Cart a : cartList) 
