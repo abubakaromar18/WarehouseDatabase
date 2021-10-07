@@ -54,15 +54,15 @@ public class Cart {
 
                 products  pL = prodIt.next();
 
-                // If warehouse has enought quantity
+                // If Product List Have Enought Quantity
                 if(c.getproductName() == pL.getProductName() && c.getQuantity() <= pL.getQuantity()){
                     
                    int num = (pL.getQuantity() - c.getQuantity());
 
-                   // Update quantity in product list
+                   // Update Quantity In Product List
 
 
-                   // Remove product from cart
+                   // Remove Product From Cart
                    cartList.remove(c);
 
                    found = true; 
@@ -71,13 +71,13 @@ public class Cart {
                 }
             }
 
-            // If warehouse doesn't have enought quantity
+            // If There Isn't Enought Quantity In Product List
             if(found == false){
                 int wQuantity = c.getQuantity();
 
                 String wProductName = c.getproductName();
 
-                // Put into waitlist
+                // Put Into WaitList
                waitList.add(wQuantity + wProductName);
             }
         }    
