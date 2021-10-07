@@ -44,27 +44,41 @@ public class Cart {
 
         Iterator<products> prodIt = pList.getProduct();
        
+        // Cart
         for (Cart c: cartList){
 
+            boolean found = false; 
+
+            // Product List
             while (prodIt.hasNext()){
+
                 products  pL = prodIt.next();
 
-                // If cartList product is in the productList class
+                // If warehouse has enought quantity
                 if(c.getproductName() == pL.getProductName() && c.getQuantity() <= pL.getQuantity()){
                     
                    int num = (pL.getQuantity() - c.getQuantity());
 
-                   // Remove object
-                   cartList.remove(pL);
-                }
-                else{
-                    int wQuantity = pL.getQuantity();
+                   // Update quantity in product list
 
-                    String wProductName = pL.getProductName();
 
-                    // Put into waitlist
-                   waitList.add(wQuantity + wProductName);
+                   // Remove product from cart
+                   cartList.remove(c);
+
+                   found = true; 
+
+                   break;
                 }
+            }
+
+            // If warehouse doesn't have enought quantity
+            if(found == false){
+                int wQuantity = c.getQuantity();
+
+                String wProductName = c.getproductName();
+
+                // Put into waitlist
+               waitList.add(wQuantity + wProductName);
             }
         }    
     }
