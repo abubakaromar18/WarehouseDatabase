@@ -98,11 +98,9 @@ public class TestStage2 {
         else
             System.out.println("\nCart Is Empty");
 
-        System.out.println();
 
         // Process Shopping Card
         cart1.processCart(pList1);
-
 
         // Is Shopping Cart Empty?
         if (cart1.CheckEmpty() == 0)
