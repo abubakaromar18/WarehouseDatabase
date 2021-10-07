@@ -32,7 +32,7 @@ public class TestStage2 {
 
         products prod3 = new products("Tom", "Notebook","PID789", "Notebook 80 Sheet", 2.23, 100);
 
-        products prod4 = new products("Tom", "Computer","PID321", "A Machine To Do Cool Stuff", 599.99, 15);
+        products prod4 = new products("Tom", "Computer","PID321", "A Machine To Do Cool Stuff", 599.99, 100);
 
         // Product List
         productList pList1 = new productList();

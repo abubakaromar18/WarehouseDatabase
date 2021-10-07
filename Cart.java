@@ -49,13 +49,19 @@ public class Cart {
 
             boolean found = false; 
 
+            System.out.println("Warehouse Has Product 1");
+
             // Product List
             while (prodIt.hasNext()){
 
                 products  pL = prodIt.next();
 
+                System.out.println("Warehouse Has Product 2");
+
                 // If Product List Have Enought Quantity
                 if(c.getproductName() == pL.getProductName() && c.getQuantity() <= pL.getQuantity()){
+
+                    System.out.println("Warehouse Has Product 3");
                     
                    int num = (pL.getQuantity() - c.getQuantity());
 
@@ -67,7 +73,6 @@ public class Cart {
 
                    // Create Invoice 
                    Transaction t = new Transaction("T123", "123456", num * pL.getCostPrice());
-
                    t.insertItemToTransaction(t);
 
                    found = true; 
@@ -81,6 +86,8 @@ public class Cart {
                 int wQuantity = c.getQuantity();
 
                 String wProductName = c.getproductName();
+
+                System.out.println("Warehouse Has Product 4");
 
                 // Put Into WaitList
                waitList.add(wQuantity + wProductName);
