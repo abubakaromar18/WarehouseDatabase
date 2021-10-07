@@ -57,6 +57,8 @@ public class TestStage2 {
         // Display Shopping Cart
         cart1.displayAllCart();
 
+        System.out.println("");
+
         // Display Product List
         pList1.displayAllProductList();
 
@@ -66,6 +68,8 @@ public class TestStage2 {
 
         System.out.print("Please Enter The Product Quantity To Update The Cart: ");
         pQuantity = in.nextInt();
+        
+        System.out.println("");
         
         // Is Product In Shopping Cart
         productFound = cart1.updateCart(pName, pQuantity);

@@ -4,14 +4,14 @@ public class Transaction {
 
     private String transactionID;
     private String OrderNum;
-    private String PriceToTal;
+    private double PriceToTal;
 
-    private Vector<Transaction> transactionList = new Vector<Transaction>();
+    private List<Transaction> transactionList = new LinkedList<Transaction>();
 
-    public void insertItemToTransaction(Transaction l) {transactionList.addElement(l);}
+    public void insertItemToTransaction(Transaction l) {transactionList.add(l);}
 
     // Constructor
-    Transaction(String transactionID, String OrderNum, String PriceTotal){
+    Transaction(String transactionID, String OrderNum, double PriceTotal){
         this.transactionID = transactionID;
         this. OrderNum = OrderNum;
         this.PriceToTal = PriceTotal;
@@ -28,7 +28,7 @@ public class Transaction {
     public Transaction searchTransaction(String find){
 
         for (Transaction a : transactionList) 
-            if(a.gettransactionID().equals(find) ||a.getOrdernumber().equals(find) || a.getPrice().equals(find))
+            if(a.gettransactionID().equals(find) ||a.getOrdernumber().equals(find))
                 return a;  
         
         return null;
@@ -39,14 +39,14 @@ public class Transaction {
 
     public void setOrdernumber(String Price){ this.OrderNum = Price; }
     
-    public void setPrice(String Quantity){this.PriceToTal = Quantity;}
+    public void setPrice(double Quantity){this.PriceToTal = Quantity;}
     
     // Getter
     public String gettransactionID(){ return this.transactionID; }
     
     public String getOrdernumber() { return this.OrderNum; }
    
-    public String getPrice(){ return this.PriceToTal; }
+    public double getPrice(){ return this.PriceToTal; }
 
     @Override
     public String toString(){ return this.transactionID+ " " + this.OrderNum + "  " + this.PriceToTal; }

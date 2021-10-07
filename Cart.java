@@ -44,7 +44,7 @@ public class Cart {
 
         Iterator<products> prodIt = pList.getProduct();
        
-        // Cart
+        // Shopping Cart
         for (Cart c: cartList){
 
             boolean found = false; 
@@ -60,10 +60,15 @@ public class Cart {
                    int num = (pL.getQuantity() - c.getQuantity());
 
                    // Update Quantity In Product List
+                    pL.setQuantity(num);
 
-
-                   // Remove Product From Cart
+                   // Remove Product From Shopping Cart
                    cartList.remove(c);
+
+                   // Create Invoice 
+                   Transaction t = new Transaction("T123", "123456", num * pL.getCostPrice());
+
+                   t.insertItemToTransaction(t);
 
                    found = true; 
 
