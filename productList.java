@@ -1,6 +1,6 @@
-import java.util.*;
-import java.util.function.Supplier;
 import java.io.*;
+import java.util.*;
+import java.lang.*;
 
 public class productList{
 
@@ -56,6 +56,35 @@ public class productList{
             }
         }
         return null;
+    }
+
+    public void checkQuantity()
+    {
+        Scanner in = new Scanner(System.in);
+
+        System.out.println("Check Quantity: Enter product");
+        String pName = in.nextLine();
+        products product = searchProduct(pName);
+
+
+        System.out.println("Product " + pName + " has " + product.getQuantity() + " Quantities\n");
+        System.out.println("would you like to decrease the quantity? ");
+        String response = in.nextLine();
+
+        if(response.equals("yes"))
+        {
+            System.out.println("enter the new quantity: ");
+            int quantity = in.nextInt();
+            product.setQuantity(quantity);
+
+            System.out.println("Product " + pName + " has " + product.getQuantity() + " Quantities\n");
+        }
+        else
+        {
+            System.out.println("Done");
+        }
+
+        in.close();
     }
 
     public boolean setQuantity(products p, int quantity){

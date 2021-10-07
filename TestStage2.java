@@ -101,8 +101,24 @@ public class TestStage2 {
         // Process Shopping Card
         cart1.processCart(pList1);
 
+        if (cart1.CheckEmpty() == 0)
+        {
+            System.out.println("\nCart Is Not Empty!");
+        }
+        else
+        {
+            System.out.println("\nCart Is Empty!");
+        }
+
+        System.out.println();
+
         // TEST To See If Shopping Cart Is Empty Or Not. 
         cart1.displayAllCart();
+
+        //pList1.checkQuantity();
+
+        System.out.println(t.toString());
+
 
 
         //Check Quantity

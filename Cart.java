@@ -56,24 +56,30 @@ public class Cart {
 
                 products  pL = prodIt.next();
 
+                System.out.println("Product " + pL.toString());
+                System.out.println("Cart Product " + c.toString());
+
                 System.out.println("Warehouse Has Product 2");
 
                 // If Product List Have Enought Quantity
-                if(c.getproductName() == pL.getProductName() && c.getQuantity() <= pL.getQuantity()){
-
-                    System.out.println("Warehouse Has Product 3");
+                if(c.getproductName().equals(pL.getProductName()) && c.getQuantity() <= pL.getQuantity())
+                {
+                   System.out.println("Warehouse Has Product 3");
                     
                    int num = (pL.getQuantity() - c.getQuantity());
 
                    // Update Quantity In Product List
+                   System.out.println(num);
                     pL.setQuantity(num);
 
                    // Remove Product From Shopping Cart
-                   cartList.remove(c);
+                   //cartList.remove(c);
 
                    // Create Invoice 
                    Transaction t = new Transaction("T123", "123456", num * pL.getCostPrice());
                    t.insertItemToTransaction(t);
+
+                   System.out.println(t.toString());
 
                    found = true; 
 
@@ -92,9 +98,10 @@ public class Cart {
                 // Put Into WaitList
                waitList.add(wQuantity + wProductName);
             }
-        }    
+        }   
+
+        cartList.clear();
     }
-    
 
     // Display All Cart
     public void displayAllCart(){
