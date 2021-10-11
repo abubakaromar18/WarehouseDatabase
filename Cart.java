@@ -14,7 +14,7 @@ public class Cart {
 
     public void insertItemToCart(Cart l) {cartList.add(l);}
 
-    public void insertWaitList(Cart l) { waitList.add(l); };
+    public void insertWaitList(products l) { waitList.add(l); };
 
     // Contructor
     Cart(String productName, double Price, int Quantity, double PriceTotal){
@@ -49,6 +49,8 @@ public class Cart {
 
             boolean found = false; 
 
+            System.out.println("Warehouse Has Product 1");
+
             // Product List
             while (prodIt.hasNext()){
 
@@ -63,23 +65,32 @@ public class Cart {
                 if(c.getproductName().equals(pL.getProductName()) && c.getQuantity() <= pL.getQuantity())
                 {
                    System.out.println("Warehouse Has Product 3");
+<<<<<<< HEAD
 
                 // If Product List Have Enought Quantity
                 if(c.getproductName().equals(pL.getProductName()) && c.getQuantity() <= pL.getQuantity() ){
 
+=======
+>>>>>>> parent of 77cf1ee (Merge branch 'main' of https://github.com/abubakaromar18/WarehouseDatabase)
                     
                    int num = (pL.getQuantity() - c.getQuantity());
 
                    // Update Quantity In Product List
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 77cf1ee (Merge branch 'main' of https://github.com/abubakaromar18/WarehouseDatabase)
                    System.out.println(num);
                     pL.setQuantity(num);
 
                    // Remove Product From Shopping Cart
                    //cartList.remove(c);
+<<<<<<< HEAD
 
                    pL.setQuantity(num);
 
+=======
+>>>>>>> parent of 77cf1ee (Merge branch 'main' of https://github.com/abubakaromar18/WarehouseDatabase)
 
                    // Create Invoice 
                    Transaction t = new Transaction("T123", "123456", num * pL.getCostPrice());
@@ -95,33 +106,19 @@ public class Cart {
 
             // If There Isn't Enought Quantity In Product List
             if(found == false){
-
                 int wQuantity = c.getQuantity();
 
                 String wProductName = c.getproductName();
 
+                System.out.println("Warehouse Has Product 4");
+
                 // Put Into WaitList
-               waitList.add(wProductName + wQuantity);
+               waitList.add(wQuantity + wProductName);
             }
-<<<<<<< HEAD
         }   
 
         cartList.clear();
     }
-=======
-        } 
-        // Remove Cart
-        cartList.clear();
-    }
-
-    // Display Wait List
-    public void displayWList(){
-
-        for (Cart c : cartList) 
-            System.out.println(c);
-    } 
-    
->>>>>>> 6e467c7c3a8d81289e99344a0b4b19692449afa9
 
     // Display All Cart
     public void displayAllCart(){
@@ -131,6 +128,7 @@ public class Cart {
     } 
 
     // Search For A Cart
+
     public Cart searchCart(String find){
 
         for (Cart a : cartList) 
@@ -148,7 +146,7 @@ public class Cart {
             return 1; 
         }
         else
-            return 0;
+         return 0;
     }
 
 
