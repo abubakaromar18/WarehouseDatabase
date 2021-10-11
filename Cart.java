@@ -67,7 +67,7 @@ public class Cart {
 =======
                 // If Product List Have Enought Quantity
                 if(c.getproductName().equals(pL.getProductName()) && c.getQuantity() <= pL.getQuantity() ){
->>>>>>> 6e467c7c3a8d81289e99344a0b4b19692449afa9
+
                     
                    int num = (pL.getQuantity() - c.getQuantity());
 
