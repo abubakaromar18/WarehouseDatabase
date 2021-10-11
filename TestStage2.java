@@ -95,12 +95,14 @@ public class TestStage2 {
         // Is Shopping Cart Empty?
         if (cart1.CheckEmpty() == 0)
             System.out.println("\nCart Is Not Empty!");
+        else
+            System.out.println("\nCart Is Empty");
 
-        System.out.println();
 
         // Process Shopping Card
         cart1.processCart(pList1);
 
+<<<<<<< HEAD
         if (cart1.CheckEmpty() == 0)
         {
             System.out.println("\nCart Is Not Empty!");
@@ -114,6 +116,24 @@ public class TestStage2 {
 
         // TEST To See If Shopping Cart Is Empty Or Not. 
         cart1.displayAllCart();
+=======
+        // Is Shopping Cart Empty?
+        if (cart1.CheckEmpty() == 0)
+            System.out.println("\nCart Is Not Empty!");
+        else
+            System.out.println("\nCart Is Empty");
+
+
+        // Display Wait List
+        cart1.displayWList();
+
+        Transaction t = new Transaction("", "", 0);
+
+        // Display Transcation
+        t.displayAllTranscation();
+
+
+>>>>>>> 6e467c7c3a8d81289e99344a0b4b19692449afa9
 
         //pList1.checkQuantity();
 
