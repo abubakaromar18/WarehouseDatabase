@@ -72,6 +72,7 @@ public class products {
         " Product Name: " + productName + " "+
         " Product ID: " + productID + " "+
         " Product Description: " + description +  " "+
+        " Prduct Quantity: " + quantity + " " +
         " Cost Price: " + costPrice + "\n";
     }
 }
