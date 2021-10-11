@@ -43,13 +43,13 @@ public class TestStage1 {
 
 
         // Search For A Client
-        System.out.print("Please Enter The Client Name, Address, Phone number, Or ID To Search For A Client: ");
+        System.out.print("Please Enter The Client Name To Search For A Client: ");
         Scanner in = new Scanner(System.in);
         input = in.nextLine();
         System.out.println("The Person You Are Looking For Is: " + d.searchClient(input));
 
         // Search For A Shopping Cart
-        System.out.print("Please Enter The Client Name, Product Name, Or ID To Search For The Shopping Cart: ");
+        System.out.print("Please Enter The Product Name To Search For The Shopping Cart: ");
         input = in.nextLine();
         System.out.println("The Shopping Cart Contain The Following Information: " + e.searchCart(input));
 
