@@ -55,12 +55,16 @@ public class TestStage2 {
         cart1.insertItemToCart(cart3);
 
         // Display Shopping Cart
+        System.out.println("SHOPPING CART: ");
         cart1.displayAllCart();
 
         System.out.println("");
 
         // Display Product List
+        System.out.println("PRODUCT LIST: ");
         pList1.displayAllProductList();
+
+        System.out.println("");
 
         // Search For A Client
         System.out.print("Please Enter The Product Name To Update The Cart: ");
@@ -71,23 +75,28 @@ public class TestStage2 {
         
         System.out.println("");
         
-        // Is Product In Shopping Cart
+        // Is Product In Shopping Cart. If Yes, Update Quantity
         productFound = cart1.updateCart(pName, pQuantity);
 
-        if(productFound == 1)
+        // Product Is In Shopping Cart. Display Update Cart
+        if(productFound == 1){
+            System.out.println("UPDATED SHOPPING CART: ");
             cart1.displayAllCart();
+
+        }
 
         // Product Not In Shopping Cart
         if (productFound == 0){
 
-            // Search for price
+            // Search For Price
             double temp = pList1.searchCartPrice(pName);
 
-        
-            // Cart(String productName, String Price, String Quantity, String PriceTotal)
+            // Add Product To Shopping Cart
             Cart l = new Cart(pName, temp, pQuantity , 1199.98);
             cart1.insertItemToCart(l);
 
+            // Display Updated Shopping Cart
+            System.out.println("UPDATED SHOPPING CART: ");
             cart1.displayAllCart();
 
         }
@@ -96,27 +105,32 @@ public class TestStage2 {
         if (cart1.CheckEmpty() == 0)
             System.out.println("\nCart Is Not Empty!");
 
-        System.out.println();
+     
 
-        // Process Shopping Card
+        // Process Shopping Cart
         cart1.processCart(pList1);
 
+        // Is Cart Empty After Cart Is Process
         if (cart1.CheckEmpty() == 0)
-        {
-            System.out.println("\nCart Is Not Empty!");
-        }
+            System.out.println("\nCart Is Not Empty After Processing Shopping Cart!" + "\n");
+        
         else
-        {
-            System.out.println("\nCart Is Empty!");
-        }
+            System.out.println("\nCart Is Empty After Processing Shopping Cart!" + "\n");
+        
 
-        System.out.println();
 
-        // TEST To See If Shopping Cart Is Empty Or Not. 
-        cart1.displayAllCart();
+        // TEST: Display All Product List
+        System.out.println("PRODUCT LIST: ");
+        pList1.displayAllProductList();
 
-        //pList1.checkQuantity();
+        Transaction transaction1 = new Transaction("","", 0);
 
+        System.out.println("\nTRANSACTION: ");
+        transaction1.displayAllTranscation();
+
+         // TEST: Desplay WaitList
+         // ERROR: DOESN'T WORK, DIDN'T DISPLAY THE WAITLISTED ITEM. 
+         cart1.displayWList();
 
 
         //Check Quantity
