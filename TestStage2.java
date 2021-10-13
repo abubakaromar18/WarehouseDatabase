@@ -117,8 +117,6 @@ public class TestStage2 {
 
         //pList1.checkQuantity();
 
-        System.out.println(t.toString());
-
 
 
         //Check Quantity
