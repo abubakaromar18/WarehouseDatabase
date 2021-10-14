@@ -63,6 +63,7 @@ public class Cart {
                    pL.setQuantity(num);
 
                    // Create Invoice 
+                   /********************  ISSUE: DIDN'T CREATE ANY TRANSACTION *********************/
                    Transaction t = new Transaction("T123", "123456", num * pL.getCostPrice());
                    t.insertItemToTransaction(t);
 
@@ -73,6 +74,7 @@ public class Cart {
             }
 
             // If There Isn't Enought Quantity In Product List
+            /************ ISSUE HERE: PRODUCT IS NOT ADDED TO WAITLIST ***************************/
             if(found == false){
 
                 int wQuantity = c.getQuantity();
@@ -83,6 +85,7 @@ public class Cart {
                waitList.add(wProductName + wQuantity);
             }
         } 
+
         // Remove Cart
         cartList.clear();
     }
