@@ -101,12 +101,6 @@ public class TestStage2 {
 
         }
 
-        // Is Shopping Cart Empty?
-        if (cart1.CheckEmpty() == 0)
-            System.out.println("\nCart Is Not Empty!");
-
-     
-
         // Process Shopping Cart
         cart1.processCart(pList1);
 
@@ -124,7 +118,6 @@ public class TestStage2 {
         else
             System.out.println("\nCart Is Empty After Processing Shopping Cart!" + "\n");
         
-
 
         // TEST: Display All Product List
         System.out.println("PRODUCT LIST: ");
