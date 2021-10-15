@@ -7,6 +7,7 @@ public class Cart {
     private double Price;
     private int Quantity;
     private double PriceTotal;
+    private double totalPrice; 
 
     private List<Object> waitList = new LinkedList<Object>();
 
@@ -22,6 +23,12 @@ public class Cart {
         this.Price = Price;
         this.Quantity = Quantity;
         this.PriceTotal = PriceTotal;
+    }
+
+    void putIntoWaitList(String productName, int Quantity){
+        this.productName = productName;
+        this.Quantity = Quantity;
+
     }
 
     // Update Shopping Cart
@@ -59,13 +66,10 @@ public class Cart {
                     
                    int num = (pL.getQuantity() - c.getQuantity());
 
+                   totalPrice += (c.getPrice() * c.getQuantity());
+
                    // Update Quantity In Product List
                    pL.setQuantity(num);
-
-                   // Create Invoice 
-                   /********************  ISSUE: DIDN'T CREATE ANY TRANSACTION *********************/
-                   Transaction t = new Transaction("T123", "123456", num * pL.getCostPrice());
-                   t.insertItemToTransaction(t);
 
                    found = true; 
 
@@ -77,12 +81,10 @@ public class Cart {
             /************ ISSUE HERE: PRODUCT IS NOT ADDED TO WAITLIST ***************************/
             if(found == false){
 
-                int wQuantity = c.getQuantity();
-
-                String wProductName = c.getproductName();
+                c.putIntoWaitList(c.getproductName(), c.getQuantity());
 
                 // Put Into WaitList
-               waitList.add(wProductName + wQuantity);
+               waitList.add(c);
             }
         } 
 
@@ -136,6 +138,8 @@ public class Cart {
 
     public void setPriceTotal(double PriceTotal) { this.PriceTotal = PriceTotal;}
 
+    public void setTotalPrice(double totalPrice) { this.totalPrice = totalPrice; }
+
 
     // Getter
     public double getTotalPrice() { return this.PriceTotal; }
@@ -145,6 +149,8 @@ public class Cart {
     public double getPrice() { return this.Price;}
 
     public int getQuantity() { return this.Quantity; }
+
+    public double gettotalPrice() { return this.totalPrice; }
 
     @Override
     public String toString(){ return this.productName + " " + this.Price + "  " + this.Quantity + " " + this.PriceTotal; }

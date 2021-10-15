@@ -110,6 +110,13 @@ public class TestStage2 {
         // Process Shopping Cart
         cart1.processCart(pList1);
 
+         // Create Invoice 
+        Transaction t1 = new Transaction("T123", "123456", cart1.gettotalPrice());
+        t1.insertItemToTransaction(t1);
+
+        System.out.println("Transaction Test Inside Processing Cart Method: ");
+        t1.displayAllTranscation();
+
         // Is Cart Empty After Cart Is Process
         if (cart1.CheckEmpty() == 0)
             System.out.println("\nCart Is Not Empty After Processing Shopping Cart!" + "\n");
@@ -122,18 +129,24 @@ public class TestStage2 {
         // TEST: Display All Product List
         System.out.println("PRODUCT LIST: ");
         pList1.displayAllProductList();
-
-        Transaction transaction1 = new Transaction("","", 0);
-
+        
+        // Display Transaction 
         System.out.println("\nTRANSACTION: ");
-        transaction1.displayAllTranscation();
+        t1.displayAllTranscation();
 
          // TEST: Desplay WaitList
          // ERROR: DOESN'T WORK, DIDN'T DISPLAY THE WAITLISTED ITEM. 
          cart1.displayWList();
 
 
-        //Check Quantity
+    }
+
+}
+
+
+
+
+       //Check Quantity
         /*
         System.out.println("Check Quantity: Enter product");
         pName = in.nextLine();
@@ -160,6 +173,3 @@ public class TestStage2 {
         in.close();
 
         */
-    }
-
-}
