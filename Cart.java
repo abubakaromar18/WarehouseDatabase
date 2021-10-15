@@ -9,13 +9,13 @@ public class Cart {
     private double PriceTotal;
     private double totalPrice; 
 
-    private List<Object> waitList = new LinkedList<Object>();
+    private List<Cart> waitList = new LinkedList<Cart>();
 
     private List<Cart> cartList = new LinkedList<Cart>();
 
-    public void insertItemToCart(Cart l) {cartList.add(l);}
+    public void insertItemToCart(Cart l) {cartList.add(l); }
 
-    public void insertWaitList(Cart l) { waitList.add(l); };
+    public void insertWaitList(Cart l) { waitList.add(l); }
 
     // Contructor
     Cart(String productName, int Quantity, double Price, double PriceTotal){
@@ -74,7 +74,7 @@ public class Cart {
 
                 // If There Isn't Enought Quantity In Product List
                 /*******        NOT DISPLAY OR STORING WAITLIST   ********/
-                if(c.getproductName().equals(pL.getProductName()) && c.getQuantity() >= pL.getQuantity()){
+                if(c.getproductName().equals(pL.getProductName()) && c.getQuantity() > pL.getQuantity()){
                     
                     int num1 = (c.getQuantity() - pL.getQuantity());
 
@@ -87,14 +87,11 @@ public class Cart {
                     c.putIntoWaitList(c.getproductName(), num1);
 
                     // Put Into WaitList
-                    waitList.add(c);
+                    c.insertWaitList(c);
 
                     break;
                 }
             }
-
-            System.out.println("\nTEST TEST TES: Display WaitList: ");
-            c.displayWList();
         } 
 
         // Remove Cart
@@ -104,7 +101,7 @@ public class Cart {
     // Display Wait List
     public void displayWList(){
 
-        for (Cart c : cartList) 
+        for (Cart c : waitList) 
             System.out.println(c);
     } 
     

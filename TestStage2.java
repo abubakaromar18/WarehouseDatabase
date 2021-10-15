@@ -18,7 +18,7 @@ public class TestStage2 {
         Client client1 = new Client("Jack", "123 1ST Ave", "(123) 456-8789", "ID1");
 
         // Shopping Cart
-        Cart cart1 = new Cart("Pen", 14, 12.32, (12.32 * 14));
+        Cart cart1 = new Cart("Pen", 14, 12.3, (12.3 * 14));
 
         Cart cart2 = new Cart("Apple", 12, 15.32, (15.32 * 12));
 
@@ -116,18 +116,18 @@ public class TestStage2 {
             System.out.println("\nCart Is Empty After Processing Shopping Cart!" + "\n");
         
 
-        // TEST: Display All Product List
-        System.out.println("PRODUCT LIST: ");
+        // Display All Product List
+        System.out.println("Product List After Shopping Cart Is Process : ");
         pList1.displayAllProductList();
         
         // Display Transaction 
         System.out.println("\nTRANSACTION: ");
         t1.displayAllTranscation();
 
-         // TEST: Desplay WaitList
-         // ERROR: DOESN'T WORK, DIDN'T DISPLAY THE WAITLISTED ITEM. 
-        cart1.displayWList();
 
+         // Desplay WaitList
+        System.out.println("\nWait List Item: ");
+        cart1.displayWList();
 
     }
 
