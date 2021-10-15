@@ -3,6 +3,7 @@ import java.io.*;
 import java.lang.*;
 
 public class products {
+    private String supplierName;
     private String productName;
     private String description;
     private double costPrice;
@@ -11,8 +12,9 @@ public class products {
 
     public products(){};
 
-    public products(String pName, String productID, String descipt, int quantity, double cPrice)
+    public products(String sName, String pName, String productID, String descipt, int quantity, double cPrice)
     {
+        this.supplierName = sName;
         this.productName = pName;
         this.productID = productID;
         this.description = descipt;
@@ -21,6 +23,8 @@ public class products {
     }
 
     // Setters
+    public void setSupplier(String sName ){ this.supplierName = sName; }
+
     public void setProduct(String pName) { this.productName = pName; }
 
     public void setDescription(String productDescription) { this.description = productDescription; }
@@ -35,6 +39,8 @@ public class products {
     // Getters
     public String getProductID() { return productID; }
 
+    public String getSupplierName() { return supplierName; }
+
     public String getProductName() { return productName; }
     
     public String getDescription() { return description; }
@@ -44,7 +50,7 @@ public class products {
     public int getQuantity() {  return quantity; }
 
     public String toString(){
-        return  productName + " "+ productID + " "+ description +  " "+ costPrice + " " + quantity; 
+        return supplierName + " " + productName + " "+ productID + " "+ description +  " "+ costPrice + " " + quantity; 
     }
 
 

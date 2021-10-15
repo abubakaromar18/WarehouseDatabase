@@ -32,28 +32,15 @@ public class Cart {
     }
 
     // Update Shopping Cart
-    public int updateCart(String productName, int Quantity, productList pList){
-
-        Iterator<products> prodIt = pList.getProduct();
+    public int updateCart(String productName, int Quantity){
 
         for (Cart c : cartList) {
 
-            while (prodIt.hasNext()){
-
-                products  pL = prodIt.next();
-
-                // Product In Cart
-                if(c.getproductName().equals(productName)){
-                    c.setName(productName);
-                    c.setQuantity(Quantity);
-                    return 1; 
-                }
-                // Product Not In Cart, But Warehouse Carry The Product
-                if(pL.getProductName().equals(productName) && c.getproductName() != productName){
-                    Cart c1 = new Cart(productName, Quantity, pL.getCostPrice(), Quantity * pL.getCostPrice());
-                    c.insertItemToCart(c1);
-                    return 1;
-                }
+            // Product In Cart
+            if(c.getproductName().equals(productName)){
+                c.setName(productName);
+                c.setQuantity(Quantity);
+                return 1; 
             }
         }
         return 0;
