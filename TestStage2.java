@@ -26,13 +26,13 @@ public class TestStage2 {
 
 
         // Product
-        products prod1 = new products( "Tom", "Pen", "PID123", "Box of Pen", 100, 12.32);
+        products prod1 = new products( "Pen", "PID123", "Box of Pen", 100, 12.32);
 
-        products prod2 = new products("Tom", "Apple", "PID456", "Bag of Apple", 100, 15.32);
+        products prod2 = new products("Apple", "PID456", "Bag of Apple", 100, 15.32);
 
-        products prod3 = new products("Tom", "Notebook","PID789", "Notebook 80 Sheet", 100, 2.23);
+        products prod3 = new products("Notebook","PID789", "Notebook 80 Sheet", 100, 2.23);
 
-        products prod4 = new products("Tom", "Computer","PID321", "A Machine To Do Cool Stuff", 100, 599.99);
+        products prod4 = new products("Computer","PID321", "A Machine To Do Cool Stuff", 100, 599.99);
 
         // Product List
         productList pList1 = new productList();
@@ -76,7 +76,7 @@ public class TestStage2 {
         System.out.println("");
         
         // Is Product In Shopping Cart. If Yes, Update Quantity
-        productFound = cart1.updateCart(pName, pQuantity);
+        productFound = cart1.updateCart(pName, pQuantity, pList1);
 
         // Product Is In Shopping Cart. Display Update Cart
         if(productFound == 1){
@@ -84,22 +84,8 @@ public class TestStage2 {
             cart1.displayAllCart();
 
         }
-
-        // Product Not In Shopping Cart
-        if (productFound == 0){
-
-            // Search For Price
-            double temp = pList1.searchCartPrice(pName);
-
-            // Add Product To Shopping Cart
-            Cart l = new Cart(pName, pQuantity, temp, (pQuantity * temp));
-            cart1.insertItemToCart(l);
-
-            // Display Updated Shopping Cart
-            System.out.println("UPDATED SHOPPING CART: ");
-            cart1.displayAllCart();
-
-        }
+        else
+            System.out.println("\nThe Warehouse Doesn't Have " + pName);
 
         // Process Shopping Cart
         cart1.processCart(pList1);
