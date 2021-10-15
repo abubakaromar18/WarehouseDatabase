@@ -126,7 +126,7 @@ public class TestStage2 {
 
          // TEST: Desplay WaitList
          // ERROR: DOESN'T WORK, DIDN'T DISPLAY THE WAITLISTED ITEM. 
-         cart1.displayWList();
+        cart1.displayWList();
 
 
     }

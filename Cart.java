@@ -54,8 +54,6 @@ public class Cart {
         // Shopping Cart
         for (Cart c: cartList){
 
-            boolean found = false; 
-
             // Product List
             while (prodIt.hasNext()){
 
@@ -71,21 +69,32 @@ public class Cart {
                    // Update Quantity In Product List
                    pL.setQuantity(num);
 
-                   found = true; 
-
                    break;
+                }
+
+                // If There Isn't Enought Quantity In Product List
+                /*******        NOT DISPLAY OR STORING WAITLIST   ********/
+                if(c.getproductName().equals(pL.getProductName()) && c.getQuantity() >= pL.getQuantity()){
+                    
+                    int num1 = (c.getQuantity() - pL.getQuantity());
+
+                    totalPrice += (c.getPrice() * c.getQuantity());
+
+                    Math.abs(num1);
+                    
+                    pL.setQuantity(0);
+
+                    c.putIntoWaitList(c.getproductName(), num1);
+
+                    // Put Into WaitList
+                    waitList.add(c);
+
+                    break;
                 }
             }
 
-            // If There Isn't Enought Quantity In Product List
-            /************ ISSUE HERE: PRODUCT IS NOT ADDED TO WAITLIST ***************************/
-            if(found == false){
-
-                c.putIntoWaitList(c.getproductName(), c.getQuantity());
-
-                // Put Into WaitList
-               waitList.add(c);
-            }
+            System.out.println("\nTEST TEST TES: Display WaitList: ");
+            c.displayWList();
         } 
 
         // Remove Cart

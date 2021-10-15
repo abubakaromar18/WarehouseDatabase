@@ -1,2 +1,1 @@
-
-        // Display Transaction 
+cart1.displayWList();
