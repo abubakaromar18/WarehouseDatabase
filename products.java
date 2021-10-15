@@ -12,14 +12,14 @@ public class products {
 
     public products(){};
 
-    public products(String sName, String pName, String productID, String descipt, double cPrice, int quantity)
+    public products(String sName, String pName, String productID, String descipt, int quantity, double cPrice)
     {
         this.supplierName = sName;
         this.productName = pName;
         this.productID = productID;
         this.description = descipt;
-        this.costPrice = cPrice;
         this.quantity = quantity;
+        this.costPrice = cPrice;
     }
 
     // Setters
@@ -50,7 +50,7 @@ public class products {
     public int getQuantity() {  return quantity; }
 
     public String toString(){
-        return supplierName + " " + productName + " "+ productID + " "+ description +  " "+ quantity + " " + costPrice; 
+        return supplierName + " " + productName + " "+ productID + " "+ description +  " "+ costPrice + " " + quantity; 
     }
 
 

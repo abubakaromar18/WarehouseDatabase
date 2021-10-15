@@ -18,21 +18,21 @@ public class TestStage2 {
         Client client1 = new Client("Jack", "123 1ST Ave", "(123) 456-8789", "ID1");
 
         // Shopping Cart
-        Cart cart1 = new Cart("Pen", 12.32, 14, 172.48);
+        Cart cart1 = new Cart("Pen", 14, 12.32, (12.32 * 14));
 
-        Cart cart2 = new Cart("Apple", 15.32, 12, 183.84);
+        Cart cart2 = new Cart("Apple", 12, 15.32, (15.32 * 12));
 
-        Cart cart3 = new Cart("Notebook", 2.23, 14, 32.48);
+        Cart cart3 = new Cart("Notebook", 14, 2.23, (2.23 * 14));
 
 
         // Product
-        products prod1 = new products( "Tom", "Pen", "PID123", "Box of Pen", 12.32, 100);
+        products prod1 = new products( "Tom", "Pen", "PID123", "Box of Pen", 100, 12.32);
 
-        products prod2 = new products("Tom", "Apple", "PID456", "Bag of Apple", 15.32, 100);
+        products prod2 = new products("Tom", "Apple", "PID456", "Bag of Apple", 100, 15.32);
 
-        products prod3 = new products("Tom", "Notebook","PID789", "Notebook 80 Sheet", 2.23, 100);
+        products prod3 = new products("Tom", "Notebook","PID789", "Notebook 80 Sheet", 100, 2.23);
 
-        products prod4 = new products("Tom", "Computer","PID321", "A Machine To Do Cool Stuff", 599.99, 100);
+        products prod4 = new products("Tom", "Computer","PID321", "A Machine To Do Cool Stuff", 100, 599.99);
 
         // Product List
         productList pList1 = new productList();
@@ -92,7 +92,7 @@ public class TestStage2 {
             double temp = pList1.searchCartPrice(pName);
 
             // Add Product To Shopping Cart
-            Cart l = new Cart(pName, temp, pQuantity , 1199.98);
+            Cart l = new Cart(pName, pQuantity, temp, (pQuantity * temp));
             cart1.insertItemToCart(l);
 
             // Display Updated Shopping Cart
@@ -105,11 +105,8 @@ public class TestStage2 {
         cart1.processCart(pList1);
 
          // Create Invoice 
-        Transaction t1 = new Transaction("T123", "123456", cart1.gettotalPrice());
+        Transaction t1 = new Transaction("T123", "123456", cart1.getTotalPrice());
         t1.insertItemToTransaction(t1);
-
-        System.out.println("Transaction Test Inside Processing Cart Method: ");
-        t1.displayAllTranscation();
 
         // Is Cart Empty After Cart Is Process
         if (cart1.CheckEmpty() == 0)

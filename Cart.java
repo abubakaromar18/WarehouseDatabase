@@ -18,10 +18,10 @@ public class Cart {
     public void insertWaitList(Cart l) { waitList.add(l); };
 
     // Contructor
-    Cart(String productName, double Price, int Quantity, double PriceTotal){
+    Cart(String productName, int Quantity, double Price, double PriceTotal){
         this.productName = productName;
-        this.Price = Price;
         this.Quantity = Quantity;
+        this.Price = Price;
         this.PriceTotal = PriceTotal;
     }
 
@@ -142,7 +142,7 @@ public class Cart {
 
 
     // Getter
-    public double getTotalPrice() { return this.PriceTotal; }
+    public double getPriceTotal() { return this.PriceTotal; }
 
     public String getproductName() { return this.productName;}
 
@@ -150,10 +150,10 @@ public class Cart {
 
     public int getQuantity() { return this.Quantity; }
 
-    public double gettotalPrice() { return this.totalPrice; }
+    public double getTotalPrice() { return this.totalPrice; }
 
     @Override
-    public String toString(){ return this.productName + " " + this.Price + "  " + this.Quantity + " " + this.PriceTotal; }
+    public String toString(){ return this.productName + " " + this.Quantity + "  " + this.Price + " " + this.PriceTotal; }
 }
 
 
