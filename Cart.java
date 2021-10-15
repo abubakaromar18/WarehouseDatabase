@@ -89,6 +89,9 @@ public class Cart {
                     // Put Into WaitList
                     c.insertWaitList(c);
 
+                    System.out.println("\nWaitList Inside Processing Cart Method");
+                    c.displayWList();
+
                     break;
                 }
             }

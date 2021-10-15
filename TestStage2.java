@@ -18,7 +18,7 @@ public class TestStage2 {
         Client client1 = new Client("Jack", "123 1ST Ave", "(123) 456-8789", "ID1");
 
         // Shopping Cart
-        Cart cart1 = new Cart("Pen", 14, 12.3, (12.3 * 14));
+        Cart cart1 = new Cart("Pen", 14, 12.3, (12.35 * 14));
 
         Cart cart2 = new Cart("Apple", 12, 15.32, (15.32 * 12));
 
