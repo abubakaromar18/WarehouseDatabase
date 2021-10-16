@@ -123,34 +123,3 @@ public class TestStage2 {
     }
 
 }
-
-
-
-
-       //Check Quantity
-        /*
-        System.out.println("Check Quantity: Enter product");
-        pName = in.nextLine();
-        products product = pList1.searchProduct(pName);
-
-
-        System.out.println("Product " + pName + " has " + pList1.getQuantity() + " Quantities\n");
-        System.out.println("would you like to decrease the quantity? ");
-        String response = in.nextLine();
-
-        if(response.equals("yes"))
-        {
-            System.out.println("enter the new quantity: ");
-            int quantity = in.nextInt();
-            product.setQuantity(quantity);
-
-            System.out.println("Product " + pName + " has " + pList1.getQuantity() + " Quantities\n");
-        }
-        else
-        {
-            System.out.println("Done");
-        }
-
-        in.close();
-
-        */
