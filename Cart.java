@@ -89,7 +89,6 @@ public class Cart {
                 }
 
                 // If There Isn't Enought Quantity In Product List
-                /*******        NOT DISPLAY OR STORING WAITLIST   ********/
                 if(c.getproductName().equals(pL.getProductName()) && c.getQuantity() > pL.getQuantity()){
                     
                     int num1 = (c.getQuantity() - pL.getQuantity());
