@@ -149,6 +149,14 @@ public class Cart {
             return 0;
     }
 
+    // Is WaitList Empty?
+    public int checkWaitList(){
+        if (waitList.isEmpty())
+            return 1;
+        else
+            return 0; 
+    }
+
 
     // Setter
     public void setName(String productName) { this.productName = productName; }

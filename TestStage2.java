@@ -113,8 +113,12 @@ public class TestStage2 {
 
 
          // Desplay WaitList
-        System.out.println("\nWait List Item: ");
-        cart1.displayWList();
+        if (cart1.checkWaitList() == 1)
+            System.out.println("\nWait List Is Empty");
+        else{
+            System.out.println("\nWait List Item:");
+            cart1.displayWList();
+        }
 
     }
 
