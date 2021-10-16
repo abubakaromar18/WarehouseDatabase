@@ -9,9 +9,9 @@ public class Cart {
     private double PriceTotal;
     private double totalPrice; 
 
-    private List<Cart> waitList = new LinkedList<Cart>();
+    private static List<Cart> waitList = new LinkedList<Cart>();
 
-    private List<Cart> cartList = new LinkedList<Cart>();
+    private static List<Cart> cartList = new LinkedList<Cart>();
 
     public void insertItemToCart(Cart l) {cartList.add(l); }
 
@@ -32,17 +32,33 @@ public class Cart {
     }
 
     // Update Shopping Cart
-    public int updateCart(String productName, int Quantity){
+    public int updateCart(String pName, int Q, productList pList){
+
+
+        Iterator<products> prodIt = pList.getProduct();
 
         for (Cart c : cartList) {
 
             // Product In Cart
-            if(c.getproductName().equals(productName)){
-                c.setName(productName);
-                c.setQuantity(Quantity);
+            if(c.getproductName().equals(pName)){
+                c.setQuantity(Q);
+                return 1; 
+            }   
+        }
+
+        while (prodIt.hasNext()){
+
+            products  pL = prodIt.next();
+
+            // Product Not In Cart, But Warehouse Carry The Product
+            if (pL.getProductName().equals(pName)){
+
+                Cart newC = new Cart(pName, Q, pL.getCostPrice(), Q *pL.getCostPrice());
+                cartList.add(newC);
                 return 1; 
             }
         }
+
         return 0;
     }
 
@@ -88,9 +104,6 @@ public class Cart {
 
                     // Put Into WaitList
                     c.insertWaitList(c);
-
-                    System.out.println("\nWaitList Inside Processing Cart Method");
-                    c.displayWList();
 
                     break;
                 }

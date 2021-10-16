@@ -24,7 +24,6 @@ public class TestStage2 {
 
         Cart cart3 = new Cart("Notebook", 14, 2.23, (2.23 * 14));
 
-
         // Product
         products prod1 = new products( "Tom", "Pen", "PID123", "Box of Pen", 100, 12.32);
 
@@ -76,7 +75,7 @@ public class TestStage2 {
         System.out.println("");
         
         // Is Product In Shopping Cart. If Yes, Update Quantity
-        productFound = cart1.updateCart(pName, pQuantity);
+        productFound = cart1.updateCart(pName, pQuantity, pList1);
 
         // Product Is In Shopping Cart. Display Update Cart
         if(productFound == 1){
@@ -84,22 +83,9 @@ public class TestStage2 {
             cart1.displayAllCart();
 
         }
+        else
+            System.out.println("Warehouse Doesn't Carry This Product: " + pName);
 
-        // Product Not In Shopping Cart
-        if (productFound == 0){
-
-            // Search For Price
-            double temp = pList1.searchCartPrice(pName);
-
-            // Add Product To Shopping Cart
-            Cart l = new Cart(pName, pQuantity, temp, (pQuantity * temp));
-            cart1.insertItemToCart(l);
-
-            // Display Updated Shopping Cart
-            System.out.println("UPDATED SHOPPING CART: ");
-            cart1.displayAllCart();
-
-        }
 
         // Process Shopping Cart
         cart1.processCart(pList1);
@@ -108,6 +94,7 @@ public class TestStage2 {
         Transaction t1 = new Transaction("T123", "123456", cart1.getTotalPrice());
         t1.insertItemToTransaction(t1);
 
+        
         // Is Cart Empty After Cart Is Process
         if (cart1.CheckEmpty() == 0)
             System.out.println("\nCart Is Not Empty After Processing Shopping Cart!" + "\n");
@@ -117,6 +104,7 @@ public class TestStage2 {
         
 
         // Display All Product List
+        
         System.out.println("Product List After Shopping Cart Is Process : ");
         pList1.displayAllProductList();
         
