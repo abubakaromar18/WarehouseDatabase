@@ -18,14 +18,14 @@ public class TestStage2 {
         Client client1 = new Client("Jack", "123 1ST Ave", "(123) 456-8789", "ID1");
 
         // Shopping Cart
-        Cart cart1 = new Cart("Pen", 150, 12.3, (12.35 * 14));
+        Cart cart1 = new Cart("Pen", 150, 12.35, (12.35 * 14));
 
         Cart cart2 = new Cart("Apple", 12, 15.32, (15.32 * 12));
 
         Cart cart3 = new Cart("Notebook", 14, 2.23, (2.23 * 14));
 
         // Product
-        products prod1 = new products( "Pen", "PID123", "Box of Pen", 100, 12.32);
+        products prod1 = new products("Pen", "PID123", "Box of Pen", 100, 12.32);
 
         products prod2 = new products("Apple", "PID456", "Bag of Apple", 100, 15.32);
 
@@ -54,13 +54,13 @@ public class TestStage2 {
         cart1.insertItemToCart(cart3);
 
         // Display Shopping Cart
-        System.out.println("SHOPPING CART: ");
+        System.out.println("Shopping Cart: ");
         cart1.displayAllCart();
 
         System.out.println("");
 
         // Display Product List
-        System.out.println("PRODUCT LIST: ");
+        System.out.println("Product List: ");
         pList1.displayAllProductList();
 
         System.out.println("");
@@ -79,7 +79,7 @@ public class TestStage2 {
 
         // Product Is In Shopping Cart. Display Update Cart
         if(productFound == 1){
-            System.out.println("UPDATED SHOPPING CART: ");
+            System.out.println("Updated Shopping Cart: ");
             cart1.displayAllCart();
 
         }
@@ -104,12 +104,11 @@ public class TestStage2 {
         
 
         // Display All Product List
-        
         System.out.println("Product List After Shopping Cart Is Process : ");
         pList1.displayAllProductList();
         
         // Display Transaction 
-        System.out.println("\nTRANSACTION: ");
+        System.out.println("\nTransaction: ");
         t1.displayAllTranscation();
 
 

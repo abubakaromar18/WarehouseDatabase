@@ -44,7 +44,7 @@ public class products {
     public int getQuantity() {  return quantity; }
 
     public String toString(){
-        return  productName + " "+ productID + " "+ description +  " "+ costPrice + " " + quantity; 
+        return  productName + " "+ productID + " "+ description +  " "+ quantity+ " " + costPrice ; 
     }
 
 
