@@ -18,20 +18,20 @@ public class TestStage2 {
         Client client1 = new Client("Jack", "123 1ST Ave", "(123) 456-8789", "ID1");
 
         // Shopping Cart
-        Cart cart1 = new Cart("Pen", 14, 12.3, (12.35 * 14));
+        Cart cart1 = new Cart("Pen", 150, 12.3, (12.35 * 14));
 
         Cart cart2 = new Cart("Apple", 12, 15.32, (15.32 * 12));
 
         Cart cart3 = new Cart("Notebook", 14, 2.23, (2.23 * 14));
 
         // Product
-        products prod1 = new products( "Tom", "Pen", "PID123", "Box of Pen", 100, 12.32);
+        products prod1 = new products( "Pen", "PID123", "Box of Pen", 100, 12.32);
 
-        products prod2 = new products("Tom", "Apple", "PID456", "Bag of Apple", 100, 15.32);
+        products prod2 = new products("Apple", "PID456", "Bag of Apple", 100, 15.32);
 
-        products prod3 = new products("Tom", "Notebook","PID789", "Notebook 80 Sheet", 100, 2.23);
+        products prod3 = new products("Notebook","PID789", "Notebook 80 Sheet", 100, 2.23);
 
-        products prod4 = new products("Tom", "Computer","PID321", "A Machine To Do Cool Stuff", 100, 599.99);
+        products prod4 = new products("Computer","PID321", "A Machine To Do Cool Stuff", 100, 599.99);
 
         // Product List
         productList pList1 = new productList();
