@@ -5,6 +5,7 @@ import java.lang.*;
 public class productList{
 
     private List<products> pList = new LinkedList<products>();
+
     private static productList ProductList;
 
     // Add To Product List
@@ -31,7 +32,7 @@ public class productList{
             System.out.println(c);
     } 
 
-    // Update Cart: Search Product Price + Return Product Price
+    // Search Product Price + Return Product Price
     public double searchCartPrice(String find){
 
         for (products a : pList) 
@@ -58,8 +59,7 @@ public class productList{
         return null;
     }
 
-    public void checkQuantity()
-    {
+    public void checkQuantity(){
         Scanner in = new Scanner(System.in);
 
         System.out.println("Check Quantity: Enter product");
@@ -71,16 +71,14 @@ public class productList{
         System.out.println("would you like to decrease the quantity? ");
         String response = in.nextLine();
 
-        if(response.equals("yes"))
-        {
+        if(response.equals("yes")) {
             System.out.println("enter the new quantity: ");
             int quantity = in.nextInt();
             product.setQuantity(quantity);
 
             System.out.println("Product " + pName + " has " + product.getQuantity() + " Quantities\n");
         }
-        else
-        {
+        else{
             System.out.println("Done");
         }
 
@@ -92,16 +90,9 @@ public class productList{
         return true;
     }
     
-    public Iterator getProduct(){
-        return pList.iterator();
-    }
+    public Iterator getProduct() { return pList.iterator(); }
 
+    public int getQuantity() { return getQuantity(); }
 
-    public int getQuantity(){
-        return getQuantity();
-    }
-
-    public String toString() {
-        return pList.toString();
-    }
+    public String toString() { return pList.toString();}
 }

@@ -174,6 +174,8 @@ public class Cart {
 
     public double getTotalPrice() { return this.totalPrice; }
 
+    public Iterator getwaitList() { return waitList.iterator(); }
+
     @Override
     public String toString(){ return this.productName + " " + this.Quantity + "  " + this.Price + " " + this.PriceTotal; }
 }
