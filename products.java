@@ -22,30 +22,20 @@ public class products {
 
     // Setters
     public void setProduct(String pName) { this.productName = pName; }
-
     public void setDescription(String productDescription) { this.description = productDescription; }
-
     public void setCostPrice(double cPrice) { this.costPrice = cPrice; }
-
     public void setProductID(String pID) { this.productID = pID; }
-
     public void setQuantity(int quantity) { this.quantity = quantity; }
 
     
     // Getters
     public String getProductID() { return productID; }
-
     public String getProductName() { return productName; }
-    
     public String getDescription() { return description; }
-
     public double getCostPrice() { return costPrice; }
-
     public int getQuantity() {  return quantity; }
 
-    public String toString(){
-        return  productName + " "+ productID + " "+ description +  " "+ quantity+ " " + costPrice ; 
-    }
+    public String toString(){ return  productName + " "+ productID + " "+ description +  " "+ quantity+ " " + costPrice ; }
 
 
 

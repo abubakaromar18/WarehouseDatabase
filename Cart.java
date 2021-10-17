@@ -64,11 +64,11 @@ public class Cart {
 
     // Process Shopping Cart
     public void processCart(productList pList){
-
-        Iterator<products> prodIt = pList.getProduct();
        
         // Shopping Cart
         for (Cart c: cartList){
+
+            Iterator<products> prodIt = pList.getProduct();
 
             // Product List
             while (prodIt.hasNext()){
@@ -160,27 +160,18 @@ public class Cart {
 
     // Setter
     public void setName(String productName) { this.productName = productName; }
-
     public void setPrice(double Price) { this.Price = Price; }
-
     public void setQuantity(int Quantity) { this.Quantity = Quantity; }
-
     public void setPriceTotal(double PriceTotal) { this.PriceTotal = PriceTotal;}
-
     public void setTotalPrice(double totalPrice) { this.totalPrice = totalPrice; }
 
 
     // Getter
     public double getPriceTotal() { return this.PriceTotal; }
-
     public String getproductName() { return this.productName;}
-
     public double getPrice() { return this.Price;}
-
     public int getQuantity() { return this.Quantity; }
-
     public double getTotalPrice() { return this.totalPrice; }
-
     public Iterator getwaitList() { return waitList.iterator(); }
 
     @Override

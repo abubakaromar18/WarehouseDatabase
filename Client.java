@@ -20,20 +20,14 @@ public class Client{
 
     // Getter
     public String getClientName(){ return cName; }
-
     public String getClientAddress(){ return cAddress; }
-
     public String getClientPhone(){ return cPhone; }
-
     public String getClientID(){ return clientID; }
 
     // Setter
     public void setCName(String cName) { this.cName = cName; }
-    
     public void setCAddress(String cAddress) { this.cAddress = cAddress; }
-
     public void setCPhone(String cPhone) { this.cPhone = cPhone; }
-
     public void setCID(String cID) { this.clientID = cID; }
 
     @Override

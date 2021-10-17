@@ -14,35 +14,16 @@ public class Supplier implements Serializable{
 		this.name = name;
 		this.address = address;
 	}
-	//temp code for id
-	public void setid(String id) {
-		this.id = id;
-	}
+
+	// Setter
+	public void setid(String id) { this.id = id; }
+	public void setName(String name) { this.name = name; }
+	public void setAddress(String address) {this.address = address; }
+
+	// Getter
+	public String getId() { return id;}	
+	public String getName() { return name; }
+	public String getAddress() { return address; }
 	
-	public void setName(String name) {
-		this.name = name;
-	}
-	
-	public void setAddress(String address) {
-		this.address = address;
-	}
-	//get Supplier ID
-	public String getId() {
-		return id;
-	}	
-	
-	//get Supplier name
-	public String getName() {
-		return name;
-	}
-	
-	//get Supplier address
-	public String getAddress() {
-		return address;
-	}
-	
-	//get all Supplier info
-	public String toString() {
-		return "Supplier ID: " + id + ";  Name: " + name + ";  Address: " + address;
-	}	
+	public String toString() { return "Supplier ID: " + id + ";  Name: " + name + ";  Address: " + address; }	
 }	

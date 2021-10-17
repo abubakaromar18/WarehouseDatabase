@@ -36,17 +36,13 @@ public class Transaction {
 
     // Setter
     public void settransactionID(String transactionID){ this.transactionID = transactionID; }
-
     public void setOrdernumber(String Price){ this.OrderNum = Price; }
-    
     public void setPrice(double Quantity){this.PriceToTal = Quantity;}
     
     // Getter
     public String gettransactionID(){ return this.transactionID; }
-    
     public String getOrdernumber() { return this.OrderNum; }
-   
-    public double getPrice(){ return this.PriceToTal; }
+   public double getPrice(){ return this.PriceToTal; }
 
     @Override
     public String toString(){ return this.transactionID+ " " + this.OrderNum + "  " + this.PriceToTal; }
