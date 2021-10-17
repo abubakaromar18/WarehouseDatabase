@@ -113,7 +113,7 @@ public class Cart {
         cartList.clear();
     }
 
-    // Display Wait List
+    // Display All Wait List
     public void displayWList(){
 
         for (Cart c : waitList) 
