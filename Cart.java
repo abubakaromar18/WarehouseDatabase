@@ -9,9 +9,9 @@ public class Cart {
     private double PriceTotal;
     private double totalPrice; 
 
-    private static List<Cart> waitList = new LinkedList<Cart>();
+    private List<Cart> waitList = new LinkedList<Cart>();
 
-    private static List<Cart> cartList = new LinkedList<Cart>();
+    private List<Cart> cartList = new LinkedList<Cart>();
 
     public void insertItemToCart(Cart l) {cartList.add(l); }
 
@@ -102,7 +102,7 @@ public class Cart {
                     c.putIntoWaitList(c.getproductName(), num1);
 
                     // Put Into WaitList
-                    c.insertWaitList(c);
+                    waitList.add(c);
 
                     break;
                 }
