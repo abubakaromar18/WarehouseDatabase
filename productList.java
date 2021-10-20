@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*;
 import java.lang.*;
 
-public class productList{
+public class productList implements Serializable{
 
     private List<products> pList = new LinkedList<products>();
 
