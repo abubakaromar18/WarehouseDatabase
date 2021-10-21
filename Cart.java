@@ -8,6 +8,7 @@ public class Cart {
     private int Quantity;
     private double PriceTotal;
     private double totalPrice; 
+    private double clientDebt; 
 
     private List<Cart> waitList = new LinkedList<Cart>();
 
@@ -16,6 +17,10 @@ public class Cart {
     public void insertItemToCart(Cart l) {cartList.add(l); }
 
     public void insertWaitList(Cart l) { waitList.add(l); }
+
+    private List<Double> cDebt = new LinkedList<Double>();
+
+    public void insertCDebt(Double a) { cDebt.add(a); }
 
     // Contructor
     Cart(String productName, int Quantity, double Price, double PriceTotal){
@@ -107,11 +112,24 @@ public class Cart {
                     break;
                 }
             }
+
+            c.insertCDebt(totalPrice);
         } 
+
+        // Debt Client
+        Cart c1 = new Cart("", 0, 0, 0);
+        c1.insertCDebt(totalPrice);
 
         // Remove Cart
         cartList.clear();
     }
+
+    // Display Client Debt
+    public void displayCDebt(){
+
+        for (double c : cDebt) 
+            System.out.println(c);
+    } 
 
     // Display All Wait List
     public void displayWList(){
@@ -164,6 +182,7 @@ public class Cart {
     public void setQuantity(int Quantity) { this.Quantity = Quantity; }
     public void setPriceTotal(double PriceTotal) { this.PriceTotal = PriceTotal;}
     public void setTotalPrice(double totalPrice) { this.totalPrice = totalPrice; }
+    public void setCDebt(double cDebt) {this.clientDebt = cDebt; }
 
 
     // Getter
@@ -173,6 +192,7 @@ public class Cart {
     public int getQuantity() { return this.Quantity; }
     public double getTotalPrice() { return this.totalPrice; }
     public Iterator getwaitList() { return waitList.iterator(); }
+    public double getClientDebt(){return clientDebt; }
 
     @Override
     public String toString(){ return this.productName + " " + this.Quantity + "  " + this.Price + " " + this.PriceTotal; }
