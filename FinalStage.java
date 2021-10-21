@@ -169,12 +169,8 @@ public class FinalStage {
         transID.insertItemToTransaction(transID4);
 
         System.out.println("Client Transaction");
-        System.out.println(transID.gettransactionID());
-        System.out.println(transID1.gettransactionID());
-        System.out.println(transID2.gettransactionID());
-        System.out.println(transID3.gettransactionID());
-        System.out.println(transID4.gettransactionID());
-        
+        transID.displayAllTranscation();
+
 
 
         /* Question 11 */
@@ -209,7 +205,12 @@ public class FinalStage {
         System.out.println("--------------------------------------");
 
         /* Question 16 */
-
+        System.out.println("\nCLIENT WITH UNPAID BALANCE: ");
+        clist.setCBalance("John", cart1.cartTotal());
+        clist.setCBalance("Mike", cart2.cartTotal());
+        clist.setCBalance("Emily", cart3.cartTotal());
+        clist.setCBalance("Tim", cart4.cartTotal());
+        clist.displayCBalance();
 
 
         /* Question 17 */
