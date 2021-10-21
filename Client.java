@@ -23,7 +23,6 @@ public class Client{
     public String getClientAddress(){ return cAddress; }
     public String getClientPhone(){ return cPhone; }
     public String getClientID(){ return clientID; }
-   
 
     // Setter
     public void setCName(String cName) { this.cName = cName; }

@@ -120,10 +120,6 @@ public class TestStage2 {
             cart1.displayWList();
         }
 
-        // Display Client Debt
-        System.out.println("\nClient Debt:");
-        cart1.displayCDebt();
-
     }
 
 }
