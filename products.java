@@ -2,7 +2,7 @@ import java.util.*;
 import java.io.*;
 import java.lang.*;
 
-public class products implements Serializable{
+public class products {
     private String productName;
     private String description;
     private double costPrice;

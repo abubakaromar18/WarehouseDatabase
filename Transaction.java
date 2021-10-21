@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Transaction implements Serializable{
+public class Transaction {
 
     private String transactionID;
     private String OrderNum;
