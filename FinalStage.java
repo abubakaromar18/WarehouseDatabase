@@ -2,10 +2,30 @@ public class FinalStage {
     public static void main(String[] args){
 
         /* Question 1 */
-
+		Client c1= new Client("john","21 Ave SE", "736-345-4434", "03949");
+        Client c2= new Client("mike","7th Ave SE", "493-948-5039", "34283");
+        Client c3= new Client("emily","2088 3rd Ave NE", "459-394-3984", "49582");
+        Client c4= new Client("cheng","864 2th Ave S", "073-895-5938", "93029");
+        Client c5= new Client("paul","212 Ave N", "304-683-1647", "95827");
+        Client c6= new Client("ken","468 8th Ave", "594-474-5920", "62456");
+        Client c7= new Client("tom","2100 2th Ave", "968-483-2648", "68798");
+        Client c8= new Client("fray","956 9th Ave NE", "485-960-4839", "12584");
+        Client c9= new Client("jack","39932 3rd Ave SE", "990-594-9483", "32855");
+        Client c10= new Client("miku","Milkyroad 2453 N", "445-839-4060", "10552");
 
         /* Question 2 */
-
+		ClientList clist=new ClientList();
+        clist.insertClientInfo(c1);
+        clist.insertClientInfo(c2);
+        clist.insertClientInfo(c3);
+        clist.insertClientInfo(c4);
+        clist.insertClientInfo(c5);
+        clist.insertClientInfo(c6);
+        clist.insertClientInfo(c7);
+        clist.insertClientInfo(c8);
+        clist.insertClientInfo(c9);
+        clist.insertClientInfo(c10);
+        clist.displayAllClient();
 
         /* Question 3 */
         products prod1 = new products("Pen","P1245", "Ball-point Pen", 100, 1.75 );
