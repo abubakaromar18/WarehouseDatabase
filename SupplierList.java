@@ -7,7 +7,7 @@ public class SupplierList implements Serializable {
 	private List<Supplier> aList = new LinkedList<Supplier>();
 	private static SupplierList supplierList;
 	
-	private SupplierList() {
+	SupplierList() {
 	}
 	
 	public static SupplierList instance() {
