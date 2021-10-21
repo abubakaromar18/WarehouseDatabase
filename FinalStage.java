@@ -150,11 +150,11 @@ public class FinalStage {
         inventory.displayAllProductList();
         System.out.println("--------------------------------------");
 
-<<<<<<< HEAD
+
         /* Question 8 */
         System.out.println("\nINVENTORY LIST:");
         inventory.displayAllProductList();
-=======
+
         /* Question 13 */
         System.out.println("-----------List of Products-----------");
         inventory.displayAllProductList();
@@ -165,7 +165,6 @@ public class FinalStage {
         System.out.println("-----------List of Products-----------");
         inventory.displayAllProductList();
         System.out.println("--------------------------------------");
->>>>>>> 2240e59b0f42331656ffc4eac0104fb713f62d6e
 
         /* Question 9 */
         System.out.println("\nCLIENT WITH/WITHOUT BALANCE: ");
