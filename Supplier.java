@@ -24,7 +24,9 @@ public class Supplier implements Serializable{
 		pList.add(Item);
 		return true;
 	}	
-
+	public boolean RemoveProduct(Product Item) {
+		return pList.removeProduct(Item);
+	}
 	// Getter
 	public String getId() { return id;}	
 	public String getName() { return name; }
