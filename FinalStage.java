@@ -156,15 +156,25 @@ public class FinalStage {
         System.out.println("Name: " + clist.searchClient("Paul") + "\n" + "Cart Balance: $" + cart5.cartTotal());
 
         /* Question 10 */
-        Transaction transID=new Transaction(10392, 55345, 1204);
-        Transaction transID1=new Transaction(49492, 95823, 5928);
-        Transaction transID2=new Transaction(95933, 59696, 1434);
-        Transaction transID3=new Transaction(59472, 03452, 6642);
-        Transaction transID4=new Transaction(10392, 55345, 1204);
+        Transaction transID=new Transaction("10392", "55345", 1204);
+        Transaction transID1=new Transaction("49492", "95823", 5928);
+        Transaction transID2=new Transaction("95933", "59696", 1434);
+        Transaction transID3=new Transaction("59472", "03452", 6642);
+        Transaction transID4=new Transaction("10392", "55345", 1204);
         
-        transID.insertTra
+        transID.insertItemToTransaction(transID);
+        transID.insertItemToTransaction(transID1);
+        transID.insertItemToTransaction(transID2);
+        transID.insertItemToTransaction(transID3);
+        transID.insertItemToTransaction(transID4);
 
-
+        System.out.println("Client Transaction");
+        System.out.println(transID.gettransactionID());
+        System.out.println(transID1.gettransactionID());
+        System.out.println(transID2.gettransactionID());
+        System.out.println(transID3.gettransactionID());
+        System.out.println(transID4.gettransactionID());
+        
 
 
         /* Question 11 */
@@ -199,6 +209,8 @@ public class FinalStage {
         System.out.println("--------------------------------------");
 
         /* Question 16 */
+
+
 
         /* Question 17 */
         System.out.println("\nACCEPTING PAYMENT: ");
