@@ -43,9 +43,15 @@ public class Cart {
 
 
         Iterator<products> prodIt = pList.getProduct();
+<<<<<<< HEAD
 
         for (Cart c : cartList) {
 
+=======
+
+        for (Cart c : cartList) {
+
+>>>>>>> parent of 910138a (Merge branch 'main' of https://github.com/abubakaromar18/WarehouseDatabase)
             // Product In Cart
             if(c.getproductName().equals(pName)){
                 c.setQuantity(Q);
