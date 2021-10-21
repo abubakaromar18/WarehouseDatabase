@@ -31,10 +31,9 @@ public class Supplier implements Serializable{
 	public String getId() { return id;}	
 	public String getName() { return name; }
 	public String getAddress() { return address; }
-	public productList getProductAssigned() {
-		return pList;
-	}
-	
+	public Iterator<products> getProductAssigned() {
+		return pList.iterator();
+	}	
 	
 	public String toString() { return "Supplier ID: " + id + ";  Name: " + name + ";  Address: " + address; }	
 }	
