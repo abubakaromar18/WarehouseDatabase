@@ -93,6 +93,16 @@ public class FinalStage {
         
         /* Question 7 */
 
+        /* Question 13 */
+        System.out.println("-----------List of Products-----------");
+        inventory.displayAllProductList();
+        System.out.println("--------------------------------------");
+        /* Question 14 */
+        
+        /* Question 15 */
+        System.out.println("-----------List of Products-----------");
+        inventory.displayAllProductList();
+        System.out.println("--------------------------------------");
 
 
         /* Question 17 */
