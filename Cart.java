@@ -7,7 +7,9 @@ public class Cart {
     private double Price;
     private int Quantity;
     private double PriceTotal;
-    private double totalPrice; 
+    private double totalPrice; // Shopping Cart Amount
+    private double wListAmount;
+
 
     private List<Cart> waitList = new LinkedList<Cart>();
 
@@ -101,7 +103,7 @@ public class Cart {
                     
                     int num1 = (c.getQuantity() - pL.getQuantity());
 
-                    totalPrice += (c.getPrice() * c.getQuantity());
+                    wListAmount += (c.getPrice() * c.getQuantity());
 
                     Math.abs(num1);
                     
@@ -165,10 +167,45 @@ public class Cart {
             return 0; 
     }
 
+    // Total Cost Of Shopping Cart
+    public double cartTotal(){
+
+        double n = 0; 
+
+        for (Cart a : cartList){
+
+            n += a.getPriceTotal(); 
+
+            a.setTotalPrice(n);
+
+        }
+
+        return n; 
+    }
+
+    public int acceptPayment(double a, Cart b){
+
+        // Accpt Payment
+        if(a >= b. getTotalPrice()){
+
+            b.setTotalPrice(0); 
+
+            return 1;
+
+        }
+        else{
+            b.setTotalPrice(b. getTotalPrice() - a); 
+        }
+
+        return 0; 
+
+    }
+
 
     // Setter
     public void setName(String productName) { this.productName = productName; }
     public void setPrice(double Price) { this.Price = Price; }
+    public void setWAmount (double a) { this.wListAmount = a; }
     public void setQuantity(int Quantity) { this.Quantity = Quantity; }
     public void setPriceTotal(double PriceTotal) { this.PriceTotal = PriceTotal;}
     public void setTotalPrice(double totalPrice) { this.totalPrice = totalPrice; }
@@ -177,6 +214,7 @@ public class Cart {
     // Getter
     public double getPriceTotal() { return this.PriceTotal; }
     public String getproductName() { return this.productName;}
+    public double setWAmount () { return this.wListAmount; }
     public double getPrice() { return this.Price;}
     public int getQuantity() { return this.Quantity; }
     public double getTotalPrice() { return this.totalPrice; }
