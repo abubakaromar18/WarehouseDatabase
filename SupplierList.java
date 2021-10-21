@@ -22,18 +22,11 @@ public class SupplierList implements Serializable {
 		aList.add(aSupplier);
 		return true;
 	}
-	
-	public Supplier getSupplier(String anId) {
-		for(Supplier supplier: aList) {
-			if(anId.equalsIgnoreCase(supplier.getId()))
-				return (supplier);
-		}
-		return null;
-	}
-		
+
 	public Iterator<Supplier> getSupplierList() {
 		return aList.iterator();
 	}
+
 	
 	private void readObject(java.io.ObjectInputStream inPut) {
 		if(aList != null)
