@@ -155,6 +155,18 @@ public class FinalStage {
         System.out.println("Name: " + clist.searchClient("Tim") + "\n" + "Cart Balance: $" + cart4.cartTotal());
         System.out.println("Name: " + clist.searchClient("Paul") + "\n" + "Cart Balance: $" + cart5.cartTotal());
 
+        /* Question 10 */
+        Transaction transID=new Transaction(10392, 55345, 1204);
+        Transaction transID1=new Transaction(49492, 95823, 5928);
+        Transaction transID2=new Transaction(95933, 59696, 1434);
+        Transaction transID3=new Transaction(59472, 03452, 6642);
+        Transaction transID4=new Transaction(10392, 55345, 1204);
+        
+        transID.insertTra
+
+
+
+
         /* Question 11 */
         System.out.println("\nCLIENT WITH UNPAID BALANCE: ");
         clist.setCBalance("John", cart1.cartTotal());
@@ -185,6 +197,8 @@ public class FinalStage {
         System.out.println("\n-----------List of Products-----------");
         inventory.displayAllProductList();
         System.out.println("--------------------------------------");
+
+        /* Question 16 */
 
         /* Question 17 */
         System.out.println("\nACCEPTING PAYMENT: ");
