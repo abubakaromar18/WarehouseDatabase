@@ -41,14 +41,14 @@ public class Cart {
 
 
         Iterator<products> prodIt = pList.getProduct();
-
-        for (Cart c : cartList) {
-
-            // Product In Cart
-            if(c.getproductName().equals(pName)){
-                c.setQuantity(Q);
-                return 1; 
-            }   
+//INVOICE
+void generateInvoice()
+{
+    //clientID
+    //Transaction #
+    //Products bought
+    //cost
+} }   
         }
 
         while (prodIt.hasNext()){
@@ -161,7 +161,6 @@ public class Cart {
         else
             return 0; 
     }
-
 
     // Setter
     public void setName(String productName) { this.productName = productName; }
