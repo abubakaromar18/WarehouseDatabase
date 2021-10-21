@@ -3,7 +3,7 @@ import java.util.*;
 import java.lang.*;
 import java.text.Format;
 
-public class Client{
+public class Client implements Serializable{
     
     private String cName;
     private String cAddress;

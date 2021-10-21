@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*;
 import java.lang.*;
 
-public class ClientList{
+public class ClientList implements Serializable{
 
     private List<Client> clientList = new LinkedList<Client>();
 

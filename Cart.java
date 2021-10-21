@@ -1,6 +1,7 @@
 import java.util.*;
 import java.io.*;
-public class Cart {
+
+public class Cart implements Serializable{
 
     private products product;
     private String productName;
@@ -14,13 +15,14 @@ public class Cart {
 
     private List<Cart> cartList = new LinkedList<Cart>();
 
-    public void insertItemToCart(Cart l) {cartList.add(l); }
-
-    public void insertWaitList(products l) { waitList.add(l); }
-
+    // Client Debt
     private List<Double> cDebt = new LinkedList<Double>();
 
     public void insertCDebt(Double a) { cDebt.add(a); }
+
+    public void insertItemToCart(Cart l) {cartList.add(l); }
+
+    public void insertWaitList(products l) { waitList.add(l); }
 
     // Contructor
     Cart(String productName, int Quantity, double Price, double PriceTotal){
