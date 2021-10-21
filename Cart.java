@@ -40,16 +40,8 @@ public class Cart {
     public int updateCart(String pName, int Q, productList pList){
 
 
-        Iterator<products> prodIt = pList.getProduct();
-//INVOICE
-void generateInvoice()
-{
-    //clientID
-    //Transaction #
-    //Products bought
-    //cost
-} }   
-        }
+        Iterator<products> prodIt = pList.getProduct();  
+
 
         while (prodIt.hasNext()){
 
