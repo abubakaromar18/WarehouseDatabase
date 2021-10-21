@@ -2,20 +2,20 @@ public class FinalStage {
     public static void main(String[] args){
 
         /* Question 1 */
-		Client c1= new Client("John","21 Ave SE", "736-345-4434", "03949");
-        Client c2= new Client("Mike","7th Ave SE", "493-948-5039", "34283");
-        Client c3= new Client("Emily","2088 3rd Ave NE", "459-394-3984", "49582");
-        Client c4= new Client("Tim","864 2th Ave S", "073-895-5938", "93029");
-        Client c5= new Client("Paul","212 Ave N", "304-683-1647", "95827");
-        Client c6= new Client("Ken","468 8th Ave", "594-474-5920", "62456");
-        Client c7= new Client("Tom","2100 2th Ave", "968-483-2648", "68798");
-        Client c8= new Client("Fray","956 9th Ave NE", "485-960-4839", "12584");
-        Client c9= new Client("Jack","39932 3rd Ave SE", "990-594-9483", "32855");
-        Client c10= new Client("Miku","Milkyroad 2453 N", "445-839-4060", "10552");
+		Client c1= new Client("John","21 Ave SE", "736-345-4434", "03949", 0);
+        Client c2= new Client("Mike","7th Ave SE", "493-948-5039", "34283", 0);
+        Client c3= new Client("Emily","2088 3rd Ave NE", "459-394-3984", "49582", 0);
+        Client c4= new Client("Tim","864 2th Ave S", "073-895-5938", "93029", 0);
+        Client c5= new Client("Paul","212 Ave N", "304-683-1647", "95827", 0);
+        Client c6= new Client("Ken","468 8th Ave", "594-474-5920", "62456", 0);
+        Client c7= new Client("Tom","2100 2th Ave", "968-483-2648", "68798", 0);
+        Client c8= new Client("Fray","956 9th Ave NE", "485-960-4839", "12584", 0);
+        Client c9= new Client("Jack","39932 3rd Ave SE", "990-594-9483", "32855", 0);
+        Client c10= new Client("Miku","Milkyroad 2453 N", "445-839-4060", "10552", 0);
 
         /* Question 2 */
         System.out.println("\nCLIENT LIST: ");
-		ClientList clist=new ClientList();
+		ClientList clist = new ClientList();
         clist.insertClientInfo(c1);
         clist.insertClientInfo(c2);
         clist.insertClientInfo(c3);
@@ -57,8 +57,6 @@ public class FinalStage {
         
         
         /* Question 5 */
-
-
         Supplier sup1 = new Supplier("5892","Ben","address1");
         Supplier sup2 = new Supplier("7442","Adam","address2");
         Supplier sup3 = new Supplier("3707","David","address3");
@@ -105,20 +103,24 @@ public class FinalStage {
         cart1.insertItemToCart(cart3);
         cart1.insertItemToCart(cart4);
         cart1.insertItemToCart(cart5);
+       
 
         // Client 2 Shopping Cart
         cart2.insertItemToCart(cart1);
         cart2.insertItemToCart(cart3);
         cart2.insertItemToCart(cart4);
         cart2.insertItemToCart(cart5);
+       
 
         // Client 3 Shopping Cart
         cart3.insertItemToCart(cart1);
         cart3.insertItemToCart(cart3);
+        
       
         // Client 4 Shopping Cart
         cart4.insertItemToCart(cart4);
         cart4.insertItemToCart(cart5);
+       
 
         System.out.println("\nCLIENT 1 SHOPPING CART:");
         cart1.displayAllCart();
@@ -139,32 +141,18 @@ public class FinalStage {
             System.out.println("\nWarehouse Doesn't Carry This Product: ");
         
 
-        /* Question 13 */
-        System.out.println("-----------List of Products-----------");
-        inventory.displayAllProductList();
-        System.out.println("--------------------------------------");
-        /* Question 14 */
         
-        /* Question 15 */
-        System.out.println("-----------List of Products-----------");
-        inventory.displayAllProductList();
-        System.out.println("--------------------------------------");
+    
+        
+ 
 
 
         /* Question 8 */
         System.out.println("\nINVENTORY LIST:");
         inventory.displayAllProductList();
 
-        /* Question 13 */
-        System.out.println("-----------List of Products-----------");
-        inventory.displayAllProductList();
-        System.out.println("--------------------------------------");
-        /* Question 14 */
         
-        /* Question 15 */
-        System.out.println("-----------List of Products-----------");
-        inventory.displayAllProductList();
-        System.out.println("--------------------------------------");
+        
 
         /* Question 9 */
         System.out.println("\nCLIENT WITH/WITHOUT BALANCE: ");
@@ -175,6 +163,12 @@ public class FinalStage {
         System.out.println("Name: " + clist.searchClient("Paul") + "\n" + "Cart Balance: $" + cart5.cartTotal());
 
         /* Question 11 */
+        System.out.println("\nCLIENT WITH UNPAID BALANCE: ");
+        clist.setCBalance("John", cart1.cartTotal());
+        clist.setCBalance("Mike", cart2.cartTotal());
+        clist.setCBalance("Emily", cart3.cartTotal());
+        clist.setCBalance("Tim", cart4.cartTotal());
+        clist.displayCBalance();
 
         /* Question 12 */
         System.out.println("\nPROCESSING ALL SHOPPING CART: ");
@@ -186,6 +180,19 @@ public class FinalStage {
         System.out.println("\nCLIENT 1 WAITLIST: ");
         cart1.displayWList();
 
+        
+
+        /* Question 13 */
+        System.out.println("\n-----------List of Products-----------");
+        inventory.displayAllProductList();
+        System.out.println("--------------------------------------");
+
+
+        /* Question 15 */
+        System.out.println("\n-----------List of Products-----------");
+        inventory.displayAllProductList();
+        System.out.println("--------------------------------------");
+
         /* Question 17 */
         System.out.println("\nACCEPTING PAYMENT: ");
         System.out.println("\nFOLLOWING CLIENT STILL HAVE AMOUNT DUE: ");
@@ -195,17 +202,16 @@ public class FinalStage {
 
         n = cart2.acceptPayment(150, cart2);
             if (n == 0)
-            System.out.println("Name: " + clist.searchClient("John") + "\n" + "Cart Balance: $" + cart2.getTotalPrice());
+            System.out.println("Name: " + clist.searchClient("Mike") + "\n" + "Cart Balance: $" + cart2.getTotalPrice());
 
         n = cart3.acceptPayment(200, cart3);
             if (n == 0)
-            System.out.println("Name: " + clist.searchClient("John") + "\n" + "Cart Balance: $" + cart3.getTotalPrice());
+            System.out.println("Name: " + clist.searchClient("Emily") + "\n" + "Cart Balance: $" + cart3.getTotalPrice());
 
         n = cart4.acceptPayment(500, cart4);
             if (n == 0)
-            System.out.println("Name: " + clist.searchClient("John") + "\n" + "Cart Balance: $" + cart4.getTotalPrice());
-
-
+            System.out.println("Name: " + clist.searchClient("Time") + "\n" + "Cart Balance: $" + cart4.getTotalPrice());
+            
 
 
         /* Question 18 */

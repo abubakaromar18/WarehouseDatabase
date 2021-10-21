@@ -52,6 +52,7 @@ public class Cart {
             // Product In Cart
             if(c.getproductName().equals(pName)){
                 c.setQuantity(Q);
+                c.setPriceTotal(c.getQuantity()*getPrice());
                 return 1; 
             }   
         }
@@ -183,6 +184,7 @@ public class Cart {
         return n; 
     }
 
+    // Accept Payment
     public int acceptPayment(double a, Cart b){
 
         // Accpt Payment

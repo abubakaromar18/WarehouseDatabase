@@ -18,6 +18,28 @@ public class ClientList{
             System.out.println(c);
     } 
 
+    // Set Client Balance
+    public Client setCBalance(String name, double amount){
+
+        for (Client c: clientList){
+
+            if (c.getClientName().equals(name))
+                c.setCBalance(amount);
+        }
+        return null; 
+    }
+
+    // Display Client With Balance
+    public Client displayCBalance(){
+
+        for (Client c : clientList){
+            if (c.getClientBalance() > 0)
+                System.out.println(c.getClientName());
+        }
+
+        return null; 
+    }
+
     // Search For Client
     public Client searchClient(String find){
 
