@@ -1,21 +1,21 @@
-import java.io.PrintStream;
 import java.util.*;
-
+import java.io.*;
 public class Cart {
 
+    private products product;
     private String productName;
     private double Price;
     private int Quantity;
     private double PriceTotal;
     private double totalPrice; 
 
-    private List<Cart> waitList = new LinkedList<Cart>();
+    private List<products> waitList = new LinkedList<products>();
 
     private List<Cart> cartList = new LinkedList<Cart>();
 
     public void insertItemToCart(Cart l) {cartList.add(l); }
 
-    public void insertWaitList(Cart l) { waitList.add(l); }
+    public void insertWaitList(products l) { waitList.add(l); }
 
     // Contructor
     Cart(String productName, int Quantity, double Price, double PriceTotal){
@@ -25,9 +25,14 @@ public class Cart {
         this.PriceTotal = PriceTotal;
     }
 
+    //WaitList
     void putIntoWaitList(String productName, int Quantity){
-        this.productName = productName;
-        this.Quantity = Quantity;
+        product = new products();
+        product.setProduct(productName);
+        product.setQuantity(Quantity);
+        
+
+        waitList.add(product);
 
     }
 
@@ -102,7 +107,7 @@ public class Cart {
                     c.putIntoWaitList(c.getproductName(), num1);
 
                     // Put Into WaitList
-                    waitList.add(c);
+                    // waitList.add(c);
 
                     break;
                 }
@@ -116,7 +121,7 @@ public class Cart {
     // Display All Wait List
     public void displayWList(){
 
-        for (Cart c : waitList) 
+        for (products c : waitList) 
             System.out.println(c);
     } 
     
