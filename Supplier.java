@@ -3,6 +3,7 @@ import java.io.*;
 public class Supplier implements Serializable{
 
 	private static final long serialVersionUID = 1L;
+	private productList pList = new productList();	
 	private String id;	
 	private String name;			
 	private String address;			
@@ -19,6 +20,10 @@ public class Supplier implements Serializable{
 	public void setid(String id) { this.id = id; }
 	public void setName(String name) { this.name = name; }
 	public void setAddress(String address) {this.address = address; }
+	public boolean AssignProduct(Product Item) {
+		pList.add(Item);
+		return true;
+	}	
 
 	// Getter
 	public String getId() { return id;}	
