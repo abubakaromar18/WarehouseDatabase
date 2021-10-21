@@ -33,12 +33,41 @@ public class FinalStage {
         inventory.addProductList(prod8);
         inventory.addProductList(prod9);
         inventory.addProductList(prod10);
+        
+        
         /* Question 5 */
+        private static Supplierlist supplierlist 
+        Supplier sup1 = new Supplier("5892","Ben","address1");
+        Supplier sup2 = new Supplier("7442","Adam","address2");
+        Supplier sup3 = new Supplier("3707","David","address3");
+        Supplier sup4 = new Supplier("9666","Annie","address4");
+        Supplier sup5 = new Supplier("1796","Jenny","address5");
+        Supplier sup6 = new Supplier("2102","Cathy","address6");
+        Supplier sup7 = new Supplier("4487","Thomas","address7");
+        Supplier sup8 = new Supplier("8985","Jackson","address8");
+        Supplier sup9 = new Supplier("9698","Cathrine","address9");
+        Supplier sup10 = new Supplier("2233","Amy","address10");
 
-
+        supplierlist db = new supplierlist();
+        db.addSupplier(sup1);
+        db.addSupplier(sup2);
+        db.addSupplier(sup3);
+        db.addSupplier(sup4);
+        db.addSupplier(sup5);
+        db.addSupplier(sup6);
+        db.addSupplier(sup7);
+        db.addSupplier(sup8);
+        db.addSupplier(sup9);
+        db.addSupplier(sup10);
+        
         /* Question 6 */
-
-
+        Iterator<?> allSupplier = getSupplierList();
+        System.out.println("-----Ten Suppliers listed-----");
+    	while(allSupplier.hasNext()) {
+    		Supplier supplier = (Supplier) allSupplier.next();
+    		System.out.println(supplier.toString());
+    	}
+        
         /* Question 7 */
 
 
@@ -77,8 +106,16 @@ public class FinalStage {
         /* Question 17 */
 
 
-        /* Question 18 */
-
+        /* Question 18 */        
+ 		Iterator<String> Unpaidbalance = getUnpaidbalanceList();
+ 		if(!Unpaidbalance.hasNext()) {
+ 			System.out.println("...No client in the list...!!!!");
+ 		}
+ 	 	System.out.println("\n-----Client(id) that had unpaid Balance-----");
+ 	 	while(Unpaidbalance.hasNext()) {
+ 	 		String id = (String) Unpaidbalance.next();
+ 	 		System.out.println(id);
+ 	 	}       
 
 
         /* Question 19 */
@@ -90,5 +127,10 @@ public class FinalStage {
 
 
     }
-    
+  	    public Iterator<Supplier> getSupplierList() {
+  		    return supplierList.getSupplierList();
+    	}
+      	public Iterator<String> getUnpaidbalanceList() {
+  		    return UnpaidBalanceList.getIterator();
+      	}
 }
