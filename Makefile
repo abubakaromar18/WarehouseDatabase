@@ -12,7 +12,7 @@ compile4:
 	javac Cart.java Transaction.java
 
 compile5:
-	javac FinalStage.java
+	javac TestStage1.java
 
 
 clean:

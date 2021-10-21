@@ -1,8 +1,8 @@
+import java.io.PrintStream;
 import java.util.*;
-import java.io.*;
+
 public class Cart {
 
-    private products product;
     private String productName;
     private double Price;
     private int Quantity;
@@ -10,13 +10,13 @@ public class Cart {
     private double totalPrice; 
     private double clientDebt; 
 
-    private List<products> waitList = new LinkedList<products>();
+    private List<Cart> waitList = new LinkedList<Cart>();
 
     private List<Cart> cartList = new LinkedList<Cart>();
 
     public void insertItemToCart(Cart l) {cartList.add(l); }
 
-    public void insertWaitList(products l) { waitList.add(l); }
+    public void insertWaitList(Cart l) { waitList.add(l); }
 
     private List<Double> cDebt = new LinkedList<Double>();
 
@@ -30,14 +30,9 @@ public class Cart {
         this.PriceTotal = PriceTotal;
     }
 
-    //WaitList
     void putIntoWaitList(String productName, int Quantity){
-        product = new products();
-        product.setProduct(productName);
-        product.setQuantity(Quantity);
-        
-
-        waitList.add(product);
+        this.productName = productName;
+        this.Quantity = Quantity;
 
     }
 
@@ -45,8 +40,16 @@ public class Cart {
     public int updateCart(String pName, int Q, productList pList){
 
 
-        Iterator<products> prodIt = pList.getProduct();  
+        Iterator<products> prodIt = pList.getProduct();
 
+        for (Cart c : cartList) {
+
+            // Product In Cart
+            if(c.getproductName().equals(pName)){
+                c.setQuantity(Q);
+                return 1; 
+            }   
+        }
 
         while (prodIt.hasNext()){
 
@@ -104,7 +107,7 @@ public class Cart {
                     c.putIntoWaitList(c.getproductName(), num1);
 
                     // Put Into WaitList
-                    // waitList.add(c);
+                    waitList.add(c);
 
                     break;
                 }
@@ -131,7 +134,7 @@ public class Cart {
     // Display All Wait List
     public void displayWList(){
 
-        for (products c : waitList) 
+        for (Cart c : waitList) 
             System.out.println(c);
     } 
     
@@ -171,6 +174,7 @@ public class Cart {
         else
             return 0; 
     }
+
 
     // Setter
     public void setName(String productName) { this.productName = productName; }
