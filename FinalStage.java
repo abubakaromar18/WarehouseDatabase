@@ -98,20 +98,20 @@ public class FinalStage {
 
         
     
-  	    /*public Iterator<Supplier> getSupplierList() {
-  		    return supplierList.getSupplierList();
-    	}
-      	public Iterator<String> getUnpaidbalanceList() {
-  		    return UnpaidBalanceList.getIterator();
-      	}*/
 
         
 
 
 
 
-    }
-    
-
+    } 	
+        private SupplierList supplierList;
+      	private UnpaidBalance UnpaidBalanceList;
+  	    /*public Iterator<Supplier> getSupplierList() {
+  		    return supplierList.getSupplierList();
+    	}
+      	public Iterator<String> getUnpaidbalanceList() {
+  		    return UnpaidBalanceList.getIterator();
+      	}*/
     
 }
