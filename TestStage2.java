@@ -15,7 +15,7 @@ public class TestStage2 {
         Scanner in = new Scanner(System.in);
 
         // Client
-        Client client1 = new Client("Jack", "123 1ST Ave", "(123) 456-8789", "ID1");
+        Client client1 = new Client("Jack", "123 1ST Ave", "(123) 456-8789", "ID1",0);
 
         // Shopping Cart
         Cart cart1 = new Cart("Pen", 150, 12.35, (12.35 * 14));

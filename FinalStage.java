@@ -140,16 +140,6 @@ public class FinalStage {
         else
             System.out.println("\nWarehouse Doesn't Carry This Product: ");
         
-<<<<<<< HEAD
-
-        
-    
-        
- 
-
-
-=======
->>>>>>> efab8da5f33e06073a50aa84664d3a67de460f23
         /* Question 8 */
         System.out.println("\nINVENTORY LIST:");
         inventory.displayAllProductList();

@@ -10,9 +10,9 @@ public class TestStage1 {
         
         String input;
 
-        Client a = new Client("Jack", "123 1ST Ave", "(123) 456-8789", "ID1");
+        Client a = new Client("Jack", "123 1ST Ave", "(123) 456-8789", "ID1",0);
 
-        Client b = new Client("Lucy", "456 2ND Ave", "(456) 799-1324", "ID2");
+        Client b = new Client("Lucy", "456 2ND Ave", "(456) 799-1324", "ID2",0);
 
         Cart e = new Cart("Pen", 14, 12.32, 100);
 
