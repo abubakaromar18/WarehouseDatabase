@@ -1,10 +1,6 @@
 import java.io.PrintStream;
 import java.util.*;
-<<<<<<< HEAD
 
-=======
-import java.io.*;
->>>>>>> parent of f8141f9 (update)
 public class Cart {
 
     private String productName;
@@ -18,17 +14,10 @@ public class Cart {
     private List<Cart> cartList = new LinkedList<Cart>();
 
     public void insertItemToCart(Cart l) {cartList.add(l); }
-<<<<<<< HEAD
 
     public void insertWaitList(Cart l) { waitList.add(l); }
 
 <<<<<<< HEAD
-    private List<Double> cDebt = new LinkedList<Double>();
-=======
->>>>>>> parent of f8141f9 (update)
-
-    public void insertCDebt(Double a) { cDebt.add(a); }
-
     private List<Double> cDebt = new LinkedList<Double>();
 
     public void insertCDebt(Double a) { cDebt.add(a); }
