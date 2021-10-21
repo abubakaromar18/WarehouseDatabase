@@ -17,13 +17,12 @@ public class Cart {
 
     public void insertWaitList(Cart l) { waitList.add(l); }
 
-<<<<<<< HEAD
+
     private List<Double> cDebt = new LinkedList<Double>();
 
     public void insertCDebt(Double a) { cDebt.add(a); }
 
-=======
->>>>>>> parent of 28e0972 (update)
+
     // Contructor
     Cart(String productName, int Quantity, double Price, double PriceTotal){
         this.productName = productName;
@@ -43,15 +42,11 @@ public class Cart {
 
 
         Iterator<products> prodIt = pList.getProduct();
-<<<<<<< HEAD
+
 
         for (Cart c : cartList) {
 
-=======
 
-        for (Cart c : cartList) {
-
->>>>>>> parent of 910138a (Merge branch 'main' of https://github.com/abubakaromar18/WarehouseDatabase)
             // Product In Cart
             if(c.getproductName().equals(pName)){
                 c.setQuantity(Q);
