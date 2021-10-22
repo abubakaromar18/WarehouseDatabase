@@ -1,5 +1,22 @@
 public class FinalStage {
+
+
+    // Accept Payment From Client
+    public void acceptPayment(ClientList clist, Cart cart1, String cName, double amountPay){
+    
+        int n = cart1.acceptPayment(amountPay, cart1);
+            if (n == 0){
+                clist.setCBalance(cName, cart1.getTotalPrice());
+                System.out.println("Name: " + clist.searchClient(cName) + "\n" + "Cart Balance: $" + cart1.getTotalPrice());
+            }
+            else
+                clist.setCBalance(cName, cart1.cartTotal());
+    }
+
+
     public static void main(String[] args){
+
+        FinalStage f1 = new FinalStage();
 
         /* Question 1 */
 		Client c1= new Client("John","21 Ave SE", "736-345-4434", "03949", 0);
@@ -212,27 +229,13 @@ public class FinalStage {
         /* Question 17 */
         System.out.println("\nPROCESSING PAYMENT! ");
         System.out.println("\nFOLLOWING CLIENT STILL HAVE AMOUNT DUE: ");
-        int n = cart1.acceptPayment(1623, cart1);
-        clist.setCBalance("John", cart1.cartTotal());
-            if (n == 0)
-            System.out.println("Name: " + clist.searchClient("John") + "\n" + "Cart Balance: $" + cart1.getTotalPrice());
-
-        n = cart2.acceptPayment(150, cart2);
-        clist.setCBalance("Mike", cart2.cartTotal());
-            if (n == 0)
-            System.out.println("Name: " + clist.searchClient("Mike") + "\n" + "Cart Balance: $" + cart2.getTotalPrice());
-
-        n = cart3.acceptPayment(200, cart3);
-        clist.setCBalance("Emily", cart3.cartTotal());
-            if (n == 0)
-            System.out.println("Name: " + clist.searchClient("Emily") + "\n" + "Cart Balance: $" + cart3.getTotalPrice());
-
-        n = cart4.acceptPayment(500, cart4);
-        clist.setCBalance("Tim", cart4.cartTotal());
-            if (n == 0)
-            System.out.println("Name: " + clist.searchClient("Time") + "\n" + "Cart Balance: $" + cart4.getTotalPrice());
-            
-
+        f1.acceptPayment(clist, cart1, "John" , 1623);
+        f1.acceptPayment(clist, cart2, "Mike" , 150);
+        f1.acceptPayment(clist, cart3, "Emily" , 300);
+        f1.acceptPayment(clist, cart4, "Tim" , 500);
+     
+      
+    
 
         /* Question 18 */
 
