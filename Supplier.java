@@ -38,7 +38,13 @@ public class Supplier implements Serializable{
 	/*
 	public Iterator<products> getProductAssigned() {
 		return pList.iterator();
-	}	*/
+	}	
+	
+	public String getProductPrice() {
+		return pList.getCostPrice();
+	}	
+	
+	*/
 	
 	public String toString() { return "Supplier ID: " + id + ";  Name: " + name + ";  Address: " + address; }	
 }	
