@@ -9,7 +9,7 @@ compile3:
 	javac Supplier.java SupplierList.java
 
 compile4:
-	javac Cart.java Transaction.java UnpaidBalance.java
+	javac Cart.java Transaction.java
 
 compile5:
 	javac FinalStage.java
