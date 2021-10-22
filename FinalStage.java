@@ -1,25 +1,11 @@
+import java.util.*;
+import java.io.*;
+
 public class FinalStage {
-
-
-    // Accept Payment From Client
-    public void acceptPayment(ClientList clist, Cart c, String cName, double amountPay){
-    
-        int n = c.acceptPayment(amountPay, c);
-            if (n == 0){
-                clist.setCBalance(cName, c.getTotalPrice());
-                System.out.println("Name: " + clist.searchClient(cName) + "\n" + "Cart Balance: $" + c.getTotalPrice());
-            }
-            else
-                clist.setCBalance(cName, c.cartTotal());
-    }
-
-
     public static void main(String[] args){
 
-        FinalStage f1 = new FinalStage();
-
         /* Question 1 */
-		Client c1= new Client("John","21 Ave SE", "736-345-4434", "03949", 0);
+	Client c1= new Client("John","21 Ave SE", "736-345-4434", "03949", 0);
         Client c2= new Client("Mike","7th Ave SE", "493-948-5039", "34283", 0);
         Client c3= new Client("Emily","2088 3rd Ave NE", "459-394-3984", "49582", 0);
         Client c4= new Client("Tim","864 2th Ave S", "073-895-5938", "93029", 0);
@@ -115,50 +101,43 @@ public class FinalStage {
         Cart cart5 = new Cart("Calculator", 10, 114.99, (114.99 * 10));
 
         // Client 1 Shopping Cart
-        Cart client1Cart = cart1; 
         cart1.insertItemToCart(cart1);
         cart1.insertItemToCart(cart2);
         cart1.insertItemToCart(cart3);
         cart1.insertItemToCart(cart4);
         cart1.insertItemToCart(cart5);
-        
-        
+       
 
         // Client 2 Shopping Cart
-        Cart client2Cart = cart2; 
         cart2.insertItemToCart(cart1);
         cart2.insertItemToCart(cart3);
         cart2.insertItemToCart(cart4);
         cart2.insertItemToCart(cart5);
-
-
+       
 
         // Client 3 Shopping Cart
-        Cart client3Cart = cart3; 
         cart3.insertItemToCart(cart1);
         cart3.insertItemToCart(cart3);
-
         
       
         // Client 4 Shopping Cart
-        Cart client4Cart = cart4; 
         cart4.insertItemToCart(cart4);
         cart4.insertItemToCart(cart5);
        
 
         System.out.println("\nCLIENT 1 SHOPPING CART:");
-        client1Cart.displayAllCart();
+        cart1.displayAllCart();
 
         // Update Client 1 Shopping Cart
-        client1Cart.updateCart("Pen", 250, inventory);
-        client1Cart.updateCart("Folders", 150, inventory);
-        client1Cart.updateCart("Sharpener", 112, inventory);
-        int productFound = client1Cart.updateCart("Calculator", 130, inventory);
+        cart1.updateCart("Pen", 250, inventory);
+        cart1.updateCart("Folders", 150, inventory);
+        cart1.updateCart("Sharpener", 112, inventory);
+        int productFound = cart1.updateCart("Calculator", 130, inventory);
 
         // Display Client 1 Updated Shopping Cart
         if(productFound == 1){
             System.out.println("\nCLIENT 1 UPDATED SHOPPING CART: ");
-            client1Cart.displayAllCart();
+            cart1.displayAllCart();
 
         }
         else
@@ -173,10 +152,10 @@ public class FinalStage {
 
         /* Question 9 */
         System.out.println("\nCLIENT WITH/WITHOUT BALANCE: ");
-        System.out.println("Name: " + clist.searchClient("John") + "\n" + "Cart Balance: $" + client1Cart.cartTotal());
-        System.out.println("Name: " + clist.searchClient("Mike") + "\n" + "Cart Balance: $" + client2Cart.cartTotal());
-        System.out.println("Name: " + clist.searchClient("Emily") + "\n" + "Cart Balance: $" + client3Cart.cartTotal());
-        System.out.println("Name: " + clist.searchClient("Tim") + "\n" + "Cart Balance: $" + client4Cart.cartTotal());
+        System.out.println("Name: " + clist.searchClient("John") + "\n" + "Cart Balance: $" + cart1.cartTotal());
+        System.out.println("Name: " + clist.searchClient("Mike") + "\n" + "Cart Balance: $" + cart2.cartTotal());
+        System.out.println("Name: " + clist.searchClient("Emily") + "\n" + "Cart Balance: $" + cart3.cartTotal());
+        System.out.println("Name: " + clist.searchClient("Tim") + "\n" + "Cart Balance: $" + cart4.cartTotal());
         System.out.println("Name: " + clist.searchClient("Paul") + "\n" + "Cart Balance: $" + cart5.cartTotal());
 
         /* Question 10 */
@@ -192,28 +171,28 @@ public class FinalStage {
         transID.insertItemToTransaction(transID3);
         transID.insertItemToTransaction(transID4);
 
-        System.out.println("\nClient Transaction");
+        System.out.println("Client Transaction");
         transID.displayAllTranscation();
 
 
 
         /* Question 11 */
         System.out.println("\nCLIENT WITH UNPAID BALANCE: ");
-        clist.setCBalance("John", client1Cart.cartTotal());
-        clist.setCBalance("Mike", client2Cart.cartTotal());
-        clist.setCBalance("Emily", client3Cart.cartTotal());
-        clist.setCBalance("Tim", client4Cart.cartTotal());
+        clist.setCBalance("John", cart1.cartTotal());
+        clist.setCBalance("Mike", cart2.cartTotal());
+        clist.setCBalance("Emily", cart3.cartTotal());
+        clist.setCBalance("Tim", cart4.cartTotal());
         clist.displayCBalance();
 
         /* Question 12 */
         System.out.println("\nPROCESSING ALL SHOPPING CART: ");
-        client1Cart.processCart(inventory);
-        client2Cart.processCart(inventory);
-        client3Cart.processCart(inventory);
-        client4Cart.processCart(inventory);
+        cart1.processCart(inventory);
+        cart2.processCart(inventory);
+        cart3.processCart(inventory);
+        cart4.processCart(inventory);
 
         System.out.println("\nCLIENT 1 WAITLIST: ");
-        client1Cart.displayWList();
+        cart1.displayWList();
 
         
 
@@ -230,50 +209,84 @@ public class FinalStage {
 
         /* Question 16 */
         System.out.println("\nCLIENT WITH UNPAID BALANCE: ");
+        clist.setCBalance("John", cart1.cartTotal());
+        clist.setCBalance("Mike", cart2.cartTotal());
+        clist.setCBalance("Emily", cart3.cartTotal());
+        clist.setCBalance("Tim", cart4.cartTotal());
         clist.displayCBalance();
 
 
         /* Question 17 */
-        System.out.println("\nPROCESSING PAYMENT! ");
+        System.out.println("\nACCEPTING PAYMENT: ");
         System.out.println("\nFOLLOWING CLIENT STILL HAVE AMOUNT DUE: ");
-        f1.acceptPayment(clist, client1Cart, "John" , 1623);
-        f1.acceptPayment(clist, client2Cart, "Mike" , 150);
-        f1.acceptPayment(clist, client3Cart, "Emily" , 300);
-        f1.acceptPayment(clist, client4Cart, "Tim" , 500);
-     
-      
-    
+        int n = cart1.acceptPayment(1623, cart1);
+            if (n == 0)
+            System.out.println("Name: " + clist.searchClient("John") + "\n" + "Cart Balance: $" + cart1.getTotalPrice());
 
-        /* Question 18 */
+        n = cart2.acceptPayment(150, cart2);
+            if (n == 0)
+            System.out.println("Name: " + clist.searchClient("Mike") + "\n" + "Cart Balance: $" + cart2.getTotalPrice());
 
-        /* Question 18 */       
+        n = cart3.acceptPayment(200, cart3);
+            if (n == 0)
+            System.out.println("Name: " + clist.searchClient("Emily") + "\n" + "Cart Balance: $" + cart3.getTotalPrice());
+
+        n = cart4.acceptPayment(500, cart4);
+            if (n == 0)
+            System.out.println("Name: " + clist.searchClient("Time") + "\n" + "Cart Balance: $" + cart4.getTotalPrice());
+            
+
+
+        /* Question 18 */  
         
- 		/*Iterator<String> Unpaidbalance = getUnpaidbalanceList();
- 		if(!Unpaidbalance.hasNext()) {
- 			System.out.println("...No client in the list...!!!!");
- 		}
- 	 	System.out.println("\n-----Client(id) that had unpaid Balance-----");
- 	 	while(Unpaidbalance.hasNext()) {
- 	 		String id = (String) Unpaidbalance.next();
- 	 		System.out.println(id);
- 	 	}      */ 
+ 	/*Iterator<String> Unpaidbalance = getUnpaidbalanceList();
+ 	if(!Unpaidbalance.hasNext()) {
+ 		System.out.println("...No client in the list...!!!!");
+ 	}
+ 	 System.out.println("\n-----Client(id) that had unpaid Balance-----");
+ 	 while(Unpaidbalance.hasNext()) {
+ 	 	String id = (String) Unpaidbalance.next();
+ 	 	System.out.println(id);
+ 	 }      */ 
           
 
 
         /* Question 19 */
 
-        
-    
-
-        
-
-
-
-
+        /*
+    	Supplier supplier1 = findSupplier("5892");
+    	Supplier supplier2 = findSupplier("2102");	
+     	Supplier supplier3 = findSupplier("9698");       
+	supplier1.AssignProduct(prod1);
+	supplier2.AssignProduct(prod2);	
+	supplier3.AssignProduct(prod3);
+ 	System.out.println("price in productlist: \n");
+ 	System.out.println(prod1.getCostPrice() + "\n");
+ 	System.out.println(prod2.getCostPrice() + "\n");
+ 	System.out.println(prod3.getCostPrice() + "\n");
+	
+ 	System.out.println("price in Supplierlist: \n");
+ 	System.out.println(supplier1.getProductPrice() + "\n");
+ 	System.out.println(supplier2.getProductPrice() + "\n");
+ 	System.out.println(supplier3.getProductPrice() + "\n");	
+	
+	*/
     } 	
         private SupplierList supplierList;
       	private UnpaidBalance UnpaidBalanceList;
-  	    /*public Iterator<Supplier> getSupplierList() {
+      /*
+
+	public Supplier findSupplier(String supplierId) {
+  		Iterator<Supplier> iterator = supplierList.getSupplierList();
+  		while(iterator.hasNext()) {
+  			Supplier supplier = (Supplier) iterator.next();
+  			if(supplier.getId().equalsIgnoreCase(supplierId))
+  				return supplier; 
+  		}
+  		return null;
+  	}      		
+	
+	public Iterator<Supplier> getSupplierList() {
   		    return supplierList.getSupplierList();
     	}
       	public Iterator<String> getUnpaidbalanceList() {
