@@ -1,12 +1,11 @@
-import java.io.*;
 import java.util.*;
-import java.lang.*;
 import java.util.Scanner;
 
 // Stage 2 Client, ClientList, Cart, Transaction Test
-public class TestStage3 {
-   
-    public static void main(String[] args){
+public class TestStage3 
+{
+    public static void main(String[] args)
+    {
         
         String pName;
 
@@ -78,13 +77,15 @@ public class TestStage3 {
         productFound = cart1.updateCart(pName, pQuantity, pList1);
 
         // Product Is In Shopping Cart. Display Update Cart
-        if(productFound == 1){
+        if(productFound == 1)
+        {
             System.out.println("Updated Shopping Cart: ");
             cart1.displayAllCart();
-
         }
         else
+        {
             System.out.println("Warehouse Doesn't Carry This Product: " + pName);
+        }
 
 
         // Process Shopping Cart
@@ -97,10 +98,14 @@ public class TestStage3 {
         
         // Is Cart Empty After Cart Is Process
         if (cart1.CheckEmpty() == 0)
+        {
             System.out.println("\nCart Is Not Empty After Processing Shopping Cart!" + "\n");
+        }
         
         else
+        {
             System.out.println("\nCart Is Empty After Processing Shopping Cart!" + "\n");
+        }
         
 
         // Display All Product List
@@ -114,58 +119,74 @@ public class TestStage3 {
 
          // Desplay WaitList
         if (cart1.checkWaitList() == 1)
+        {
             System.out.println("\nWait List Is Empty");
-        else{
+        }
+
+        else
+        {
             System.out.println("\nWait List Item:");
             cart1.displayWList();
         }
 
         /* New shipment is recieved, waitlist needs to be updated, and products quanity should be updated */
-    System.out.println("New Shippment? YES/NO: ");
-    String input = in.next();
-    int quanity;
+        System.out.println("New Shippment? YES/NO: ");
+        String input = in.next();
+        int quanity;
 
-    if(input.toLowerCase().equals("yes"))
-    {
-        Cart tempC;
-        products tempP;
-        Iterator<Cart> c = cart1.getWaitList();
-        Iterator<products> p = pList1.getProduct();
-        while(c.hasNext())
+        if(input.toLowerCase().equals("yes"))
         {
-            tempC = c.next();
-            System.out.println(tempC.toString());
-            System.out.println("Would you like to full this Item? YES/NO");
-            input = in.next();
-            if(input.toLowerCase().equals("yes"))
+            Cart tempC;
+            products tempP;
+            Iterator<Cart> c = cart1.getWaitList();
+            Iterator<products> p = pList1.getProduct();
+            while(c.hasNext())
             {
-                System.out.println("Enter the quantity of the shippment: ");
-                quanity = in.nextInt();
-                if(tempC.getQuantity() < quanity)
+                tempC = c.next();
+                System.out.println(tempC.toString());
+                System.out.println("Would you like to full this Item? YES/NO");
+                input = in.next();
+                if(input.toLowerCase().equals("yes"))
                 {
-                    while(p.hasNext())
+                    System.out.println("Enter the quantity of the shippment: ");
+                    quanity = in.nextInt();
+                    if(tempC.getQuantity() < quanity)
                     {
-                        tempP = p.next();
-                        if(tempC.getproductName().equals(tempP.getProductName()))
+                        while(p.hasNext())
                         {
-                            int addToInventory = quanity - tempC.getQuantity();
-                            tempP.setQuantity(addToInventory);
-                            tempC.setQuantity(0);
+                            tempP = p.next();
+                            if(tempC.getproductName().equals(tempP.getProductName()))
+                            {
+                                int addToInventory = quanity - tempC.getQuantity();
+                                tempP.setQuantity(addToInventory);
+                                tempC.setQuantity(0);
+
+                                System.out.println("The Updated values");
+
+                                System.out.println(tempC.toString());
+                                System.out.println(tempP.toString());
+                            }
                         }
                     }
-                }
-                else if(tempC.getQuantity() == quanity)
-                {
-                    tempC.setQuantity(0);
-                }
-                else
-                {
-                    int remainder = tempC.getQuantity() - quanity;
-                    tempC.setQuantity(remainder);
+                    else if(tempC.getQuantity() == quanity)
+                    {
+                        tempC.setQuantity(0);
+
+                        System.out.println("The Updated values");
+                        System.out.println(tempC.toString());
+                    }
+                    else
+                    {
+                        int remainder = tempC.getQuantity() - quanity;
+                        tempC.setQuantity(remainder);
+
+                        System.out.println("The Updated values");
+                        System.out.println(tempC.toString());
+                    }
                 }
             }
         }
-    }
+        in.close();
 
     }
 
