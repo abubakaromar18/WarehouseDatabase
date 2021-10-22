@@ -206,29 +206,29 @@ public class FinalStage {
 
         /* Question 16 */
         System.out.println("\nCLIENT WITH UNPAID BALANCE: ");
-        clist.setCBalance("John", cart1.cartTotal());
-        clist.setCBalance("Mike", cart2.cartTotal());
-        clist.setCBalance("Emily", cart3.cartTotal());
-        clist.setCBalance("Tim", cart4.cartTotal());
         clist.displayCBalance();
 
 
         /* Question 17 */
-        System.out.println("\nACCEPTING PAYMENT: ");
+        System.out.println("\nPROCESSING PAYMENT! ");
         System.out.println("\nFOLLOWING CLIENT STILL HAVE AMOUNT DUE: ");
         int n = cart1.acceptPayment(1623, cart1);
+        clist.setCBalance("John", cart1.cartTotal());
             if (n == 0)
             System.out.println("Name: " + clist.searchClient("John") + "\n" + "Cart Balance: $" + cart1.getTotalPrice());
 
         n = cart2.acceptPayment(150, cart2);
+        clist.setCBalance("Mike", cart2.cartTotal());
             if (n == 0)
             System.out.println("Name: " + clist.searchClient("Mike") + "\n" + "Cart Balance: $" + cart2.getTotalPrice());
 
         n = cart3.acceptPayment(200, cart3);
+        clist.setCBalance("Emily", cart3.cartTotal());
             if (n == 0)
             System.out.println("Name: " + clist.searchClient("Emily") + "\n" + "Cart Balance: $" + cart3.getTotalPrice());
 
         n = cart4.acceptPayment(500, cart4);
+        clist.setCBalance("Tim", cart4.cartTotal());
             if (n == 0)
             System.out.println("Name: " + clist.searchClient("Time") + "\n" + "Cart Balance: $" + cart4.getTotalPrice());
             
