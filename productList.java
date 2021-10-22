@@ -95,4 +95,70 @@ public class productList{
     public int getQuantity() { return getQuantity(); }
 
     public String toString() { return pList.toString();}
+
+    /* New shipment is recieved, waitlist needs to be updated, and products quanity should be updated */
+    public void newShipment(Cart cart1, productList pList1)
+    {
+        Scanner in = new Scanner(System.in);
+
+        System.out.println("New Shippment? YES/NO: ");
+
+        String input = in.next();
+        int quanity;
+
+        Cart tempC;
+        products tempP;
+
+        Iterator<Cart> c = cart1.getWaitList();
+        Iterator<products> p = pList1.getProduct();
+
+        while(c.hasNext())
+        {
+            tempC = c.next();
+            System.out.println(tempC.toString());
+            System.out.println("Would you like to full this Item? YES/NO");
+            input = in.next();
+            if(input.toLowerCase().equals("yes"))
+            {
+                System.out.println("Enter the quantity of the shippment: ");
+                quanity = in.nextInt();
+                if(tempC.getQuantity() < quanity)
+                {
+                    while(p.hasNext())
+                    {
+                        tempP = p.next();
+                        if(tempC.getproductName().equals(tempP.getProductName()))
+                        {
+                            int addToInventory = quanity - tempC.getQuantity();
+                            tempP.setQuantity(addToInventory);
+                            tempC.setQuantity(0);
+
+                            System.out.println("The Updated values");
+
+                            System.out.println(tempC.toString());
+                            System.out.println(tempP.toString());
+                        }
+                    }
+                }
+                else if(tempC.getQuantity() == quanity)
+                {
+                    tempC.setQuantity(0);
+
+                    System.out.println("The Updated values");
+                    System.out.println(tempC.toString());
+                }
+                else
+                {
+                    int remainder = tempC.getQuantity() - quanity;
+                    tempC.setQuantity(remainder);
+
+                    System.out.println("The Updated values");
+                    System.out.println(tempC.toString());
+                }
+            }
+        }
+        in.close();
+    }
+        
 }
+
