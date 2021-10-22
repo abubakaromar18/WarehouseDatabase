@@ -2,8 +2,6 @@ import java.util.*;
 import java.io.*;
 
 public class FinalStage {
-    private SupplierList supplierList;
-	private UnpaidBalance UnpaidBalanceList;
 
     // Accept Payment From Client
     public void acceptPayment(ClientList clist, Cart cart1, String cName, double amountPay){
@@ -16,7 +14,6 @@ public class FinalStage {
             else
                 clist.setCBalance(cName, cart1.cartTotal());
     }
-
 
     public static void main(String[] args){
 
@@ -89,26 +86,26 @@ public class FinalStage {
         Supplier sup9 = new Supplier("9698","Cathrine","address9");
         Supplier sup10 = new Supplier("2233","Amy","address10");
 
-        SupplierList db = new SupplierList();
-        db.addSupplier(sup1);
-        db.addSupplier(sup2);
-        db.addSupplier(sup3);
-        db.addSupplier(sup4);
-        db.addSupplier(sup5);
-        db.addSupplier(sup6);
-        db.addSupplier(sup7);
-        db.addSupplier(sup8);
-        db.addSupplier(sup9);
-        db.addSupplier(sup10);
+        SupplierList supplierList = new SupplierList();
+        supplierList.addSupplier(sup1);
+        supplierList.addSupplier(sup2);
+        supplierList.addSupplier(sup3);
+        supplierList.addSupplier(sup4);
+        supplierList.addSupplier(sup5);
+        supplierList.addSupplier(sup6);
+        supplierList.addSupplier(sup7);
+        supplierList.addSupplier(sup8);
+        supplierList.addSupplier(sup9);
+        supplierList.addSupplier(sup10);
 
        
         /* Question 6 */
-        /*Iterator<?> allSupplier = getSupplierList();
-        System.out.println("-----Ten Suppliers listed-----");
+        Iterator<?> allSupplier = supplierList.getSupplierList();
+        System.out.println("\n-----Suppliers listed-----");
     	while(allSupplier.hasNext()) {
     		Supplier supplier = (Supplier) allSupplier.next();
     		System.out.println(supplier.toString());
-    	}*/
+    	}
         
       
         /* Question 7 */
@@ -250,60 +247,26 @@ public class FinalStage {
       
     
 
-        /* Question 18 */
-        
- 	Iterator<String> Unpaidbalance = getUnpaidbalanceList();
- 	if(!Unpaidbalance.hasNext()) {
- 		System.out.println("...No client in the list...!!!!");
- 	}
- 	 System.out.println("\n-----Client(id) that had unpaid Balance-----");
- 	 while(Unpaidbalance.hasNext()) {
- 	 	String id = (String) Unpaidbalance.next();
- 	 	System.out.println(id);
- 	 }      
-          
+        /* Question 18 */	
+        System.out.println("\nCLIENT WITH UNPAID BALANCE: ");
+        clist.displayCBalance();
 
 
-        /* Question 19 */
-	Supplier supplier1 = findSupplier("5892");
-  	Supplier supplier2 = findSupplier("2102");	
- 	Supplier supplier3 = findSupplier("9698");       
-	supplier1.AssignProduct(prod1);
-	supplier2.AssignProduct(prod2);	
-	supplier3.AssignProduct(prod3);
- 	System.out.println("price in productlist: \n");
- 	System.out.println(prod1.getCostPrice() + "\n");
- 	System.out.println(prod2.getCostPrice() + "\n");
- 	System.out.println(prod3.getCostPrice() + "\n");
-	
- 	System.out.println("price in Supplierlist: \n");
- 	System.out.println(supplier1.getProductPrice() + "\n");
- 	System.out.println(supplier2.getProductPrice() + "\n");
- 	System.out.println(supplier3.getProductPrice() + "\n");	
+			/* Question 19 */      
+		sup1.AssignProduct(prod1);
+		sup6.AssignProduct(prod2);	
+		sup9.AssignProduct(prod3);
+		System.out.println("\nprice in productlist: \n");
+		System.out.println(prod1.getCostPrice() + "\n");
+		System.out.println(prod2.getCostPrice() + "\n");
+		System.out.println(prod3.getCostPrice() + "\n");
+		
+		System.out.println("price in Supplierlist: \n");
+		System.out.println(sup1.getProductPrice("Pen") + "\n");
+		System.out.println(sup6.getProductPrice("NoteBook") + "\n");
+		System.out.println(sup9.getProductPrice("Backpack") + "\n");	
         
     
-
-        
-
-
-
-
     } 	
-	public Supplier findSupplier(String supplierId) {
-  		Iterator<Supplier> iterator = supplierList.getSupplierList();
-  		while(iterator.hasNext()) {
-  			Supplier supplier = (Supplier) iterator.next();
-  			if(supplier.getId().equalsIgnoreCase(supplierId))
-  				return supplier; 
-  		}
-  		return null;
-  	} 
-  	public Iterator<Supplier> getSupplierList() {
-  		    return supplierList.getSupplierList();
-    	}
-      	public Iterator<String> getUnpaidbalanceList() {
-  		    return UnpaidBalanceList.getIterator();
-      	}
-	
     
 }
