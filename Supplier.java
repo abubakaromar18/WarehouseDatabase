@@ -23,23 +23,23 @@ public class Supplier implements Serializable{
 	public void setAddress(String address) {this.address = address; }
 	
 	public boolean AssignProduct(products Item) {
-		pList.add(Item);
+		pList.addProductList(Item);
 		return true;
 	}	
 	
 	public boolean RemoveProduct(products Item) {
-		return pList.remove(Item);
-	
+		return pList.removeProduct(Item);
+	}
 	// Getter
 	public String getId() { return id;}	
 	public String getName() { return name; }
 	public String getAddress() { return address; }
 
 	public Iterator<products> getProductAssigned() {
-		return pList.iterator();
+		return pList.getProduct();
 	}
-	public String getProductPrice() {
-		return pList.getCostPrice();
+	public Double getProductPrice(String Item) {
+		return pList.searchCartPrice(Item);
 	}	
 	
 	public String toString() { return "Supplier ID: " + id + ";  Name: " + name + ";  Address: " + address; }	
