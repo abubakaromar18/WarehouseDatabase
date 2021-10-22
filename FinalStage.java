@@ -115,6 +115,7 @@ public class FinalStage {
         Cart cart5 = new Cart("Calculator", 10, 114.99, (114.99 * 10));
 
         // Client 1 Shopping Cart
+        Cart client1Cart = cart1; 
         cart1.insertItemToCart(cart1);
         cart1.insertItemToCart(cart2);
         cart1.insertItemToCart(cart3);
@@ -123,6 +124,7 @@ public class FinalStage {
        
 
         // Client 2 Shopping Cart
+        Cart client2Cart = cart2; 
         cart2.insertItemToCart(cart1);
         cart2.insertItemToCart(cart3);
         cart2.insertItemToCart(cart4);
@@ -130,28 +132,33 @@ public class FinalStage {
        
 
         // Client 3 Shopping Cart
+        Cart client3Cart = cart3; 
         cart3.insertItemToCart(cart1);
         cart3.insertItemToCart(cart3);
         
       
         // Client 4 Shopping Cart
+        Cart client4Cart = cart4; 
         cart4.insertItemToCart(cart4);
         cart4.insertItemToCart(cart5);
+
+        // Client 5 Shopping Cart
+        Cart client5Cart = cart5; 
        
 
         System.out.println("\nCLIENT 1 SHOPPING CART:");
         cart1.displayAllCart();
 
         // Update Client 1 Shopping Cart
-        cart1.updateCart("Pen", 250, inventory);
-        cart1.updateCart("Folders", 150, inventory);
-        cart1.updateCart("Sharpener", 112, inventory);
-        int productFound = cart1.updateCart("Calculator", 130, inventory);
+        client1Cart.updateCart("Pen", 250, inventory);
+        client1Cart.updateCart("Folders", 150, inventory);
+        client1Cart.updateCart("Sharpener", 112, inventory);
+        int productFound = client1Cart.updateCart("Calculator", 130, inventory);
 
         // Display Client 1 Updated Shopping Cart
         if(productFound == 1){
             System.out.println("\nCLIENT 1 UPDATED SHOPPING CART: ");
-            cart1.displayAllCart();
+            client1Cart.displayAllCart();
 
         }
         else
@@ -166,11 +173,11 @@ public class FinalStage {
 
         /* Question 9 */
         System.out.println("\nCLIENT WITH/WITHOUT BALANCE: ");
-        System.out.println("Name: " + clist.searchClient("John") + "\n" + "Cart Balance: $" + cart1.cartTotal());
-        System.out.println("Name: " + clist.searchClient("Mike") + "\n" + "Cart Balance: $" + cart2.cartTotal());
-        System.out.println("Name: " + clist.searchClient("Emily") + "\n" + "Cart Balance: $" + cart3.cartTotal());
-        System.out.println("Name: " + clist.searchClient("Tim") + "\n" + "Cart Balance: $" + cart4.cartTotal());
-        System.out.println("Name: " + clist.searchClient("Paul") + "\n" + "Cart Balance: $" + cart5.cartTotal());
+        System.out.println("Name: " + clist.searchClient("John") + "\n" + "Cart Balance: $" + client1Cart.cartTotal());
+        System.out.println("Name: " + clist.searchClient("Mike") + "\n" + "Cart Balance: $" + client2Cart.cartTotal());
+        System.out.println("Name: " + clist.searchClient("Emily") + "\n" + "Cart Balance: $" + client3Cart.cartTotal());
+        System.out.println("Name: " + clist.searchClient("Tim") + "\n" + "Cart Balance: $" + client4Cart.cartTotal());
+        System.out.println("Name: " + clist.searchClient("Paul") + "\n" + "Cart Balance: $" + client5Cart.cartTotal());
 
         /* Question 10 */
         Transaction transID=new Transaction("10392", "55345", 1204);
@@ -192,21 +199,21 @@ public class FinalStage {
 
         /* Question 11 */
         System.out.println("\nCLIENT WITH UNPAID BALANCE: ");
-        clist.setCBalance("John", cart1.cartTotal());
-        clist.setCBalance("Mike", cart2.cartTotal());
-        clist.setCBalance("Emily", cart3.cartTotal());
-        clist.setCBalance("Tim", cart4.cartTotal());
+        clist.setCBalance("John", client1Cart.cartTotal());
+        clist.setCBalance("Mike", client2Cart.cartTotal());
+        clist.setCBalance("Emily", client4Cart.cartTotal());
+        clist.setCBalance("Tim", client4Cart.cartTotal());
         clist.displayCBalance();
 
         /* Question 12 */
         System.out.println("\nPROCESSING ALL SHOPPING CART: ");
-        cart1.processCart(inventory);
-        cart2.processCart(inventory);
-        cart3.processCart(inventory);
-        cart4.processCart(inventory);
+        client1Cart.processCart(inventory);
+        client2Cart.processCart(inventory);
+        client3Cart.processCart(inventory);
+        client4Cart.processCart(inventory);
 
         System.out.println("\nCLIENT 1 WAITLIST: ");
-        cart1.displayWList();
+        client1Cart.displayWList();
 
         
 
@@ -231,10 +238,10 @@ public class FinalStage {
         /* Question 17 */
         System.out.println("\nPROCESSING PAYMENT! ");
         System.out.println("\nFOLLOWING CLIENT STILL HAVE AMOUNT DUE: ");
-        f1.acceptPayment(clist, cart1, "John" , 1623);
-        f1.acceptPayment(clist, cart2, "Mike" , 150);
-        f1.acceptPayment(clist, cart3, "Emily" , 300);
-        f1.acceptPayment(clist, cart4, "Tim" , 500);
+        f1.acceptPayment(clist, client1Cart, "John" , 1623);
+        f1.acceptPayment(clist, client2Cart, "Mike" , 150);
+        f1.acceptPayment(clist, client3Cart, "Emily" , 300);
+        f1.acceptPayment(clist, client4Cart, "Tim" , 500);
      
       
     
