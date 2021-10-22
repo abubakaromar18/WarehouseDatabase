@@ -90,7 +90,7 @@ public class productList{
         return true;
     }
     
-    public Iterator getProduct() { return pList.iterator(); }
+    public Iterator<products> getProduct() { return pList.iterator(); }
 
     public int getQuantity() { return getQuantity(); }
 
