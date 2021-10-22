@@ -101,9 +101,7 @@ public class productList{
     {
         Scanner in = new Scanner(System.in);
 
-        System.out.println("New Shippment? YES/NO: ");
-
-        String input = in.next();
+        String input;
         int quanity;
 
         Cart tempC;
@@ -116,7 +114,7 @@ public class productList{
         {
             tempC = c.next();
             System.out.println(tempC.toString());
-            System.out.println("Would you like to full this Item? YES/NO");
+            System.out.println("Would you like to full this Item? YES/NO: ");
             input = in.next();
             if(input.toLowerCase().equals("yes"))
             {
@@ -133,10 +131,10 @@ public class productList{
                             tempP.setQuantity(addToInventory);
                             tempC.setQuantity(0);
 
-                            System.out.println("The Updated values");
+                            System.out.println("The Updated values\n");
 
-                            System.out.println(tempC.toString());
-                            System.out.println(tempP.toString());
+                            System.out.println("WaitList: " + tempC.toString());
+                            System.out.println("ProductList: " + tempP.toString());
                         }
                     }
                 }
@@ -144,16 +142,16 @@ public class productList{
                 {
                     tempC.setQuantity(0);
 
-                    System.out.println("The Updated values");
-                    System.out.println(tempC.toString());
+                    System.out.println("The Updated values\n");
+                    System.out.println("WaitList: " + tempC.toString());
                 }
                 else
                 {
                     int remainder = tempC.getQuantity() - quanity;
                     tempC.setQuantity(remainder);
 
-                    System.out.println("The Updated values");
-                    System.out.println(tempC.toString());
+                    System.out.println("The Updated values\n");
+                    System.out.println("WaitList: " + tempC.toString());
                 }
             }
         }
