@@ -1,5 +1,9 @@
-public class FinalStage {
+import java.util.*;
+import java.io.*;
 
+public class FinalStage {
+    private SupplierList supplierList;
+	private UnpaidBalance UnpaidBalanceList;
 
     // Accept Payment From Client
     public void acceptPayment(ClientList clist, Cart cart1, String cName, double amountPay){
@@ -247,23 +251,35 @@ public class FinalStage {
     
 
         /* Question 18 */
-
-        /* Question 18 */       
         
- 		/*Iterator<String> Unpaidbalance = getUnpaidbalanceList();
- 		if(!Unpaidbalance.hasNext()) {
- 			System.out.println("...No client in the list...!!!!");
- 		}
- 	 	System.out.println("\n-----Client(id) that had unpaid Balance-----");
- 	 	while(Unpaidbalance.hasNext()) {
- 	 		String id = (String) Unpaidbalance.next();
- 	 		System.out.println(id);
- 	 	}      */ 
+ 	Iterator<String> Unpaidbalance = getUnpaidbalanceList();
+ 	if(!Unpaidbalance.hasNext()) {
+ 		System.out.println("...No client in the list...!!!!");
+ 	}
+ 	 System.out.println("\n-----Client(id) that had unpaid Balance-----");
+ 	 while(Unpaidbalance.hasNext()) {
+ 	 	String id = (String) Unpaidbalance.next();
+ 	 	System.out.println(id);
+ 	 }      
           
 
 
         /* Question 19 */
-
+	Supplier supplier1 = findSupplier("5892");
+  	Supplier supplier2 = findSupplier("2102");	
+ 	Supplier supplier3 = findSupplier("9698");       
+	supplier1.AssignProduct(prod1);
+	supplier2.AssignProduct(prod2);	
+	supplier3.AssignProduct(prod3);
+ 	System.out.println("price in productlist: \n");
+ 	System.out.println(prod1.getCostPrice() + "\n");
+ 	System.out.println(prod2.getCostPrice() + "\n");
+ 	System.out.println(prod3.getCostPrice() + "\n");
+	
+ 	System.out.println("price in Supplierlist: \n");
+ 	System.out.println(supplier1.getProductPrice() + "\n");
+ 	System.out.println(supplier2.getProductPrice() + "\n");
+ 	System.out.println(supplier3.getProductPrice() + "\n");	
         
     
 
@@ -273,13 +289,21 @@ public class FinalStage {
 
 
     } 	
-        private SupplierList supplierList;
-      	private UnpaidBalance UnpaidBalanceList;
-  	    /*public Iterator<Supplier> getSupplierList() {
+	public Supplier findSupplier(String supplierId) {
+  		Iterator<Supplier> iterator = supplierList.getSupplierList();
+  		while(iterator.hasNext()) {
+  			Supplier supplier = (Supplier) iterator.next();
+  			if(supplier.getId().equalsIgnoreCase(supplierId))
+  				return supplier; 
+  		}
+  		return null;
+  	} 
+  	public Iterator<Supplier> getSupplierList() {
   		    return supplierList.getSupplierList();
     	}
       	public Iterator<String> getUnpaidbalanceList() {
   		    return UnpaidBalanceList.getIterator();
-      	}*/
+      	}
+	
     
 }
