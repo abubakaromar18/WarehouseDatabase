@@ -130,6 +130,10 @@ public class Cart {
         for (Cart c : waitList) 
             System.out.println(c);
     } 
+    public Iterator<Cart> getWaitList()
+    {
+        return waitList.iterator();
+    }
     
 
     // Display All Cart
