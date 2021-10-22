@@ -215,6 +215,8 @@ public class FinalStage {
         inventory.displayAllProductList();
         System.out.println("--------------------------------------");
 
+        /* Question 14 */
+        inventory.newShipment(cart1, inventory);
 
         /* Question 15 */
         System.out.println("\n-----------List of Products-----------");
