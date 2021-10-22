@@ -99,7 +99,6 @@ public class productList{
     /* New shipment is recieved, waitlist needs to be updated, and products quanity should be updated */
     public void newShipment(Cart cart1, productList pList1)
     {
-        Scanner in = new Scanner(System.in);
 
         String input;
         int quanity;
@@ -115,11 +114,11 @@ public class productList{
             tempC = c.next();
             System.out.println(tempC.toString());
             System.out.println("Would you like to full this Item? YES/NO: ");
-            input = in.next();
+            input = "yes";
             if(input.toLowerCase().equals("yes"))
             {
                 System.out.println("Enter the quantity of the shippment: ");
-                quanity = in.nextInt();
+                quanity = 110;
                 if(tempC.getQuantity() < quanity)
                 {
                     while(p.hasNext())
@@ -155,7 +154,6 @@ public class productList{
                 }
             }
         }
-        in.close();
     }
         
 }
