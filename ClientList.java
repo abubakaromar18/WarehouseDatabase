@@ -12,10 +12,12 @@ public class ClientList{
     public void insertClientInfo(Client l) {clientList.add(l);}
     
     // Display All Client Information
-    public void displayAllClient(){
+    public Client displayAllClient(){
 
         for (Client c : clientList) 
             System.out.println(c);
+
+        return null;
     } 
 
     // Set Client Balance
