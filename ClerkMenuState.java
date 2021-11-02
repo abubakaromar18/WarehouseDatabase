@@ -4,6 +4,7 @@ import java.util.Random;
 
 public class ClerkMenuState {
 
+    // Menu
     public int menu(){
 
         int choice;
@@ -23,7 +24,8 @@ public class ClerkMenuState {
         return choice;
     }
 
-    public int numGenerator(){
+    // Generate Clerk ID
+    public static int numGenerator(){
 
         Random rand = new Random();
 
@@ -33,7 +35,7 @@ public class ClerkMenuState {
 
     }
        
-
+    // Add A New Client
     public void addClient(ClientList list1){
 
         String cName;
@@ -44,8 +46,6 @@ public class ClerkMenuState {
 
         Scanner in = new Scanner(System.in);
 
-        ClerkMenuState clerk1 = new ClerkMenuState();
-
         System.out.println("Enter The Client Name: ");
         cName = in.nextLine();
         
@@ -55,7 +55,7 @@ public class ClerkMenuState {
         System.out.println("Enter The Client Phone Number: ");
         cPhone = in.nextLine();
 
-        clientID = String.valueOf(clerk1.numGenerator());
+        clientID = String.valueOf(ClerkMenuState.numGenerator());
 
         Client cOne = new Client(cName, cAddress, clientID, cPhone, 0);
 
@@ -63,6 +63,7 @@ public class ClerkMenuState {
 
     }
 
+    // Menu Option
     public void option(){
 
         ClerkMenuState clerkManu = new ClerkMenuState();
@@ -95,7 +96,7 @@ public class ClerkMenuState {
                     chosen = clerkManu.menu();
                     break; 
                 case 4:
-                   // Login.main("0");
+                   //Login.main(a);
                 case 0:
                     return;  
             }

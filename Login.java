@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class Login {
 
+    // UI Menu
     public int menu(){
 
         int choice;
@@ -46,7 +47,6 @@ public class Login {
             }
         }
         
-
     }
     
 }
