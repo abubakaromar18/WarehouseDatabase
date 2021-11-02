@@ -2,7 +2,6 @@ import java.io.*;
 import java.util.*;
 import java.lang.*;
 import java.text.Format;
-import java.util.Random;
 
 public class Client{
     
@@ -19,16 +18,6 @@ public class Client{
         this.cPhone = cPhone;
         this.clientID = clientID;
         this.cBalance = balance;
-    }
-
-    public int numGenerator(){
-
-        Random rand = new Random();
-
-        int randInt1 = rand.nextInt(1000);
-
-        return randInt1;
-       
     }
 
     // Getter
