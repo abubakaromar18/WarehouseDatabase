@@ -3,16 +3,16 @@ public class LoadData {
     public static LoadData run(ClientList cList, productList pList){
 
         // Client
-		Client c1= new Client("John","21 Ave SE", "736-345-4434", "03949", 0);
-        Client c2= new Client("Mike","7th Ave SE", "493-948-5039", "34283", 0);
-        Client c3= new Client("Emily","2088 3rd Ave NE", "459-394-3984", "49582", 0);
-        Client c4= new Client("Tim","864 2th Ave S", "073-895-5938", "93029", 0);
-        Client c5= new Client("Paul","212 Ave N", "304-683-1647", "95827", 0);
-        Client c6= new Client("Ken","468 8th Ave", "594-474-5920", "62456", 0);
-        Client c7= new Client("Tom","2100 2th Ave", "968-483-2648", "68798", 0);
-        Client c8= new Client("Fray","956 9th Ave NE", "485-960-4839", "12584", 0);
-        Client c9= new Client("Jack","39932 3rd Ave SE", "990-594-9483", "32855", 0);
-        Client c10= new Client("Miku","Milkyroad 2453 N", "445-839-4060", "10552", 0);
+		Client c1= new Client("John","21 Ave SE", "(736) 345 - 4434", "03949", 0);
+        Client c2= new Client("Mike","7th Ave SE", "(493) 948-5039", "34283", 0);
+        Client c3= new Client("Emily","2088 3rd Ave NE", "(459) 394 - 3984", "49582", 0);
+        Client c4= new Client("Tim","864 2th Ave S", "(073) 895 - 5938", "93029", 0);
+        Client c5= new Client("Paul","212 Ave N", "(304) 683 - 1647", "95827", 0);
+        Client c6= new Client("Ken","468 8th Ave", "(594) 474 - 5920", "62456", 0);
+        Client c7= new Client("Tom","2100 2th Ave", "(968) 483 - 2648", "68798", 0);
+        Client c8= new Client("Fray","956 9th Ave NE", "(485) 960 - 4839", "12584", 0);
+        Client c9= new Client("Jack","39932 3rd Ave SE", "(990) 594 - 9483", "32855", 0);
+        Client c10= new Client("Miku","Milkyroad 2453 N", "(445) 839 - 4060", "10552", 0);
 
         // Product
         products prod1 = new products("Pen","P1245", "Ball-point Pen", 100, 1.75 );
@@ -41,7 +41,6 @@ public class LoadData {
 
 
         // Add Product To List
-
         pList.addProductList(prod1);
         pList.addProductList(prod2);
         pList.addProductList(prod3);

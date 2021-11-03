@@ -32,7 +32,7 @@ public class productList{
             System.out.println(c);
     } 
 
-    // Search Product Price + Return Product Price
+    // Search Product Name + Return Product Price
     public double searchCartPrice(String find){
 
         for (products a : pList) 
