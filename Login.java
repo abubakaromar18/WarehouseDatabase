@@ -2,6 +2,14 @@ import java.util.Scanner;
 
 public class Login {
 
+    public static ClientList cList;
+    public static productList pList;
+    public static Client client; 
+
+    public static Client clientObject() {return client; };
+    public static ClientList cListObj() {return cList; }; 
+    public static productList pListObj() {return pList; };
+
     // UI Menu
     public int menu(){
 
@@ -53,6 +61,10 @@ public class Login {
 
     public static void main(String[] args){
 
+        // Load Database
+        LoadData.run(cList, pList);
+
+        // Client, Clerk, Manager Login
         Login.option();
 
     }

@@ -21,6 +21,7 @@ public class Client implements Serializable{
         this.cBalance = balance;
     }
 
+    // Generate Client, Supplier, Product ID
     public static int numGenerator(){
 
         Random rand = new Random();
