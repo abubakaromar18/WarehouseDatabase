@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 import java.util.Random;
 
 public class ClerkMenuState {
@@ -9,7 +8,7 @@ public class ClerkMenuState {
 
         int choice;
 
-        System.out.println("CLERK MENU");
+        System.out.println("\nCLERK MENU");
         System.out.println("==========");
         System.out.println("Please Choose An Option Below: ");
         System.out.println("Enter 1 To Add A Client.");
@@ -24,16 +23,6 @@ public class ClerkMenuState {
         return choice;
     }
 
-    // Generate Clerk ID
-    public static int numGenerator(){
-
-        Random rand = new Random();
-
-        int randInt1 = rand.nextInt(1000);
-
-        return randInt1;
-
-    }
        
     // Add A New Client
     public void addClient(ClientList list1){
@@ -46,16 +35,16 @@ public class ClerkMenuState {
 
         Scanner in = new Scanner(System.in);
 
-        System.out.println("Enter The Client Name: ");
+        System.out.print("Enter The Client Name: ");
         cName = in.nextLine();
         
-        System.out.println("Enter The Client Address: ");
+        System.out.print("Enter The Client Address: ");
         cAddress = in.nextLine();
 
-        System.out.println("Enter The Client Phone Number: ");
+        System.out.print("Enter The Client Phone Number: ");
         cPhone = in.nextLine();
 
-        clientID = String.valueOf(ClerkMenuState.numGenerator());
+        clientID = String.valueOf(Client.numGenerator());
 
         Client cOne = new Client(cName, cAddress, clientID, cPhone, 0);
 
@@ -64,11 +53,7 @@ public class ClerkMenuState {
     }
 
     // Menu Option
-    public void option(){
-
-        ClerkMenuState clerkManu = new ClerkMenuState();
-
-        ClientList client1 = new ClientList();
+    public void option(ClerkMenuState clerkManu, ClientList client1){
 
         Scanner ins = new Scanner(System.in);
 
@@ -86,7 +71,7 @@ public class ClerkMenuState {
                     break;
                 // Search For Client
                 case 2:
-                    System.out.println("Enter The Client Name To Search For A Client: ");
+                    System.out.print("Enter The Client Name To Search For A Client: ");
                     cName = ins.nextLine();
                     System.out.println(client1.searchClient(cName));
                     chosen = clerkManu.menu();
@@ -96,9 +81,10 @@ public class ClerkMenuState {
                     chosen = clerkManu.menu();
                     break; 
                 case 4:
-                   //Login.main(a);
+                    Login.option();
+                    break;
                 case 0:
-                    return;  
+                    break;  
             }
         }
     }
@@ -106,9 +92,13 @@ public class ClerkMenuState {
     // Main 
     public static void InClerk(){
 
-        ClerkMenuState clerk1 = new ClerkMenuState();
+        ClerkMenuState cManu = new ClerkMenuState();
 
-        clerk1.option();
+        ClerkMenuState clerkManu = new ClerkMenuState();
+
+        ClientList client1 = new ClientList();
+
+        cManu.option(clerkManu, client1);
 
     }
 

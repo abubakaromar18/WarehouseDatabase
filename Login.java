@@ -7,7 +7,8 @@ public class Login {
 
         int choice;
 
-        System.out.println("UI: ");
+        System.out.println("\nUI: ");
+        System.out.println("====");
         System.out.println("Please Choose An Option Below: ");
         System.out.println("Enter 1 For Client");
         System.out.println("Enter 2 For Clerk");
@@ -21,7 +22,7 @@ public class Login {
 
     }
 
-    public static void main(String[] args){
+    public static void option(){
 
         Login in = new Login();
 
@@ -43,10 +44,17 @@ public class Login {
                     break;
 
                 case 0:
-                    return;  
+                    break;  
             }
         }
-        
+
+
+    }
+
+    public static void main(String[] args){
+
+        Login.option();
+
     }
     
 }

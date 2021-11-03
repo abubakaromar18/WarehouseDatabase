@@ -4,7 +4,7 @@ import java.lang.*;
 import java.text.Format;
 import java.util.Random;
 
-public class Client{
+public class Client implements Serializable{
     
     private String cName;
     private String cAddress;
@@ -21,7 +21,7 @@ public class Client{
         this.cBalance = balance;
     }
 
-    public int numGenerator(){
+    public static int numGenerator(){
 
         Random rand = new Random();
 
